@@ -13,9 +13,7 @@
 		C10D44921D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C10D44911D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m */; };
 		C14582531D4397CC00D9BBA7 /* NSDGitConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C14582521D4397CC00D9BBA7 /* NSDGitConstants.m */; };
 		C17ADCAF1D4566D800B33892 /* NSDNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = C17ADCAE1D4566D800B33892 /* NSDNetworkController.m */; };
-		C19A17401D4611490025C1A4 /* NSDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C19A173F1D4611490025C1A4 /* NSDHomeViewController.m */; };
 		C1AD3AEC1D44D3F00001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AD3AEB1D44D3F00001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.m */; };
-		C1BFEAA61D44FA3E00E6710C /* NSDOauthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BFEAA51D44FA3E00E6710C /* NSDOauthViewController.m */; };
 		C1C3BE241D436BDE001A0E50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C3BE231D436BDE001A0E50 /* main.m */; };
 		C1C3BE271D436BDE001A0E50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C3BE261D436BDE001A0E50 /* AppDelegate.m */; };
 		C1C3BE2D1D436BDE001A0E50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C3BE2B1D436BDE001A0E50 /* Main.storyboard */; };
@@ -47,14 +45,9 @@
 		C14582521D4397CC00D9BBA7 /* NSDGitConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDGitConstants.m; sourceTree = "<group>"; };
 		C17ADCAD1D4566D800B33892 /* NSDNetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNetworkController.h; sourceTree = "<group>"; };
 		C17ADCAE1D4566D800B33892 /* NSDNetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDNetworkController.m; sourceTree = "<group>"; };
-		C17ADCB01D456E9800B33892 /* NSDNetworkController_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNetworkController_Private.h; sourceTree = "<group>"; };
-		C19A173E1D4611490025C1A4 /* NSDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDHomeViewController.h; sourceTree = "<group>"; };
-		C19A173F1D4611490025C1A4 /* NSDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDHomeViewController.m; sourceTree = "<group>"; };
 		C19A17411D4635710025C1A4 /* NSDGitManager_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDGitManager_Private.h; sourceTree = "<group>"; };
 		C1AD3AEA1D44D3EF0001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+NSDNetworkConnection.h"; sourceTree = "<group>"; };
 		C1AD3AEB1D44D3F00001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+NSDNetworkConnection.m"; sourceTree = "<group>"; };
-		C1BFEAA41D44FA3E00E6710C /* NSDOauthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDOauthViewController.h; sourceTree = "<group>"; };
-		C1BFEAA51D44FA3E00E6710C /* NSDOauthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDOauthViewController.m; sourceTree = "<group>"; };
 		C1C3BE1F1D436BDE001A0E50 /* gitClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gitClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C3BE231D436BDE001A0E50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C1C3BE251D436BDE001A0E50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,7 +92,6 @@
 				C10A91F91D44199E008AB357 /* NSDChacheController.m */,
 				C17ADCAD1D4566D800B33892 /* NSDNetworkController.h */,
 				C17ADCAE1D4566D800B33892 /* NSDNetworkController.m */,
-				C17ADCB01D456E9800B33892 /* NSDNetworkController_Private.h */,
 			);
 			name = NSDControllers;
 			sourceTree = "<group>";
@@ -107,10 +99,6 @@
 		C1BFEAA31D44FA0C00E6710C /* NSDViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C1BFEAA41D44FA3E00E6710C /* NSDOauthViewController.h */,
-				C1BFEAA51D44FA3E00E6710C /* NSDOauthViewController.m */,
-				C19A173E1D4611490025C1A4 /* NSDHomeViewController.h */,
-				C19A173F1D4611490025C1A4 /* NSDHomeViewController.m */,
 			);
 			name = NSDViewControllers;
 			sourceTree = "<group>";
@@ -282,7 +270,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C14582531D4397CC00D9BBA7 /* NSDGitConstants.m in Sources */,
-				C19A17401D4611490025C1A4 /* NSDHomeViewController.m in Sources */,
 				C10D44921D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m in Sources */,
 				C1C3BE271D436BDE001A0E50 /* AppDelegate.m in Sources */,
 				C1C3BE241D436BDE001A0E50 /* main.m in Sources */,
@@ -290,7 +277,6 @@
 				C10A91FA1D44199E008AB357 /* NSDChacheController.m in Sources */,
 				C1043F031D442708002684BF /* NSDictionary+NSDNetworkConnection.m in Sources */,
 				C17ADCAF1D4566D800B33892 /* NSDNetworkController.m in Sources */,
-				C1BFEAA61D44FA3E00E6710C /* NSDOauthViewController.m in Sources */,
 				C1AD3AEC1D44D3F00001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

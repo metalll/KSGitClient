@@ -10,12 +10,151 @@
 #import "NSURL+NSDNetworkConnection.h"
 #import <UIKit/UIKit.h>
 #import "NSDGitManager_Private.h"
+#import "NSDGitConstants.h"
 @implementation NSDGitManager
 
 
++ (instancetype)controller {
+    static id instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [self new];
+    });
+    return instance;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.baseURL = kGithubAPIURL;
+        self.urlSession = nil;
+        self.token = nil;
+    }
+    return self;
+}
+
++(NSString *)URLStringWithPathComponent:(NSString *)pathComponent{
+    return [kGithubAPIURL stringByAppendingString:pathComponent];
+}
+
++(void)searchForPath:(NSString *)path andQueryString:(NSString *)query andCompletion:(void (^)(NSDictionary *, NSString *)) completion{
+    NSMutableDictionary * params = [NSMutableDictionary new];
+    [params setObject:query forKey:@"q"];
+    
+    [self performRequestWithURLPath:path andMethod:@"GET" andParams:params andAcceptJSONResponse:true andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
+        [self processJSONData:data andErrorString:errorString andCompletion:completion];
+    }];
+    
+}
+
++(void)processJSONData:(NSData *)JSONData andErrorString:(NSString *)errorString andCompletion:(void (^)(NSDictionary *, NSString *))completion{
+    NSString * newErrorString = errorString;
+    if(JSONData!=nil){
+        NSError * error = nil;
+        NSDictionary * retValDic = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
+        if(errorString!=nil){
+            NSLog(@"GitHub error!!!");
+            completion(nil,newErrorString);
+            return;
+        }
+        
+        if(error!=nil){ completion(nil,@"Error parsing JSON"); return;}
+        
+        
+        
+        completion(retValDic,nil);
+        return;
+    }else {
+        completion(nil,@"no data no life ;-(");
+        return;
+    }
+}
+
++(void)searchForReposCountainingWithQueryString:(NSString *)queryString andCompletion:(void (^)(NSDictionary *, NSString *))    completion{
+    [self searchForPath:@"/search/repositories" andQueryString:queryString andCompletion:completion];
+}
+
++(void)searchForUserCountainingWithQueryString:(NSString *)queryString andCompletion:(void (^)(NSDictionary *, NSString *))completion{
+    [self searchForPath:@"/search/users" andQueryString:queryString andCompletion:completion];
+}
+
++(void)getCurrentUserWithCompletion:(void (^)(NSDictionary *, NSString *))completion{
+    [self performRequestWithURLPath:@"/user" andMethod:@"GET" andParams:nil andAcceptJSONResponse:YES andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
+        [self processJSONData:data andErrorString:errorString andCompletion:completion];
+    }];
+}
+
++(void)newRepoWithName:(NSString *)name andDescription:(NSString *)decription andInitWithReadMe:(BOOL)initReadMe andAllowDownloads:(BOOL)allowDownloads andCompletion:(void (^)(NSDictionary *, NSString *))completion{
+    NSMutableDictionary * params = [NSMutableDictionary new];
+    [params setObject:name forKey:@"name"];
+    if(decription!=nil){
+        [params setObject:decription forKey:@"description"];
+    }
+    if(initReadMe)
+    [params setObject:@"true" forKey:@"auto_init"];
+    else [params setObject:@"false" forKey:@"auto_init"];
+    
+    if(allowDownloads)
+        [params setObject:@"true" forKey:@"has_downloads"];
+    else [params setObject:@"false" forKey:@"has_downloads"];
+
+    [self performRequestWithURLPath:@"/user/repos" andMethod:@"POST" andParams:params andAcceptJSONResponse:true andSendBodyAsJSON:true andCompletion:^(NSData *data, NSString *errorString) {
+      [self processJSONData:data andErrorString:errorString andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
+          if(errorString!=nil){
+              completion(nil,errorString);
+              return ;
+          }
+          
+          completion(responceDic,nil);
+      }];
+    }];
+}
+
++(void)updateUserBioWithNewBio:(NSString *)newBio andCompletion:(void (^)(NSDictionary *, NSString *))completion{
+    NSMutableDictionary * userBio = [NSMutableDictionary new];
+    [userBio setObject:newBio forKey:@"bio"];
+    
+    [self performRequestWithURLPath:@"/user" andMethod:@"PATCH" andParams:userBio andAcceptJSONResponse:YES andSendBodyAsJSON:true andCompletion:^(NSData *data, NSString *errorString) {
+        [self processJSONData:data andErrorString:errorString andCompletion:completion];
+    }];
+}
 
 
++(void)setAccesToken:(NSString *)token{
+    NSURLSessionConfiguration * config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSMutableDictionary * configToken = [NSMutableDictionary new];
+    [configToken setObject:[@"token " stringByAppendingString:token] forKey:@"Authorization"];
+    
+    NSDGitManager * instance =  (NSDGitManager *)[self controller];
+    instance.urlSession = [NSURLSession sessionWithConfiguration:config];
+}
 
++(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI{
+    
+    NSDictionary * callbackParams = [callbackURI dictionaryFromURL];
+    NSString * code = [callbackParams objectForKey:@"code"];
+    NSMutableDictionary * requestParams = [NSMutableDictionary new];
+    [requestParams setObject:kGithubID forKey:@"client_id"];
+    [requestParams setObject:kGithubSecret forKey:@"client_secret"];
+    [requestParams setObject:code forKey:@"code"];
+    
+    
+    [self performRequestWithURLString:kGithubAccessTokenURLString andMethod:@"POST" andParams:requestParams andAcceptJSONResponse:YES andSendBodyAsJSON:YES andCompletion:^(NSData *data, NSString *errorString) {
+        NSError * JSONError = nil;
+        if(errorString!=nil){
+            NSLog(@"err");
+            return;
+        }
+        NSMutableDictionary * responceDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError];
+        
+        NSString * tttoken = [responceDic objectForKey:@"access_token"];
+        [[NSUserDefaults standardUserDefaults] setObject:tttoken forKey:@"accessToken"];
+        [self setAccesToken:tttoken];
+        return;
+        
+    }];
+}
 
 
 @end

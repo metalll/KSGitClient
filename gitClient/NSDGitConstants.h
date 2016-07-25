@@ -16,7 +16,7 @@ extern NSString * const kGithubAccessTokenURLString;
 extern NSString * const kGithubScope;
 extern NSString * const kGithubAPIURL;
 extern NSString * const kGithubURL;
-extern NSString * const kGithubSecrect;
+extern NSString * const kGithubSecret;
 extern NSString * const kGithubID;
 #define NSDGithubIssueClosedState @"closed"
 #define NSDGithubIssueOpenState @"open"

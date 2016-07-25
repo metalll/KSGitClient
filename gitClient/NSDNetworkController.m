@@ -7,32 +7,32 @@
 //
 
 #import "NSDNetworkController.h"
-#import "NSDNetworkController_Private.h"
 #import "NSDGitConstants.h"
 #import "NSDictionary+NSDNetworkConnection.h"
 #import "NSMutableURLRequest+NSDNetworkConnection.h"
+#import <UIKit/UIKit.h>
 @implementation NSDNetworkController
 
 
-+(NSDictionary *)sharedInstance{
-    static dispatch_once_t oncePredicate;
-    static NSString * baseURL;
-    static __weak NSURLSession * urlSession;
-    static NSString * token;
-    dispatch_once(&oncePredicate, ^{
-        baseURL = kGithubURL;
-        urlSession = [NSURLSession sharedSession];
++ (instancetype)controller {
+    static id instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [self new];
     });
-    token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
-    
-    NSMutableDictionary * retVal = [NSMutableDictionary new];
-    [retVal setObject:baseURL forKey:@"baseURL"];
-    [retVal setObject:urlSession forKey:@"urlSession"];
-    [retVal setObject:token forKey:token];
-    
-    return retVal;
+    return instance;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.urlSession = [NSURLSession sharedSession];
+        self.baseURL = kGithubURL;
+        self.token = nil;
+    }
+    return self;
+}
 
 
 
@@ -53,7 +53,7 @@
 +(void)downloadResourceWithURLString:(NSString *)url andCompletion:(void (^)(NSString * localPath, NSString * errorString))completion{
     NSURL * URL = [NSURL URLWithString:url];
     NSURLRequest * request = [NSURLRequest requestWithURL:URL cachePolicy: NSURLRequestUseProtocolCachePolicy  timeoutInterval:10];
-    NSURLSession * session = [[self sharedInstance] objectForKey:@"urlSession"];
+    NSURLSession * session = [(NSDNetworkController *)[self controller] urlSession];
     [[session downloadTaskWithRequest:request completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if(error){
@@ -92,7 +92,7 @@
 }
 
 +(void)performRequestWithURLPath:(NSString *)urlPath andMethod:(NSString *)method andParams:(NSDictionary *)params andAcceptJSONResponse:(BOOL)acceptJSONResponse andSendBodyAsJSON:(BOOL)sendBodyAsJSON andCompletion:(void (^)(NSData *, NSString *))completion{
-    NSString * baseURL =[[self sharedInstance]objectForKey:@"baseURL"];
+    NSString * baseURL =[NSString stringWithFormat:@"%@", [[self controller]baseURL]];
     if(baseURL){
         [self performRequestWithURLString:[baseURL stringByAppendingPathComponent:urlPath] andMethod:method andParams:params andAcceptJSONResponse:acceptJSONResponse andSendBodyAsJSON:sendBodyAsJSON andCompletion:completion];
     }else{
@@ -147,7 +147,7 @@
             request.URL = reqURL;
         }
         
-        NSURLSession * session = [[self sharedInstance] objectForKey:@"urlSession"];
+        NSURLSession * session = [[self controller] urlSession];
         
         [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             

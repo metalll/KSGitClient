@@ -13,7 +13,6 @@
 
 
 
-+(NSDictionary *)sharedInstance;
 
 +(void)searchForReposCountainingWithQueryString:(NSString *)queryString
                                   andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;

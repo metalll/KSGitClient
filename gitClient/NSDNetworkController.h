@@ -11,7 +11,9 @@
 @interface NSDNetworkController : NSObject
 
 
-
+@property NSString * token;
+@property NSString * baseURL;
+@property NSURLSession * urlSession;
     
 +(NSString *)processResponceWithResponce:(NSURLResponse *)responce andError:(NSError *)error;
 +(void)downloadResourceWithURLString:(NSString *)url andCompletion:(void(^)(NSString * localPath,NSString * errorString)) completion;
