@@ -11,7 +11,6 @@
 		C10A91F31D441914008AB357 /* NSDGitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A91F21D441914008AB357 /* NSDGitManager.m */; };
 		C10A91FA1D44199E008AB357 /* NSDChacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A91F91D44199E008AB357 /* NSDChacheController.m */; };
 		C10D44921D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C10D44911D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m */; };
-		C145824D1D4378A300D9BBA7 /* NSDGitNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C145824C1D4378A300D9BBA7 /* NSDGitNetworkConnection.m */; };
 		C14582531D4397CC00D9BBA7 /* NSDGitConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C14582521D4397CC00D9BBA7 /* NSDGitConstants.m */; };
 		C17ADCAF1D4566D800B33892 /* NSDNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = C17ADCAE1D4566D800B33892 /* NSDNetworkController.m */; };
 		C19A17401D4611490025C1A4 /* NSDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C19A173F1D4611490025C1A4 /* NSDHomeViewController.m */; };
@@ -44,8 +43,6 @@
 		C10A91F91D44199E008AB357 /* NSDChacheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDChacheController.m; sourceTree = "<group>"; };
 		C10D44901D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NSDNetworkConnection.h"; sourceTree = "<group>"; };
 		C10D44911D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NSDNetworkConnection.m"; sourceTree = "<group>"; };
-		C145824B1D4378A300D9BBA7 /* NSDGitNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDGitNetworkConnection.h; sourceTree = "<group>"; };
-		C145824C1D4378A300D9BBA7 /* NSDGitNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDGitNetworkConnection.m; sourceTree = "<group>"; };
 		C14582511D4397CC00D9BBA7 /* NSDGitConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDGitConstants.h; sourceTree = "<group>"; };
 		C14582521D4397CC00D9BBA7 /* NSDGitConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDGitConstants.m; sourceTree = "<group>"; };
 		C17ADCAD1D4566D800B33892 /* NSDNetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNetworkController.h; sourceTree = "<group>"; };
@@ -174,8 +171,6 @@
 			children = (
 				C14582511D4397CC00D9BBA7 /* NSDGitConstants.h */,
 				C14582521D4397CC00D9BBA7 /* NSDGitConstants.m */,
-				C145824B1D4378A300D9BBA7 /* NSDGitNetworkConnection.h */,
-				C145824C1D4378A300D9BBA7 /* NSDGitNetworkConnection.m */,
 				C10A91F11D441914008AB357 /* NSDGitManager.h */,
 				C10A91F21D441914008AB357 /* NSDGitManager.m */,
 			);
@@ -294,7 +289,6 @@
 				C1043F031D442708002684BF /* NSDictionary+NSDNetworkConnection.m in Sources */,
 				C17ADCAF1D4566D800B33892 /* NSDNetworkController.m in Sources */,
 				C1BFEAA61D44FA3E00E6710C /* NSDOauthViewController.m in Sources */,
-				C145824D1D4378A300D9BBA7 /* NSDGitNetworkConnection.m in Sources */,
 				C1AD3AEC1D44D3F00001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
