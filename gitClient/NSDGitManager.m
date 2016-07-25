@@ -130,6 +130,13 @@
     instance.urlSession = [NSURLSession sessionWithConfiguration:config];
 }
 
+
++(NSString *)requestOAuth2Access{
+    NSString * retVal = [[[[kGithubOAuthURLString stringByAppendingString:@"?client_id="] stringByAppendingString:kGithubID] stringByAppendingString:@"&scope="] stringByAppendingString:kGithubScope];
+    
+    return retVal;
+}
+
 +(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI{
     
     NSDictionary * callbackParams = [callbackURI dictionaryFromURL];

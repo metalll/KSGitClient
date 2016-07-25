@@ -32,6 +32,7 @@
                  andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
 
++(NSString *)requestOAuth2Access;
 
 +(void)setAccesToken:(NSString *)token;
 
