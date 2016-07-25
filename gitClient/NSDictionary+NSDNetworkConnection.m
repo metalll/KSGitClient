@@ -6,10 +6,10 @@
 //  Copyright © 2016 nullStackDev. All rights reserved.
 //
 
-#import "NSDictionary+NSDGitNetworkConnection.h"
+#import "NSDictionary+NSDNetworkConnection.h"
 
 @implementation NSDictionary (NSDGitNetworkConnection)
--(NSString *)encodedStringWithHttpBody:(NSString *)stringHttpBody{
+-(NSString *)encodedStringWithHttpBody{
 
    
     NSMutableArray * partsArray = [NSMutableArray new];

@@ -7,24 +7,33 @@
 //
 
 #import "NSDGitManager.h"
-
+#import "NSURL+NSDNetworkConnection.h"
 #import <UIKit/UIKit.h>
 
 @implementation NSDGitManager
--(void)requestOAuth2Access{
-    NSLog(@"AUTH step 1 getCode");
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/login/oauth/authorize?client_id=90148ae988fcef1f0bb3&scope=user,repo" ]];
++(instancetype)sharedInstance{
+    static NSDGitManager * _sharedInstance = nil;
+    static dispatch_once_t oncePredicate;
+    dispatch_once(&oncePredicate, ^{
+        _sharedInstance = [[NSDGitManager alloc] init];
+    });
+    return _sharedInstance;
     
 }
 
--(void)processOAuthWithCallbackURL:(NSURL *)callback{
 
+
+-(void)processOAuthWithCallbackURL:(NSURL *)callback{
+    NSString * reqCode = [[callback dictionaryFromURL] objectForKey:@"code"];
+    NSLog(@"AUTH step 2 code requsted code : %@",reqCode);
     
     
 }
 
 -(void)setAccessWithToken:(NSString *)token{
 
+    
+    
 }
 
 -(void)processJSONDataWithData:(NSData *)inputData andCompletion:(void (^)(NSDictionary *))completion{

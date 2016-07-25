@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "NSDGitManager.h"
 @interface AppDelegate ()
 
 @end
@@ -28,9 +28,7 @@
 
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    NSLog(@"%@",url);
-    NSDictionary * dic =[[NSDictionary alloc] initWithContentsOfURL:url];
-    NSLog(@"%@",dic);
+    [[NSDGitManager sharedInstance]processOAuthWithCallbackURL:url];
     return NO;
 }
 

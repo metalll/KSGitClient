@@ -15,3 +15,5 @@ NSString * const kGithubAccessTokenURLString = @"https://github.com/login/oauth/
 NSString * const kGithubScope = @"user,repo";
 NSString * const kGithubAPIURL = @"https://api.github.com";
 NSString * const kGithubURL = @"https://github.com";
+NSString * const kGithubID = @"90148ae988fcef1f0bb3";
+NSString * const kGithubSecret = @"4344c30471cdf09a1a72bf35674f75eebcc10fc4";

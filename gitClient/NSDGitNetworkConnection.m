@@ -7,74 +7,32 @@
 //
 
 #import "NSDGitNetworkConnection.h"
-#import "NSDGitRequestType.h"
-#import "NSDGitResponseType.h"
+#import "NSDGitNetworkController_Private.h"
+#import "NSDGitConstants.h"
 
 
 
 @implementation NSDGitNetworkConnection
 
 
-
-+ (void)asyncRequest:(NSURLRequest *)request success:(id(^)(NSData *, NSURLResponse *))successBlock failure:(id(^)(NSError *))failureBlock_
-{
-    
-   
-        NSLog(@"%@ to request : %@", request.HTTPMethod, request);
-        
-      
-        [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                if (error!=nil) {
-                    failureBlock_(error);
-                }
-                else {
-                    successBlock(data,response);
-                }
-
-            });
-            
-        
-            
-            
-        }
-        
-    ] resume];
-
-
-    
-    
-   
++(NSDictionary *)sharedInstance{
+    static dispatch_once_t oncePredicate;
+    static NSString * baseURL;
+    static __weak NSURLSession * urlSession;
+    static NSString * token;
+    dispatch_once(&oncePredicate, ^{
+        baseURL = kGithubAPIURL;
+        urlSession = [NSURLSession sharedSession];
+        token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    });
+    token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    NSMutableDictionary * retVal = [NSMutableDictionary new];
+    [retVal setObject:baseURL forKey:@"baseURL"];
+    [retVal setObject:urlSession forKey:@"urlSession"];
+    [retVal setObject:token forKey:@"token"];
+    return retVal;
 }
 
-
-+ (void)asyncRequest:(NSURLRequest *)request success:(id(^)(NSData *, NSURLResponse *))successBlock
-{
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-       
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (error!=nil) {
-                return ;
-                      }
-            else{
-                successBlock(data,response);
-            }
-  
-        });
-        
-        
-        
-        
-        
-    }
-     
-     ] resume];
-    
-    
-    
-}
 
 
 

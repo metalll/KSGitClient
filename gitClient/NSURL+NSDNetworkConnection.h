@@ -1,5 +1,5 @@
 //
-//  NSDictionary+NSDGitNetworkConnection.h
+//  NSURL+NSDGitNetworkConnection.h
 //  gitClient
 //
 //  Created by NullStackDev on 24.07.16.
@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDictionary (NSDGitNetworkConnection)
+@interface NSURL (NSDGitNetworkConnection)
 
--(NSString *)encodedStringWithHttpBody:(NSString *) stringHttpBody;
+- (NSDictionary *)dictionaryFromURL;
+
 
 @end

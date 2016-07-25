@@ -7,14 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSDGitRequestType.h"
-#import "NSDGitResponseType.h"
-@interface NSDGitNetworkConnection : NSURLConnection
-
-    +(void)asyncRequest:(NSURLRequest *)request success:(id(^)(NSData *, NSURLResponse *))successBlock;
-    +(void)asyncRequest:(NSURLRequest *)request success:(id(^)(NSData *, NSURLResponse *))successBlock failure:(id(^)(NSError *))failureBlock_;
+#import "NSDNetworkController.h"
 
 
 
+@interface NSDGitNetworkConnection : NSDNetworkController
 
+    
 @end

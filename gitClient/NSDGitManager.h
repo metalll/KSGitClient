@@ -10,9 +10,10 @@
 
 @interface NSDGitManager : NSObject
 
+
+
 -(void)processJSONDataWithData:(NSData * )inputData andCompletion:(void (^)(NSDictionary * result)) completion;
--(void)requestOAuth2Access;
 -(void)processOAuthWithCallbackURL:(NSURL *)callback;
 -(void)setAccessWithToken:(NSString *)token;
-
++(instancetype)sharedInstance;
 @end
