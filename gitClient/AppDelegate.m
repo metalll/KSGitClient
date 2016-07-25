@@ -28,7 +28,7 @@
 
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    [[NSDGitManager sharedInstance]processOAuthWithCallbackURL:url];
+    [NSDGitManager processOAuth2WithCallbackURI:url];
     return NO;
 }
 

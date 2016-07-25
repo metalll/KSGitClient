@@ -71,7 +71,8 @@
     NSDictionary * dic = [request.URL dictionaryFromURL];
     if(dic!=nil){
         if([dic objectForKey:@"code"]!=nil){
-            [[NSDGitManager sharedInstance]processOAuthWithCallbackURL:request.URL]; //bingo!!! get over here f****** code!
+            [NSDGitManager processOAuth2WithCallbackURI:request.URL]; //bingo!!! get over here f****** code!
+            
             return NO;
         }
         if([dic objectForKey:@"return_to"]!=nil){ return NO;}
