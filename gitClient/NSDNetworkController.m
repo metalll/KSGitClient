@@ -9,6 +9,8 @@
 #import "NSDNetworkController.h"
 #import "NSDNetworkController_Private.h"
 #import "NSDGitConstants.h"
+#import "NSDictionary+NSDNetworkConnection.h"
+#import "NSMutableURLRequest+NSDNetworkConnection.h"
 @implementation NSDNetworkController
 
 
@@ -99,6 +101,74 @@
     
 }
 
-
++(void)performRequestWithURLString:(NSString *)url andMethod:(NSString *)method andParams:(NSDictionary *)params andAcceptJSONResponse:(BOOL)acceptJSONResponse andSendBodyAsJSON:(BOOL)sendBodyAsJSON andCompletion:(void (^)(NSData *, NSString *))completion{
+    
+    NSURL * URL = [NSURL URLWithString:url];
+    
+    if(method==nil){
+        method = @"GET";
+    }
+    
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:URL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+    request.HTTPMethod = method;
+    
+    if(acceptJSONResponse){
+        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    }
+    
+    if(params!=nil){
+        if([method isEqualToString:@"POST"]||[method isEqualToString:@"PUT"]||[method isEqualToString:@"DELETE"]||[method isEqualToString:@"PATH"]){
+        
+            NSData * bodyData = nil;
+            if(sendBodyAsJSON){
+                NSError * JSONError  = nil;
+                bodyData = [NSJSONSerialization dataWithJSONObject:params options:0 error:&JSONError];
+                
+                if(JSONError!=nil){
+                    completion(nil,[@"Error dataWithJSON" stringByAppendingString:[JSONError localizedDescription]]);
+                }else{
+                    NSString * encodedString = [params encodedStringWithHttpBody];
+                    bodyData = [encodedString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:false];
+                    if(bodyData==nil){
+                        completion(nil,@"couldn't create bodyData");
+                        return;
+                    }
+                    
+                    [request setBodyData:bodyData isJSONData:sendBodyAsJSON];
+                }
+                
+                
+            }
+            
+        }
+        else{
+            NSString * encodedString = [params encodedStringWithHttpBody];
+            NSURL * reqURL = [NSURL URLWithString:[[url stringByAppendingString:@"?"]stringByAppendingString:  encodedString]];
+            request.URL = reqURL;
+        }
+        
+        NSURLSession * session = [[self sharedInstance] objectForKey:@"urlSession"];
+        
+        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSString * errorString = [self processResponceWithResponce:response andError:error];
+                if(errorString!=nil){
+                    completion(data,errorString);
+                    return ;
+                }
+                if(data == nil){
+                    completion(nil,@"no data, no life ;-( ");
+                }
+                
+                completion(data,nil);
+                
+                
+            });
+            
+        }] resume];
+    }
+    
+}
 
 @end
