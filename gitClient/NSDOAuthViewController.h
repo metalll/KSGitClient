@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSDOAuthViewController : UIViewController
+@interface NSDOAuthViewController : UIViewController<UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
 
 @end

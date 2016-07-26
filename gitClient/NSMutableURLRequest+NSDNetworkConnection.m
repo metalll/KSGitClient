@@ -13,8 +13,18 @@
 -(void)setBodyData:(NSData *)data isJSONData:(BOOL)isJSONData{
     
     self.HTTPBody = data;
-    [self setValue: [NSString stringWithFormat:@"%lui",(unsigned long)data.length] forHTTPHeaderField:@"Content-Length"];
+    
+    if(isJSONData) return;
+    
+    [self setValue: [NSString stringWithFormat:@"%li",data.length] forHTTPHeaderField:@"Content-Length"];
+    
+    NSString * log = [NSString stringWithFormat:@"%li",data.length];
+    
+    NSLog(@"%@",log);
+    
     [self setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"application/x-www-form-urlencoded; charset=utf-8"];
+    
+    
     
 }
 

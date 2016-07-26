@@ -1,8 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="STx-Ps-zWT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="NKR-HU-1mW">
+            <objects>
+                <navigationController id="STx-Ps-zWT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DQf-8F-JAM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sgM-lQ-2q3" kind="relationship" relationship="rootViewController" id="EAM-Bi-Dbb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fav-MH-M0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="359"/>
+        </scene>
+        <!--Base View Controller-->
+        <scene sceneID="Fw8-qD-6gc">
+            <objects>
+                <viewController id="sgM-lQ-2q3" customClass="NSDBaseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hTg-k8-ltO"/>
+                        <viewControllerLayoutGuide type="bottom" id="7y8-aH-r0W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YdG-jH-9L0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dCr-F4-MIv">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="kkp-Ju-kfQ"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWF-HW-RK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="584"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="9B9-y1-RdF">
+            <objects>
+                <viewController storyboardIdentifier="Auth" id="Y1N-Bz-eRy" customClass="NSDOAuthViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JFK-Sv-WLS"/>
+                        <viewControllerLayoutGuide type="bottom" id="YhE-uh-F7J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fu4-cB-2xz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwb-lv-aQZ">
+                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FXW-qB-Ovg">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="9m1-xx-GBr"/>
+                                    <constraint firstAttribute="height" constant="20" id="gnv-Z8-WsP"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YhE-uh-F7J" firstAttribute="top" secondItem="dwb-lv-aQZ" secondAttribute="bottom" id="0xB-5G-aNa"/>
+                            <constraint firstItem="dwb-lv-aQZ" firstAttribute="leading" secondItem="Fu4-cB-2xz" secondAttribute="leadingMargin" id="1V7-Xb-IZ9"/>
+                            <constraint firstItem="FXW-qB-Ovg" firstAttribute="centerY" secondItem="Fu4-cB-2xz" secondAttribute="centerY" id="7R8-jf-Qq5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dwb-lv-aQZ" secondAttribute="trailing" id="NH9-ak-k6B"/>
+                            <constraint firstItem="FXW-qB-Ovg" firstAttribute="centerX" secondItem="Fu4-cB-2xz" secondAttribute="centerX" id="pGa-4u-qwL"/>
+                            <constraint firstItem="dwb-lv-aQZ" firstAttribute="top" secondItem="JFK-Sv-WLS" secondAttribute="bottom" id="scJ-xe-Gzd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="indicatorView" destination="FXW-qB-Ovg" id="uef-3a-VGk"/>
+                        <outlet property="webView" destination="dwb-lv-aQZ" id="Rg7-ld-XKM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4XL-IN-3FB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="-78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu.png" width="44" height="44"/>
+    </resources>
 </document>

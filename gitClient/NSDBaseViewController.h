@@ -1,5 +1,5 @@
 //
-//  NSDHomeViewController.h
+//  NSDBaseViewController.h
 //  gitClient
 //
 //  Created by NullStackDev on 25.07.16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSDHomeViewController : UIViewController
+@interface NSDBaseViewController : UIViewController
 
 @end

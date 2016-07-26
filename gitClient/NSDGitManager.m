@@ -28,10 +28,16 @@
     self = [super init];
     if (self) {
         self.baseURL = kGithubAPIURL;
-        self.urlSession = nil;
-        self.token = nil;
+        self.token = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
+        self.urlSession = [NSURLSession sharedSession];
+        
     }
     return self;
+}
+
++(BOOL)hasToken{
+    if([[self controller]token]!=nil) [self setAccesToken:[[self controller] token]];
+    return [[self controller] token]!=nil;
 }
 
 +(NSString *)URLStringWithPathComponent:(NSString *)pathComponent{
@@ -122,10 +128,11 @@
 
 
 +(void)setAccesToken:(NSString *)token{
+    
     NSURLSessionConfiguration * config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSMutableDictionary * configToken = [NSMutableDictionary new];
     [configToken setObject:[@"token " stringByAppendingString:token] forKey:@"Authorization"];
-    
+    [config setHTTPAdditionalHeaders:configToken];
     NSDGitManager * instance =  (NSDGitManager *)[self controller];
     instance.urlSession = [NSURLSession sessionWithConfiguration:config];
 }
@@ -137,7 +144,7 @@
     return retVal;
 }
 
-+(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI{
++(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI andCompletion:(void(^)()) completionToken{
     
     NSDictionary * callbackParams = [callbackURI dictionaryFromURL];
     NSString * code = [callbackParams objectForKey:@"code"];
@@ -145,7 +152,6 @@
     [requestParams setObject:kGithubID forKey:@"client_id"];
     [requestParams setObject:kGithubSecret forKey:@"client_secret"];
     [requestParams setObject:code forKey:@"code"];
-    
     
     [self performRequestWithURLString:kGithubAccessTokenURLString andMethod:@"POST" andParams:requestParams andAcceptJSONResponse:YES andSendBodyAsJSON:YES andCompletion:^(NSData *data, NSString *errorString) {
         NSError * JSONError = nil;
@@ -157,7 +163,10 @@
         
         NSString * tttoken = [responceDic objectForKey:@"access_token"];
         [[NSUserDefaults standardUserDefaults] setObject:tttoken forKey:@"accessToken"];
+          NSDGitManager * instance =  (NSDGitManager *)[self controller];
+        instance.token = tttoken;
         [self setAccesToken:tttoken];
+        completionToken();
         return;
         
     }];

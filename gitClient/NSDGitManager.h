@@ -36,6 +36,7 @@
 
 +(void)setAccesToken:(NSString *)token;
 
-+(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI;
++(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI andCompletion:(void(^)()) completionToken;
 
++(BOOL)hasToken;
 @end

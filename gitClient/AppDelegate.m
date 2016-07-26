@@ -28,7 +28,7 @@
 
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    [NSDGitManager processOAuth2WithCallbackURI:url];
+    [NSDGitManager processOAuth2WithCallbackURI:url andCompletion:nil];
     return NO;
 }
 

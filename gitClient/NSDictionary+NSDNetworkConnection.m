@@ -14,16 +14,14 @@
    
     NSMutableArray * partsArray = [NSMutableArray new];
     
-    for(NSString * key in self){
-        if([[self valueForKey:key] isKindOfClass:[NSString class]]){
+    for(NSString * key in self.allKeys){
+       
             NSString * keyArr = [key stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
             
             NSString * valueArr = [[self valueForKey:key] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
             
             [partsArray addObject:[[(NSString *)keyArr stringByAppendingString: @"="]stringByAppendingString:(NSString *)valueArr]] ;
-        }
-            else {
-                return nil;
+       
             }
             
         
@@ -31,6 +29,4 @@
         
     }
     
-    return nil;
-}
 @end

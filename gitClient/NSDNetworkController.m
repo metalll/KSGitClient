@@ -42,7 +42,7 @@
     }
     
     NSHTTPURLResponse * httpResponce = (NSHTTPURLResponse *)responce;
-    
+    NSLog(@"%@",responce);
     if(httpResponce.statusCode>=200&&httpResponce.statusCode<=299){ return nil; }
     if(httpResponce.statusCode>=400&&httpResponce.statusCode<=499){ return [NSString stringWithFormat:@"Client error: %lu",httpResponce.statusCode]; }
     if(httpResponce.statusCode>=500&&httpResponce.statusCode<=599){ return [NSString stringWithFormat:@"Server error: %lu",httpResponce.statusCode]; }
@@ -114,6 +114,7 @@
     
     if(acceptJSONResponse){
         [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    NSLog(@"%@",request.HTTPBody) ;
     }
     
     if(params!=nil){
@@ -122,10 +123,12 @@
             NSData * bodyData = nil;
             if(sendBodyAsJSON){
                 NSError * JSONError  = nil;
-                bodyData = [NSJSONSerialization dataWithJSONObject:params options:0 error:&JSONError];
+                
+                request.HTTPBody = [NSJSONSerialization dataWithJSONObject:params options:0 error:&JSONError];
                 
                 if(JSONError!=nil){
                     completion(nil,[@"Error dataWithJSON" stringByAppendingString:[JSONError localizedDescription]]);
+                    return;
                 }else{
                     NSString * encodedString = [params encodedStringWithHttpBody];
                     bodyData = [encodedString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:false];
@@ -135,21 +138,25 @@
                     }
                     
                     [request setBodyData:bodyData isJSONData:sendBodyAsJSON];
+                    
                 }
                 
                 
             }
             
-        }
+        }}
         else{
             NSString * encodedString = [params encodedStringWithHttpBody];
-            NSURL * reqURL = [NSURL URLWithString:[[url stringByAppendingString:@"?"]stringByAppendingString:  encodedString]];
+            NSURL * reqURL;
+            if(encodedString!=nil)
+            reqURL = [NSURL URLWithString:[[url stringByAppendingString:@"?"]stringByAppendingString:  encodedString]];
+            else reqURL=[NSURL URLWithString:url];
             request.URL = reqURL;
         }
         
-        NSURLSession * session = [[self controller] urlSession];
-        
-        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    
+    
+        [[[[self controller] urlSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSString * errorString = [self processResponceWithResponce:response andError:error];
@@ -167,7 +174,7 @@
             });
             
         }] resume];
-    }
+   
     
 }
 
