@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VET-fq-hXb" customClass="NSDUserCell">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VET-fq-hXb" id="kaL-8M-GhG">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gUa-V9-x2h">
+                        <rect key="frame" x="8" y="8" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="3nN-th-sDw"/>
+                            <constraint firstAttribute="height" constant="80" id="lMy-Nh-dS4"/>
+                        </constraints>
+                    </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9dZ-cR-pL5">
+                        <rect key="frame" x="8" y="8" width="80" height="80"/>
+                    </activityIndicatorView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="NullStackDev" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWs-EL-bz6">
+                        <rect key="frame" x="88" y="8" width="264" height="35"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="KbY-6m-Fah"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="metalll" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-PT-Rka">
+                        <rect key="frame" x="88" y="49" width="264" height="35"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="Fb9-AK-cnq"/>
+                        </constraints>
+                        <color key="textColor" red="0.038818100465982164" green="0.42034892251818629" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Zpk-PT-Rka" firstAttribute="top" secondItem="rWs-EL-bz6" secondAttribute="bottom" constant="6" id="2qx-f0-8Xe"/>
+                    <constraint firstItem="9dZ-cR-pL5" firstAttribute="centerY" secondItem="gUa-V9-x2h" secondAttribute="centerY" id="6m3-bJ-NTz"/>
+                    <constraint firstItem="gUa-V9-x2h" firstAttribute="top" secondItem="kaL-8M-GhG" secondAttribute="topMargin" id="8en-W1-ea9"/>
+                    <constraint firstItem="Zpk-PT-Rka" firstAttribute="leading" secondItem="9dZ-cR-pL5" secondAttribute="trailing" id="AAB-Ks-gW0"/>
+                    <constraint firstItem="rWs-EL-bz6" firstAttribute="leading" secondItem="gUa-V9-x2h" secondAttribute="trailing" id="CUv-8I-7nZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rWs-EL-bz6" secondAttribute="trailing" id="Gf2-hD-QXV"/>
+                    <constraint firstItem="9dZ-cR-pL5" firstAttribute="centerX" secondItem="gUa-V9-x2h" secondAttribute="centerX" id="QxI-5h-S9v"/>
+                    <constraint firstItem="rWs-EL-bz6" firstAttribute="top" secondItem="kaL-8M-GhG" secondAttribute="topMargin" id="S1d-ik-vd4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Zpk-PT-Rka" secondAttribute="trailing" id="Tv8-qW-6SK"/>
+                    <constraint firstItem="9dZ-cR-pL5" firstAttribute="height" secondItem="gUa-V9-x2h" secondAttribute="height" id="mvh-TH-BaC"/>
+                    <constraint firstItem="9dZ-cR-pL5" firstAttribute="width" secondItem="gUa-V9-x2h" secondAttribute="width" id="vIP-Pz-RiD"/>
+                    <constraint firstItem="gUa-V9-x2h" firstAttribute="leading" secondItem="kaL-8M-GhG" secondAttribute="leadingMargin" id="y5f-ex-5tS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="activityIndicator" destination="9dZ-cR-pL5" id="ZNA-Rg-vUP"/>
+                <outlet property="avatarImageView" destination="gUa-V9-x2h" id="Jt1-Ha-bKd"/>
+                <outlet property="userLogin" destination="Zpk-PT-Rka" id="HUr-wr-9BZ"/>
+                <outlet property="userName" destination="rWs-EL-bz6" id="ZC8-FU-684"/>
+            </connections>
+            <point key="canvasLocation" x="382" y="-34"/>
+        </tableViewCell>
+    </objects>
+</document>

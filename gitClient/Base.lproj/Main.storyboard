@@ -25,7 +25,7 @@
         <!--Base View Controller-->
         <scene sceneID="Fw8-qD-6gc">
             <objects>
-                <viewController id="sgM-lQ-2q3" customClass="NSDBaseViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="sgM-lQ-2q3" customClass="NSDBaseViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hTg-k8-ltO"/>
                         <viewControllerLayoutGuide type="bottom" id="7y8-aH-r0W"/>
@@ -33,11 +33,26 @@
                     <view key="view" contentMode="scaleToFill" id="YdG-jH-9L0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cma-uA-f7t">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cma-uA-f7t" firstAttribute="top" secondItem="hTg-k8-ltO" secondAttribute="bottom" id="cgF-vG-9vh"/>
+                            <constraint firstItem="7y8-aH-r0W" firstAttribute="top" secondItem="Cma-uA-f7t" secondAttribute="bottom" id="dYj-F3-35G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cma-uA-f7t" secondAttribute="trailing" id="rUJ-I7-bZ7"/>
+                            <constraint firstItem="Cma-uA-f7t" firstAttribute="leading" secondItem="YdG-jH-9L0" secondAttribute="leadingMargin" id="tmK-U1-GT8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dCr-F4-MIv">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="kkp-Ju-kfQ"/>
+                        <barButtonItem key="leftBarButtonItem" image="menuImageSet" id="kkp-Ju-kfQ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Cma-uA-f7t" id="lTs-lz-iER"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWF-HW-RK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,6 +103,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="menu.png" width="44" height="44"/>
+        <image name="menuImageSet" width="22" height="22"/>
     </resources>
 </document>

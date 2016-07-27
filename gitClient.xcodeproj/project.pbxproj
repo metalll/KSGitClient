@@ -7,28 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C1043F031D442708002684BF /* NSDictionary+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C1043F021D442708002684BF /* NSDictionary+NSDNetworkConnection.m */; };
-		C1098CB51D4749DF00855264 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = C1098CB41D4749DF00855264 /* menu.png */; };
-		C10A91F31D441914008AB357 /* NSDGitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A91F21D441914008AB357 /* NSDGitManager.m */; };
-		C10A91FA1D44199E008AB357 /* NSDChacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A91F91D44199E008AB357 /* NSDChacheController.m */; };
-		C10D44921D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C10D44911D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m */; };
-		C14582531D4397CC00D9BBA7 /* NSDGitConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C14582521D4397CC00D9BBA7 /* NSDGitConstants.m */; };
-		C17ADCAF1D4566D800B33892 /* NSDNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = C17ADCAE1D4566D800B33892 /* NSDNetworkController.m */; };
-		C1AD3AEC1D44D3F00001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AD3AEB1D44D3F00001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.m */; };
+		C1BB0FBE1D481038000312C1 /* menu_logo22.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FBB1D481038000312C1 /* menu_logo22.png */; };
+		C1BB0FBF1D481038000312C1 /* menu_logo44.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FBC1D481038000312C1 /* menu_logo44.png */; };
+		C1BB0FC01D481038000312C1 /* menu_logo66.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FBD1D481038000312C1 /* menu_logo66.png */; };
+		C1BB0FC71D481EBB000312C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FC61D481EBB000312C1 /* AppDelegate.m */; };
+		C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FC81D481ED7000312C1 /* Assets.xcassets */; };
+		C1BB0FCC1D481EDF000312C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FCA1D481EDF000312C1 /* LaunchScreen.storyboard */; };
+		C1BB0FCF1D481EE3000312C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FCD1D481EE3000312C1 /* Main.storyboard */; };
+		C1BB0FF51D481F00000312C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FD21D481EFF000312C1 /* main.m */; };
+		C1BB0FF61D481F00000312C1 /* NSDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FD41D481EFF000312C1 /* NSDBaseViewController.m */; };
+		C1BB0FF71D481F00000312C1 /* NSDChacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FD61D481EFF000312C1 /* NSDChacheController.m */; };
+		C1BB0FF81D481F00000312C1 /* NSDGitConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FD81D481EFF000312C1 /* NSDGitConstants.m */; };
+		C1BB0FF91D481F00000312C1 /* NSDGitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FDB1D481EFF000312C1 /* NSDGitManager.m */; };
+		C1BB0FFA1D481F00000312C1 /* NSDictionary+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FDD1D481EFF000312C1 /* NSDictionary+NSDNetworkConnection.m */; };
+		C1BB0FFB1D481F00000312C1 /* NSDMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FDF1D481EFF000312C1 /* NSDMenuViewController.m */; };
+		C1BB0FFC1D481F00000312C1 /* NSDNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FE11D481EFF000312C1 /* NSDNetworkController.m */; };
+		C1BB0FFD1D481F00000312C1 /* NSDOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FE31D481EFF000312C1 /* NSDOAuthViewController.m */; };
+		C1BB0FFE1D481F00000312C1 /* NSDReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FE51D481EFF000312C1 /* NSDReposViewController.m */; };
+		C1BB0FFF1D481F00000312C1 /* NSDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FE71D481F00000312C1 /* NSDUser.m */; };
+		C1BB10001D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FE91D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m */; };
+		C1BB10011D481F00000312C1 /* NSDUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FEB1D481F00000312C1 /* NSDUserCell.m */; };
+		C1BB10021D481F00000312C1 /* NSDUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FEC1D481F00000312C1 /* NSDUserCell.xib */; };
+		C1BB10031D481F00000312C1 /* NSDUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FEE1D481F00000312C1 /* NSDUsersViewController.m */; };
+		C1BB10041D481F00000312C1 /* NSDViewControllerOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FF01D481F00000312C1 /* NSDViewControllerOAuth.m */; };
+		C1BB10051D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FF21D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m */; };
+		C1BB10061D481F00000312C1 /* NSURL+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FF41D481F00000312C1 /* NSURL+NSDNetworkConnection.m */; };
 		C1BBE1B21D46D4C0001B0334 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BBE1B11D46D4C0001B0334 /* logo.png */; };
-		C1C3BE241D436BDE001A0E50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C3BE231D436BDE001A0E50 /* main.m */; };
-		C1C3BE271D436BDE001A0E50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C3BE261D436BDE001A0E50 /* AppDelegate.m */; };
-		C1C3BE2D1D436BDE001A0E50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C3BE2B1D436BDE001A0E50 /* Main.storyboard */; };
-		C1C3BE2F1D436BDE001A0E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C3BE2E1D436BDE001A0E50 /* Assets.xcassets */; };
-		C1C3BE321D436BDE001A0E50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C3BE301D436BDE001A0E50 /* LaunchScreen.storyboard */; };
 		C1C3BE3D1D436BDE001A0E50 /* gitClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C3BE3C1D436BDE001A0E50 /* gitClientTests.m */; };
-		C1DF15761D467AE90062B703 /* NSDOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DF15751D467AE90062B703 /* NSDOAuthViewController.m */; };
-		C1DF15791D467B000062B703 /* NSDMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DF15781D467B000062B703 /* NSDMenuViewController.m */; };
-		C1DF157F1D467B4A0062B703 /* NSDReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DF157E1D467B4A0062B703 /* NSDReposViewController.m */; };
-		C1DF15821D467B7B0062B703 /* NSDUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DF15811D467B7B0062B703 /* NSDUsersViewController.m */; };
-		C1F9E1591D46CC71004C851B /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F9E1581D46CC71004C851B /* UserCell.m */; };
-		C1F9E15B1D46CC97004C851B /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1F9E15A1D46CC97004C851B /* UserCell.xib */; };
-		C1FBAAA71D468DE100CFC0C0 /* NSDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FBAAA61D468DE100CFC0C0 /* NSDBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,47 +47,54 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C1043F011D442708002684BF /* NSDictionary+NSDNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSDNetworkConnection.h"; sourceTree = "<group>"; };
-		C1043F021D442708002684BF /* NSDictionary+NSDNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSDNetworkConnection.m"; sourceTree = "<group>"; };
-		C1098CB41D4749DF00855264 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = ../../Downloads/menu.png; sourceTree = "<group>"; };
-		C10A91F11D441914008AB357 /* NSDGitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDGitManager.h; sourceTree = "<group>"; };
-		C10A91F21D441914008AB357 /* NSDGitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDGitManager.m; sourceTree = "<group>"; };
-		C10A91F81D44199E008AB357 /* NSDChacheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDChacheController.h; sourceTree = "<group>"; };
-		C10A91F91D44199E008AB357 /* NSDChacheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDChacheController.m; sourceTree = "<group>"; };
-		C10D44901D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+NSDNetworkConnection.h"; sourceTree = "<group>"; };
-		C10D44911D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+NSDNetworkConnection.m"; sourceTree = "<group>"; };
-		C14582511D4397CC00D9BBA7 /* NSDGitConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDGitConstants.h; sourceTree = "<group>"; };
-		C14582521D4397CC00D9BBA7 /* NSDGitConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDGitConstants.m; sourceTree = "<group>"; };
-		C17ADCAD1D4566D800B33892 /* NSDNetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNetworkController.h; sourceTree = "<group>"; };
-		C17ADCAE1D4566D800B33892 /* NSDNetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDNetworkController.m; sourceTree = "<group>"; };
-		C19A17411D4635710025C1A4 /* NSDGitManager_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDGitManager_Private.h; sourceTree = "<group>"; };
-		C1AD3AEA1D44D3EF0001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+NSDNetworkConnection.h"; sourceTree = "<group>"; };
-		C1AD3AEB1D44D3F00001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+NSDNetworkConnection.m"; sourceTree = "<group>"; };
-		C1BBE1B11D46D4C0001B0334 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../Downloads/logo.png; sourceTree = "<group>"; };
+		C1BB0FBB1D481038000312C1 /* menu_logo22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_logo22.png; sourceTree = "<group>"; };
+		C1BB0FBC1D481038000312C1 /* menu_logo44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_logo44.png; sourceTree = "<group>"; };
+		C1BB0FBD1D481038000312C1 /* menu_logo66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_logo66.png; sourceTree = "<group>"; };
+		C1BB0FC51D481EBB000312C1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = gitClient/AppDelegate.h; sourceTree = "<group>"; };
+		C1BB0FC61D481EBB000312C1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = gitClient/AppDelegate.m; sourceTree = "<group>"; };
+		C1BB0FC81D481ED7000312C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = gitClient/Assets.xcassets; sourceTree = "<group>"; };
+		C1BB0FCB1D481EDF000312C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = gitClient/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C1BB0FCE1D481EE3000312C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = gitClient/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C1BB0FD21D481EFF000312C1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = gitClient/main.m; sourceTree = "<group>"; };
+		C1BB0FD31D481EFF000312C1 /* NSDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDBaseViewController.h; path = gitClient/NSDBaseViewController.h; sourceTree = "<group>"; };
+		C1BB0FD41D481EFF000312C1 /* NSDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDBaseViewController.m; path = gitClient/NSDBaseViewController.m; sourceTree = "<group>"; };
+		C1BB0FD51D481EFF000312C1 /* NSDChacheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDChacheController.h; path = gitClient/NSDChacheController.h; sourceTree = "<group>"; };
+		C1BB0FD61D481EFF000312C1 /* NSDChacheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDChacheController.m; path = gitClient/NSDChacheController.m; sourceTree = "<group>"; };
+		C1BB0FD71D481EFF000312C1 /* NSDGitConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDGitConstants.h; path = gitClient/NSDGitConstants.h; sourceTree = "<group>"; };
+		C1BB0FD81D481EFF000312C1 /* NSDGitConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDGitConstants.m; path = gitClient/NSDGitConstants.m; sourceTree = "<group>"; };
+		C1BB0FD91D481EFF000312C1 /* NSDGitManager_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDGitManager_Private.h; path = gitClient/NSDGitManager_Private.h; sourceTree = "<group>"; };
+		C1BB0FDA1D481EFF000312C1 /* NSDGitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDGitManager.h; path = gitClient/NSDGitManager.h; sourceTree = "<group>"; };
+		C1BB0FDB1D481EFF000312C1 /* NSDGitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDGitManager.m; path = gitClient/NSDGitManager.m; sourceTree = "<group>"; };
+		C1BB0FDC1D481EFF000312C1 /* NSDictionary+NSDNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+NSDNetworkConnection.h"; path = "gitClient/NSDictionary+NSDNetworkConnection.h"; sourceTree = "<group>"; };
+		C1BB0FDD1D481EFF000312C1 /* NSDictionary+NSDNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+NSDNetworkConnection.m"; path = "gitClient/NSDictionary+NSDNetworkConnection.m"; sourceTree = "<group>"; };
+		C1BB0FDE1D481EFF000312C1 /* NSDMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDMenuViewController.h; path = gitClient/NSDMenuViewController.h; sourceTree = "<group>"; };
+		C1BB0FDF1D481EFF000312C1 /* NSDMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDMenuViewController.m; path = gitClient/NSDMenuViewController.m; sourceTree = "<group>"; };
+		C1BB0FE01D481EFF000312C1 /* NSDNetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDNetworkController.h; path = gitClient/NSDNetworkController.h; sourceTree = "<group>"; };
+		C1BB0FE11D481EFF000312C1 /* NSDNetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDNetworkController.m; path = gitClient/NSDNetworkController.m; sourceTree = "<group>"; };
+		C1BB0FE21D481EFF000312C1 /* NSDOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDOAuthViewController.h; path = gitClient/NSDOAuthViewController.h; sourceTree = "<group>"; };
+		C1BB0FE31D481EFF000312C1 /* NSDOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDOAuthViewController.m; path = gitClient/NSDOAuthViewController.m; sourceTree = "<group>"; };
+		C1BB0FE41D481EFF000312C1 /* NSDReposViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDReposViewController.h; path = gitClient/NSDReposViewController.h; sourceTree = "<group>"; };
+		C1BB0FE51D481EFF000312C1 /* NSDReposViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDReposViewController.m; path = gitClient/NSDReposViewController.m; sourceTree = "<group>"; };
+		C1BB0FE61D481F00000312C1 /* NSDUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDUser.h; path = gitClient/NSDUser.h; sourceTree = "<group>"; };
+		C1BB0FE71D481F00000312C1 /* NSDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDUser.m; path = gitClient/NSDUser.m; sourceTree = "<group>"; };
+		C1BB0FE81D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDUser+NSDInitUserWithDictionary.h"; path = "gitClient/NSDUser+NSDInitUserWithDictionary.h"; sourceTree = "<group>"; };
+		C1BB0FE91D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDUser+NSDInitUserWithDictionary.m"; path = "gitClient/NSDUser+NSDInitUserWithDictionary.m"; sourceTree = "<group>"; };
+		C1BB0FEA1D481F00000312C1 /* NSDUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDUserCell.h; path = gitClient/NSDUserCell.h; sourceTree = "<group>"; };
+		C1BB0FEB1D481F00000312C1 /* NSDUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDUserCell.m; path = gitClient/NSDUserCell.m; sourceTree = "<group>"; };
+		C1BB0FEC1D481F00000312C1 /* NSDUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NSDUserCell.xib; path = gitClient/NSDUserCell.xib; sourceTree = "<group>"; };
+		C1BB0FED1D481F00000312C1 /* NSDUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDUsersViewController.h; path = gitClient/NSDUsersViewController.h; sourceTree = "<group>"; };
+		C1BB0FEE1D481F00000312C1 /* NSDUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDUsersViewController.m; path = gitClient/NSDUsersViewController.m; sourceTree = "<group>"; };
+		C1BB0FEF1D481F00000312C1 /* NSDViewControllerOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDViewControllerOAuth.h; path = gitClient/NSDViewControllerOAuth.h; sourceTree = "<group>"; };
+		C1BB0FF01D481F00000312C1 /* NSDViewControllerOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDViewControllerOAuth.m; path = gitClient/NSDViewControllerOAuth.m; sourceTree = "<group>"; };
+		C1BB0FF11D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableURLRequest+NSDNetworkConnection.h"; path = "gitClient/NSMutableURLRequest+NSDNetworkConnection.h"; sourceTree = "<group>"; };
+		C1BB0FF21D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableURLRequest+NSDNetworkConnection.m"; path = "gitClient/NSMutableURLRequest+NSDNetworkConnection.m"; sourceTree = "<group>"; };
+		C1BB0FF31D481F00000312C1 /* NSURL+NSDNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+NSDNetworkConnection.h"; path = "gitClient/NSURL+NSDNetworkConnection.h"; sourceTree = "<group>"; };
+		C1BB0FF41D481F00000312C1 /* NSURL+NSDNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+NSDNetworkConnection.m"; path = "gitClient/NSURL+NSDNetworkConnection.m"; sourceTree = "<group>"; };
+		C1BBE1B11D46D4C0001B0334 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../Downloads/logo.png; sourceTree = "<group>"; };
 		C1C3BE1F1D436BDE001A0E50 /* gitClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gitClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1C3BE231D436BDE001A0E50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C1C3BE251D436BDE001A0E50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C1C3BE261D436BDE001A0E50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C1C3BE2C1D436BDE001A0E50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C1C3BE2E1D436BDE001A0E50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C1C3BE311D436BDE001A0E50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C1C3BE331D436BDE001A0E50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1C3BE381D436BDE001A0E50 /* gitClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gitClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C3BE3C1D436BDE001A0E50 /* gitClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gitClientTests.m; sourceTree = "<group>"; };
 		C1C3BE3E1D436BDE001A0E50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1DF15741D467AE90062B703 /* NSDOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDOAuthViewController.h; sourceTree = "<group>"; };
-		C1DF15751D467AE90062B703 /* NSDOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDOAuthViewController.m; sourceTree = "<group>"; };
-		C1DF15771D467B000062B703 /* NSDMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDMenuViewController.h; sourceTree = "<group>"; };
-		C1DF15781D467B000062B703 /* NSDMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDMenuViewController.m; sourceTree = "<group>"; };
-		C1DF157D1D467B4A0062B703 /* NSDReposViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDReposViewController.h; sourceTree = "<group>"; };
-		C1DF157E1D467B4A0062B703 /* NSDReposViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDReposViewController.m; sourceTree = "<group>"; };
-		C1DF15801D467B7B0062B703 /* NSDUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDUsersViewController.h; sourceTree = "<group>"; };
-		C1DF15811D467B7B0062B703 /* NSDUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDUsersViewController.m; sourceTree = "<group>"; };
-		C1F9E1571D46CC71004C851B /* UserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
-		C1F9E1581D46CC71004C851B /* UserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
-		C1F9E15A1D46CC97004C851B /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
-		C1FBAAA51D468DE100CFC0C0 /* NSDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDBaseViewController.h; sourceTree = "<group>"; };
-		C1FBAAA61D468DE100CFC0C0 /* NSDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDBaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,47 +115,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C10A91F41D44195A008AB357 /* NSDControllers */ = {
+		C1BB0FC41D481EAA000312C1 /* gitClient */ = {
 			isa = PBXGroup;
 			children = (
-				C1043F011D442708002684BF /* NSDictionary+NSDNetworkConnection.h */,
-				C1043F021D442708002684BF /* NSDictionary+NSDNetworkConnection.m */,
-				C10D44901D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.h */,
-				C10D44911D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m */,
-				C1AD3AEA1D44D3EF0001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.h */,
-				C1AD3AEB1D44D3F00001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.m */,
-				C10A91F81D44199E008AB357 /* NSDChacheController.h */,
-				C10A91F91D44199E008AB357 /* NSDChacheController.m */,
-				C17ADCAD1D4566D800B33892 /* NSDNetworkController.h */,
-				C17ADCAE1D4566D800B33892 /* NSDNetworkController.m */,
+				C1BB0FC51D481EBB000312C1 /* AppDelegate.h */,
+				C1BB0FC61D481EBB000312C1 /* AppDelegate.m */,
+				C1BB0FCA1D481EDF000312C1 /* LaunchScreen.storyboard */,
+				C1BB0FCD1D481EE3000312C1 /* Main.storyboard */,
+				C1BB0FD21D481EFF000312C1 /* main.m */,
+				C1BB0FD31D481EFF000312C1 /* NSDBaseViewController.h */,
+				C1BB0FD41D481EFF000312C1 /* NSDBaseViewController.m */,
+				C1BB0FD51D481EFF000312C1 /* NSDChacheController.h */,
+				C1BB0FD61D481EFF000312C1 /* NSDChacheController.m */,
+				C1BB0FD71D481EFF000312C1 /* NSDGitConstants.h */,
+				C1BB0FD81D481EFF000312C1 /* NSDGitConstants.m */,
+				C1BB0FD91D481EFF000312C1 /* NSDGitManager_Private.h */,
+				C1BB0FDA1D481EFF000312C1 /* NSDGitManager.h */,
+				C1BB0FDB1D481EFF000312C1 /* NSDGitManager.m */,
+				C1BB0FDC1D481EFF000312C1 /* NSDictionary+NSDNetworkConnection.h */,
+				C1BB0FDD1D481EFF000312C1 /* NSDictionary+NSDNetworkConnection.m */,
+				C1BB0FDE1D481EFF000312C1 /* NSDMenuViewController.h */,
+				C1BB0FDF1D481EFF000312C1 /* NSDMenuViewController.m */,
+				C1BB0FE01D481EFF000312C1 /* NSDNetworkController.h */,
+				C1BB0FE11D481EFF000312C1 /* NSDNetworkController.m */,
+				C1BB0FE21D481EFF000312C1 /* NSDOAuthViewController.h */,
+				C1BB0FE31D481EFF000312C1 /* NSDOAuthViewController.m */,
+				C1BB0FE41D481EFF000312C1 /* NSDReposViewController.h */,
+				C1BB0FE51D481EFF000312C1 /* NSDReposViewController.m */,
+				C1BB0FE61D481F00000312C1 /* NSDUser.h */,
+				C1BB0FE71D481F00000312C1 /* NSDUser.m */,
+				C1BB0FE81D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.h */,
+				C1BB0FE91D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m */,
+				C1BB0FEA1D481F00000312C1 /* NSDUserCell.h */,
+				C1BB0FEB1D481F00000312C1 /* NSDUserCell.m */,
+				C1BB0FEC1D481F00000312C1 /* NSDUserCell.xib */,
+				C1BB0FED1D481F00000312C1 /* NSDUsersViewController.h */,
+				C1BB0FEE1D481F00000312C1 /* NSDUsersViewController.m */,
+				C1BB0FEF1D481F00000312C1 /* NSDViewControllerOAuth.h */,
+				C1BB0FF01D481F00000312C1 /* NSDViewControllerOAuth.m */,
+				C1BB0FF11D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.h */,
+				C1BB0FF21D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m */,
+				C1BB0FF31D481F00000312C1 /* NSURL+NSDNetworkConnection.h */,
+				C1BB0FF41D481F00000312C1 /* NSURL+NSDNetworkConnection.m */,
+				C1BB0FC81D481ED7000312C1 /* Assets.xcassets */,
 			);
-			name = NSDControllers;
-			sourceTree = "<group>";
-		};
-		C1BFEAA31D44FA0C00E6710C /* NSDViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				C1DF15741D467AE90062B703 /* NSDOAuthViewController.h */,
-				C1DF15751D467AE90062B703 /* NSDOAuthViewController.m */,
-				C1DF15771D467B000062B703 /* NSDMenuViewController.h */,
-				C1DF15781D467B000062B703 /* NSDMenuViewController.m */,
-				C1DF157D1D467B4A0062B703 /* NSDReposViewController.h */,
-				C1DF157E1D467B4A0062B703 /* NSDReposViewController.m */,
-				C1DF15801D467B7B0062B703 /* NSDUsersViewController.h */,
-				C1DF15811D467B7B0062B703 /* NSDUsersViewController.m */,
-				C1FBAAA51D468DE100CFC0C0 /* NSDBaseViewController.h */,
-				C1FBAAA61D468DE100CFC0C0 /* NSDBaseViewController.m */,
-			);
-			name = NSDViewControllers;
+			name = gitClient;
 			sourceTree = "<group>";
 		};
 		C1C3BE161D436BDE001A0E50 = {
 			isa = PBXGroup;
 			children = (
-				C1098CB41D4749DF00855264 /* menu.png */,
-				C1C3BE211D436BDE001A0E50 /* gitClient */,
+				C1BB0FC41D481EAA000312C1 /* gitClient */,
 				C1C3BE3B1D436BDE001A0E50 /* gitClientTests */,
 				C1C3BE201D436BDE001A0E50 /* Products */,
+				C1BB0FBB1D481038000312C1 /* menu_logo22.png */,
+				C1BB0FBC1D481038000312C1 /* menu_logo44.png */,
+				C1BB0FBD1D481038000312C1 /* menu_logo66.png */,
+				C1BBE1B11D46D4C0001B0334 /* logo.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,33 +184,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C1C3BE211D436BDE001A0E50 /* gitClient */ = {
-			isa = PBXGroup;
-			children = (
-				C1F9E1561D46CC43004C851B /* NSDView */,
-				C1BFEAA31D44FA0C00E6710C /* NSDViewControllers */,
-				C10A91F41D44195A008AB357 /* NSDControllers */,
-				C1C3BE471D436C17001A0E50 /* NSDNetworkGitManager */,
-				C1C3BE251D436BDE001A0E50 /* AppDelegate.h */,
-				C1C3BE261D436BDE001A0E50 /* AppDelegate.m */,
-				C1C3BE2B1D436BDE001A0E50 /* Main.storyboard */,
-				C1C3BE2E1D436BDE001A0E50 /* Assets.xcassets */,
-				C1C3BE301D436BDE001A0E50 /* LaunchScreen.storyboard */,
-				C1C3BE331D436BDE001A0E50 /* Info.plist */,
-				C1BBE1B11D46D4C0001B0334 /* logo.png */,
-				C1C3BE221D436BDE001A0E50 /* Supporting Files */,
-			);
-			path = gitClient;
-			sourceTree = "<group>";
-		};
-		C1C3BE221D436BDE001A0E50 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C1C3BE231D436BDE001A0E50 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		C1C3BE3B1D436BDE001A0E50 /* gitClientTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,28 +191,6 @@
 				C1C3BE3E1D436BDE001A0E50 /* Info.plist */,
 			);
 			path = gitClientTests;
-			sourceTree = "<group>";
-		};
-		C1C3BE471D436C17001A0E50 /* NSDNetworkGitManager */ = {
-			isa = PBXGroup;
-			children = (
-				C14582511D4397CC00D9BBA7 /* NSDGitConstants.h */,
-				C14582521D4397CC00D9BBA7 /* NSDGitConstants.m */,
-				C10A91F11D441914008AB357 /* NSDGitManager.h */,
-				C10A91F21D441914008AB357 /* NSDGitManager.m */,
-				C19A17411D4635710025C1A4 /* NSDGitManager_Private.h */,
-			);
-			name = NSDNetworkGitManager;
-			sourceTree = "<group>";
-		};
-		C1F9E1561D46CC43004C851B /* NSDView */ = {
-			isa = PBXGroup;
-			children = (
-				C1F9E1571D46CC71004C851B /* UserCell.h */,
-				C1F9E1581D46CC71004C851B /* UserCell.m */,
-				C1F9E15A1D46CC97004C851B /* UserCell.xib */,
-			);
-			name = NSDView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,12 +275,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1F9E15B1D46CC97004C851B /* UserCell.xib in Resources */,
 				C1BBE1B21D46D4C0001B0334 /* logo.png in Resources */,
-				C1098CB51D4749DF00855264 /* menu.png in Resources */,
-				C1C3BE321D436BDE001A0E50 /* LaunchScreen.storyboard in Resources */,
-				C1C3BE2F1D436BDE001A0E50 /* Assets.xcassets in Resources */,
-				C1C3BE2D1D436BDE001A0E50 /* Main.storyboard in Resources */,
+				C1BB0FC01D481038000312C1 /* menu_logo66.png in Resources */,
+				C1BB0FCF1D481EE3000312C1 /* Main.storyboard in Resources */,
+				C1BB0FBE1D481038000312C1 /* menu_logo22.png in Resources */,
+				C1BB10021D481F00000312C1 /* NSDUserCell.xib in Resources */,
+				C1BB0FCC1D481EDF000312C1 /* LaunchScreen.storyboard in Resources */,
+				C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */,
+				C1BB0FBF1D481038000312C1 /* menu_logo44.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,21 +300,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C14582531D4397CC00D9BBA7 /* NSDGitConstants.m in Sources */,
-				C1FBAAA71D468DE100CFC0C0 /* NSDBaseViewController.m in Sources */,
-				C10D44921D449FDB00ADEC1D /* NSURL+NSDNetworkConnection.m in Sources */,
-				C1C3BE271D436BDE001A0E50 /* AppDelegate.m in Sources */,
-				C1C3BE241D436BDE001A0E50 /* main.m in Sources */,
-				C10A91F31D441914008AB357 /* NSDGitManager.m in Sources */,
-				C10A91FA1D44199E008AB357 /* NSDChacheController.m in Sources */,
-				C1DF15791D467B000062B703 /* NSDMenuViewController.m in Sources */,
-				C1DF15761D467AE90062B703 /* NSDOAuthViewController.m in Sources */,
-				C1043F031D442708002684BF /* NSDictionary+NSDNetworkConnection.m in Sources */,
-				C1DF157F1D467B4A0062B703 /* NSDReposViewController.m in Sources */,
-				C17ADCAF1D4566D800B33892 /* NSDNetworkController.m in Sources */,
-				C1AD3AEC1D44D3F00001CAB3 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */,
-				C1F9E1591D46CC71004C851B /* UserCell.m in Sources */,
-				C1DF15821D467B7B0062B703 /* NSDUsersViewController.m in Sources */,
+				C1BB0FFE1D481F00000312C1 /* NSDReposViewController.m in Sources */,
+				C1BB0FF81D481F00000312C1 /* NSDGitConstants.m in Sources */,
+				C1BB0FC71D481EBB000312C1 /* AppDelegate.m in Sources */,
+				C1BB0FFD1D481F00000312C1 /* NSDOAuthViewController.m in Sources */,
+				C1BB0FF61D481F00000312C1 /* NSDBaseViewController.m in Sources */,
+				C1BB0FF51D481F00000312C1 /* main.m in Sources */,
+				C1BB0FF91D481F00000312C1 /* NSDGitManager.m in Sources */,
+				C1BB10041D481F00000312C1 /* NSDViewControllerOAuth.m in Sources */,
+				C1BB0FFC1D481F00000312C1 /* NSDNetworkController.m in Sources */,
+				C1BB10031D481F00000312C1 /* NSDUsersViewController.m in Sources */,
+				C1BB10001D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m in Sources */,
+				C1BB10051D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */,
+				C1BB0FFB1D481F00000312C1 /* NSDMenuViewController.m in Sources */,
+				C1BB10011D481F00000312C1 /* NSDUserCell.m in Sources */,
+				C1BB10061D481F00000312C1 /* NSURL+NSDNetworkConnection.m in Sources */,
+				C1BB0FF71D481F00000312C1 /* NSDChacheController.m in Sources */,
+				C1BB0FFF1D481F00000312C1 /* NSDUser.m in Sources */,
+				C1BB0FFA1D481F00000312C1 /* NSDictionary+NSDNetworkConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,20 +340,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C1C3BE2B1D436BDE001A0E50 /* Main.storyboard */ = {
+		C1BB0FCA1D481EDF000312C1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C1C3BE2C1D436BDE001A0E50 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C1C3BE301D436BDE001A0E50 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C1C3BE311D436BDE001A0E50 /* Base */,
+				C1BB0FCB1D481EDF000312C1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C1BB0FCD1D481EE3000312C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1BB0FCE1D481EE3000312C1 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

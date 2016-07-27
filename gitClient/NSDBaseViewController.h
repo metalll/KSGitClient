@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSDBaseViewController : UIViewController
+@interface NSDBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

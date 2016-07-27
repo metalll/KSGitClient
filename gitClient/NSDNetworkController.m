@@ -15,19 +15,23 @@
 
 
 + (instancetype)controller {
+    @synchronized(self){
+        
+   
     static id instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [self new];
     });
-    return instance;
+        return instance;
+    }
 }
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.urlSession = [NSURLSession sharedSession];
+        self.urlSession = nil;
         self.baseURL = kGithubURL;
         self.token = nil;
     }
@@ -44,10 +48,10 @@
     NSHTTPURLResponse * httpResponce = (NSHTTPURLResponse *)responce;
     NSLog(@"%@",responce);
     if(httpResponce.statusCode>=200&&httpResponce.statusCode<=299){ return nil; }
-    if(httpResponce.statusCode>=400&&httpResponce.statusCode<=499){ return [NSString stringWithFormat:@"Client error: %lu",httpResponce.statusCode]; }
-    if(httpResponce.statusCode>=500&&httpResponce.statusCode<=599){ return [NSString stringWithFormat:@"Server error: %lu",httpResponce.statusCode]; }
+    if(httpResponce.statusCode>=400&&httpResponce.statusCode<=499){ return [NSString stringWithFormat:@"Client error: %u",httpResponce.statusCode]; }
+    if(httpResponce.statusCode>=500&&httpResponce.statusCode<=599){ return [NSString stringWithFormat:@"Server error: %u",httpResponce.statusCode]; }
     
-    return [NSString stringWithFormat:@"Unknown error: %lu",httpResponce.statusCode];
+    return [NSString stringWithFormat:@"Unknown error: %u",httpResponce.statusCode];
 }
 
 +(void)downloadResourceWithURLString:(NSString *)url andCompletion:(void (^)(NSString * localPath, NSString * errorString))completion{
@@ -144,22 +148,21 @@
                 
             }
             
-        }}
-        else{
+        }
+    }
+    else {
             NSString * encodedString = [params encodedStringWithHttpBody];
             NSURL * reqURL;
             if(encodedString!=nil)
             reqURL = [NSURL URLWithString:[[url stringByAppendingString:@"?"]stringByAppendingString:  encodedString]];
             else reqURL=[NSURL URLWithString:url];
             request.URL = reqURL;
-        }
-        
-    
-    
-        [[[[self controller] urlSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    }
+    NSLog(@"%@", [[self controller] urlSession]);
+    [[[[self controller] urlSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSString * errorString = [self processResponceWithResponce:response andError:error];
+              NSString * errorString = [self processResponceWithResponce:response andError:error];
                 if(errorString!=nil){
                     completion(data,errorString);
                     return ;

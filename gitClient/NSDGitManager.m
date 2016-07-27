@@ -15,12 +15,16 @@
 
 
 + (instancetype)controller {
+    @synchronized(self) {
+        
+    
     static id instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [self new];
     });
-    return instance;
+        return instance;
+    }
 }
 
 - (instancetype)init
@@ -29,7 +33,9 @@
     if (self) {
         self.baseURL = kGithubAPIURL;
         self.token = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
-        self.urlSession = [NSURLSession sharedSession];
+        if(self.token!=nil){
+            [self setToken:(self.token)];
+        }
         
     }
     return self;
@@ -128,14 +134,13 @@
 
 
 +(void)setAccesToken:(NSString *)token{
-    
+    NSLog(@"setToken %@",token);
     NSURLSessionConfiguration * config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSMutableDictionary * configToken = [NSMutableDictionary new];
     [configToken setObject:[@"token " stringByAppendingString:token] forKey:@"Authorization"];
     [config setHTTPAdditionalHeaders:configToken];
-    NSDGitManager * instance =  (NSDGitManager *)[self controller];
-    instance.urlSession = [NSURLSession sessionWithConfiguration:config];
-}
+   [(NSDNetworkController *)[self controller] setUrlSession:[NSURLSession sessionWithConfiguration:config]];
+   }
 
 
 +(NSString *)requestOAuth2Access{

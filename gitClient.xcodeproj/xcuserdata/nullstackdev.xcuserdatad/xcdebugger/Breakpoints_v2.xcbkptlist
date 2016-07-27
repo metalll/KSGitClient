@@ -10,7 +10,71 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "gitClient/NSDNetworkController.m"
-            timestampString = "491178120.042019"
+            timestampString = "491254305.366916"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "+performRequestWithURLString:andMethod:andParams:andAcceptJSONResponse:andSendBodyAsJSON:andCompletion:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[NSDNetworkController performRequestWithURLString:andMethod:andParams:andAcceptJSONResponse:andSendBodyAsJSON:andCompletion:]"
+                  moduleName = "gitClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nullstackdev/Desktop/gitClient/gitClient/NSDNetworkController.m"
+                  timestampString = "491262521.079847"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "2006">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__126+[NSDNetworkController performRequestWithURLString:andMethod:andParams:andAcceptJSONResponse:andSendBodyAsJSON:andCompletion:]_block_invoke"
+                  moduleName = "gitClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nullstackdev/Desktop/gitClient/gitClient/NSDNetworkController.m"
+                  timestampString = "491262521.081406"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "129">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gitClient/NSDNetworkController.m"
+            timestampString = "491254305.366916"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "+performRequestWithURLString:andMethod:andParams:andAcceptJSONResponse:andSendBodyAsJSON:andCompletion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gitClient/NSDNetworkController.m"
+            timestampString = "491254305.366916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
@@ -25,13 +89,75 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "gitClient/NSDGitManager.m"
+            timestampString = "491254839.130403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "+setAccesToken:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gitClient/NSDGitManager.m"
+            timestampString = "491254839.130403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "+setAccesToken:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gitClient/NSDGitManager.m"
+            timestampString = "491254839.130403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "+setAccesToken:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gitClient/NSDUserCell.h"
+            timestampString = "491232157.478755"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "gitClient/NSDNetworkController.m"
-            timestampString = "491178120.042019"
+            timestampString = "491255572.289065"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "+performRequestWithURLString:andMethod:andParams:andAcceptJSONResponse:andSendBodyAsJSON:andCompletion:"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "+processResponceWithResponce:andError:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +168,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "gitClient/NSDNetworkController.m"
-            timestampString = "491178120.042019"
+            timestampString = "491255574.665025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "+performRequestWithURLString:andMethod:andParams:andAcceptJSONResponse:andSendBodyAsJSON:andCompletion:"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "+processResponceWithResponce:andError:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gitClient/NSDBaseViewController.m"
+            timestampString = "491256402.392939"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +200,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "gitClient/NSDGitManager.m"
-            timestampString = "491178170.214045"
+            timestampString = "491255915.809298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "+setAccesToken:"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "+getCurrentUserWithCompletion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,29 +215,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "gitClient/NSDGitManager.m"
-            timestampString = "491178170.830034"
+            filePath = "gitClient/NSDChacheController.m"
+            timestampString = "491262520.956973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "+setAccesToken:"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "+dic"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "gitClient/NSDGitManager.m"
-            timestampString = "491178178.918128"
+            filePath = "gitClient/NSDChacheController.m"
+            timestampString = "491262666.069802"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "+setAccesToken:"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "+objectForKey:andCompletion:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gitClient/NSDChacheController.m"
+            timestampString = "491264445.385183"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "+objectForKey:andCompletion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

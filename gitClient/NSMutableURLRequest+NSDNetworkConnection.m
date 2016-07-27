@@ -16,9 +16,9 @@
     
     if(isJSONData) return;
     
-    [self setValue: [NSString stringWithFormat:@"%li",data.length] forHTTPHeaderField:@"Content-Length"];
+    [self setValue: [NSString stringWithFormat:@"%ui",data.length] forHTTPHeaderField:@"Content-Length"];
     
-    NSString * log = [NSString stringWithFormat:@"%li",data.length];
+    NSString * log = [NSString stringWithFormat:@"%ui",data.length];
     
     NSLog(@"%@",log);
     
