@@ -11,7 +11,6 @@
 @interface NSDGitManager ()
 +(NSString *)URLStringWithPathComponent:(NSString *)pathComponent;
 +(void)searchForPath:(NSString *)path andQueryString:(NSString *)query andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
-+(void)processJSONData:(NSData *)JSONData andErrorString:(NSString *)errorString andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
 
 @end

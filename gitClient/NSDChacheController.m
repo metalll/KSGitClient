@@ -8,6 +8,7 @@
 
 #import "NSDChacheController.h"
 #import <UIKit/UIKit.h>
+#import "NSDGitManager.h"
 @implementation NSDChacheController{
 NSMutableDictionary *cacheDic;
 NSMutableArray *array;
@@ -45,7 +46,9 @@ NSUInteger size;
         return;
     }
     
-    [[[NSURLSession sharedSession] dataTaskWithURL:key completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    
+    
+    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:key] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if(!error && data){
             UIImage * retVal = [UIImage imageWithData:data];

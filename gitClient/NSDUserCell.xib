@@ -8,34 +8,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VET-fq-hXb" customClass="NSDUserCell">
-            <rect key="frame" x="0.0" y="0.0" width="360" height="100"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="101" id="VET-fq-hXb" customClass="NSDUserCell">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="101"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VET-fq-hXb" id="kaL-8M-GhG">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="99"/>
+                <rect key="frame" x="0.0" y="0.0" width="369" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gUa-V9-x2h">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gUa-V9-x2h">
                         <rect key="frame" x="8" y="8" width="80" height="80"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="3nN-th-sDw"/>
-                            <constraint firstAttribute="height" constant="80" id="lMy-Nh-dS4"/>
+                            <constraint firstAttribute="height" constant="80" id="Z0J-36-CyW"/>
+                            <constraint firstAttribute="width" constant="80" id="qlP-y4-kEt"/>
                         </constraints>
                     </imageView>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9dZ-cR-pL5">
-                        <rect key="frame" x="8" y="8" width="80" height="80"/>
-                    </activityIndicatorView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="NullStackDev" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWs-EL-bz6">
-                        <rect key="frame" x="88" y="8" width="264" height="35"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="NullStackDev" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWs-EL-bz6">
+                        <rect key="frame" x="88" y="8" width="273" height="35"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="KbY-6m-Fah"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                     </textView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="metalll" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-PT-Rka">
-                        <rect key="frame" x="88" y="49" width="264" height="35"/>
+                    <activityIndicatorView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9dZ-cR-pL5">
+                        <rect key="frame" x="8" y="8" width="80" height="80"/>
+                    </activityIndicatorView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="metalll" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-PT-Rka">
+                        <rect key="frame" x="88" y="49" width="273" height="35"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="Fb9-AK-cnq"/>
@@ -66,7 +66,7 @@
                 <outlet property="userLogin" destination="Zpk-PT-Rka" id="HUr-wr-9BZ"/>
                 <outlet property="userName" destination="rWs-EL-bz6" id="ZC8-FU-684"/>
             </connections>
-            <point key="canvasLocation" x="382" y="-34"/>
+            <point key="canvasLocation" x="386.5" y="-34.5"/>
         </tableViewCell>
     </objects>
 </document>

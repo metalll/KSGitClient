@@ -9,6 +9,8 @@
 #import "NSDOAuthViewController.h"
 #import "NSDGitManager.h"
 #import "NSURL+NSDNetworkConnection.h"
+#import "NSDBaseViewController.h"
+#import "NSDUser+NSDInitUserWithDictionary.h"
 @interface NSDOAuthViewController ()
 
 @end
@@ -35,9 +37,8 @@
     if([[request.URL dictionaryFromURL] objectForKey:@"code"]!=nil){
         
         [NSDGitManager processOAuth2WithCallbackURI:request.URL andCompletion:^{
-            NSLog(@"working");
+            [(NSDBaseViewController *)[(UINavigationController *)[self presentingViewController] topViewController] initUser] ;
             [self dismissViewControllerAnimated:YES completion:nil];
-            
         }];
         return NO;
     }

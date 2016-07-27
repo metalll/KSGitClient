@@ -159,6 +159,7 @@
             request.URL = reqURL;
     }
     NSLog(@"%@", [[self controller] urlSession]);
+    if([[self controller]urlSession]==nil) [[self controller]setUrlSession:[NSURLSession sharedSession]];
     [[[[self controller] urlSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
             dispatch_async(dispatch_get_main_queue(), ^{

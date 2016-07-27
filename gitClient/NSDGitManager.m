@@ -22,6 +22,13 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [self new];
+        if([instance token]==nil){
+            if([[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"]){
+                [self setAccesToken:([[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"])];
+            }
+        }
+           if([instance token]==nil){
+               [instance setUrlSession: [NSURLSession sharedSession]];}
     });
         return instance;
     }
@@ -36,6 +43,7 @@
         if(self.token!=nil){
             [self setToken:(self.token)];
         }
+        
         
     }
     return self;
@@ -132,6 +140,10 @@
     }];
 }
 
++(NSURLSession *)postAuthSession{
+    if([self hasToken]) return [[self controller] urlSession];
+    return nil;
+}
 
 +(void)setAccesToken:(NSString *)token{
     NSLog(@"setToken %@",token);
@@ -168,10 +180,16 @@
         
         NSString * tttoken = [responceDic objectForKey:@"access_token"];
         [[NSUserDefaults standardUserDefaults] setObject:tttoken forKey:@"accessToken"];
-          NSDGitManager * instance =  (NSDGitManager *)[self controller];
-        instance.token = tttoken;
-        [self setAccesToken:tttoken];
-        completionToken();
+   [(NSDGitManager *)[self controller] setToken:tttoken];
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+             [self setAccesToken:tttoken];
+            
+             completionToken();
+         });
+        
+       
         return;
         
     }];

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NSDNetworkController.h"
 @interface NSDGitManager : NSDNetworkController
++(void)processJSONData:(NSData *)JSONData andErrorString:(NSString *)errorString andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
 
 
@@ -37,6 +38,6 @@
 +(void)setAccesToken:(NSString *)token;
 
 +(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI andCompletion:(void(^)()) completionToken;
-
++(NSURLSession *) postAuthSession;
 +(BOOL)hasToken;
 @end
