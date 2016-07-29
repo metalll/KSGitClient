@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "NSDGitManager.h"
+#import "NSDMenuViewController.h"
+#import "NSDNotificationsViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,8 +18,42 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+ 
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    NSDMenuViewController *leftMenu = (NSDMenuViewController*)[mainStoryboard                                                                 instantiateViewControllerWithIdentifier: @"Menu"];
     
+    NSDNotificationsViewController * rightMenu = (NSDNotificationsViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"Notifications"];
     
+    [NSDSlideNavigationController sharedInstance].rightMenu = rightMenu;
+    [NSDSlideNavigationController sharedInstance].leftMenu = leftMenu;
+    [NSDSlideNavigationController sharedInstance].menuRevealAnimationDuration = .18;
+    
+    UIButton *buttonMenu  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [buttonMenu setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
+    [buttonMenu addTarget:[NSDSlideNavigationController sharedInstance] action:@selector(toggleLeftMenu) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:buttonMenu];
+    [NSDSlideNavigationController sharedInstance].leftBarButtonItem = leftBarButtonItem;
+    
+    UIButton *buttonNotif  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [buttonNotif setImage:[UIImage imageNamed:@"notif"] forState:UIControlStateNormal];
+    [buttonNotif addTarget:[NSDSlideNavigationController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:buttonNotif];
+    [NSDSlideNavigationController sharedInstance].rightBarButtonItem = rightBarButtonItem;
+
+    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidClose object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSString *menu = note.userInfo[@"menu"];
+        NSLog(@"Closed %@", menu);
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidOpen object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSString *menu = note.userInfo[@"menu"];
+        NSLog(@"Opened %@", menu);
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidReveal object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSString *menu = note.userInfo[@"menu"];
+        NSLog(@"Revealed %@", menu);
+    }];
     
     
   
@@ -29,6 +65,7 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     [NSDGitManager processOAuth2WithCallbackURI:url andCompletion:nil];
+  
     return NO;
 }
 

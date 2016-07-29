@@ -24,6 +24,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+{
+    return NO;
+}
+
+- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+{
+    return NO;
+}
+
 /*
 #pragma mark - Navigation
 

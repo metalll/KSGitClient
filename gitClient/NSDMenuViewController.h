@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-@interface NSDMenuViewController : UIViewController
+#import "NSDSlideNavigatorController.h"
+@interface NSDMenuViewController :UIViewController <NSDSlideNavigationControllerDelegate>
 
 
 

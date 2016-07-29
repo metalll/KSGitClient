@@ -14,6 +14,7 @@
 #import "NSDUser+NSDInitUserWithDictionary.h"
 #import "NSDChacheController.h"
 #import "NSDRepo+InitWithDictionary.m"
+#import "NSDSlideNavigatorController.h"
 
 @interface NSDBaseViewController ()
 {
@@ -31,7 +32,7 @@
     else{   [self initUser];
     }
 
-    
+        
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.alpha = 0;
@@ -46,6 +47,8 @@
     if(section==0) return @"";
     else return [_user.userLogin stringByAppendingString:@" repositories"];
 }
+
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == 0&& indexPath.row == 0){
@@ -183,6 +186,16 @@
 
 }
 
+
+- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+{
+    return YES;
+}
+
+- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+{
+    return YES;
+}
 /*
 #pragma mark - Navigation
 

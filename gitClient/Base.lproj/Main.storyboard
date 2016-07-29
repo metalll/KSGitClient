@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Slide Navigation Controller-->
         <scene sceneID="NKR-HU-1mW">
             <objects>
-                <navigationController id="STx-Ps-zWT" sceneMemberID="viewController">
+                <navigationController id="STx-Ps-zWT" customClass="NSDSlideNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DQf-8F-JAM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -55,9 +55,7 @@
                             <constraint firstItem="Cma-uA-f7t" firstAttribute="leading" secondItem="YdG-jH-9L0" secondAttribute="leadingMargin" id="tmK-U1-GT8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dCr-F4-MIv">
-                        <barButtonItem key="leftBarButtonItem" image="menuImageSet" id="kkp-Ju-kfQ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="dCr-F4-MIv"/>
                     <connections>
                         <outlet property="activityIndicator" destination="gDe-aT-nBY" id="qfx-LK-RTp"/>
                         <outlet property="tableView" destination="Cma-uA-f7t" id="lTs-lz-iER"/>
@@ -67,10 +65,46 @@
             </objects>
             <point key="canvasLocation" x="816" y="584"/>
         </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="rpi-9P-mai">
+            <objects>
+                <viewController storyboardIdentifier="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hka-Lw-x4W" customClass="NSDMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q3z-tF-nfW"/>
+                        <viewControllerLayoutGuide type="bottom" id="2k2-Q8-h65"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b0E-7n-Lon">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uiJ-9W-w8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120" y="-526"/>
+        </scene>
+        <!--Notifications View Controller-->
+        <scene sceneID="wP2-rK-ZpS">
+            <objects>
+                <viewController storyboardIdentifier="Notifications" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cV3-Vv-ciP" customClass="NSDNotificationsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4yC-ek-D0o"/>
+                        <viewControllerLayoutGuide type="bottom" id="BJe-Uo-Sjc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qbY-xE-43D">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4V2-dd-KZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808" y="-747"/>
+        </scene>
         <!--Auth View Controller-->
         <scene sceneID="9B9-y1-RdF">
             <objects>
-                <viewController storyboardIdentifier="Auth" id="Y1N-Bz-eRy" customClass="NSDOAuthViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Auth" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y1N-Bz-eRy" customClass="NSDOAuthViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JFK-Sv-WLS"/>
                         <viewControllerLayoutGuide type="bottom" id="YhE-uh-F7J"/>
@@ -112,7 +146,4 @@
             <point key="canvasLocation" x="816" y="-78"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="menuImageSet" width="22" height="22"/>
-    </resources>
 </document>

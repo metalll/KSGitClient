@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "NSDUser.h"
 #import "NSDRepo.h"
-@interface NSDBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+#import "NSDSlideNavigatorController.h"
+@interface NSDBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,NSDSlideNavigationControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSDUser * user;
