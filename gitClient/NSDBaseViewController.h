@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "NSDUser.h"
+#import "NSDRepo.h"
 @interface NSDBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSDUser * user;
+@property NSArray * repos;
 -(void)initUser;
+
 @end

@@ -16,12 +16,7 @@
     
     if(isJSONData) return;
     
-    [self setValue: [NSString stringWithFormat:@"%ui",data.length] forHTTPHeaderField:@"Content-Length"];
-    
-    NSString * log = [NSString stringWithFormat:@"%ui",data.length];
-    
-    NSLog(@"%@",log);
-    
+    [self setValue: [NSString stringWithFormat:@"%ld",data.length] forHTTPHeaderField:@"Content-Length"];
     [self setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"application/x-www-form-urlencoded; charset=utf-8"];
     
     

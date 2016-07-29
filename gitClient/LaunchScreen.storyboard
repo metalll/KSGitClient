@@ -26,7 +26,7 @@
                                 <color key="color" red="0.038818100469999998" green="0.4203489225" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2016 nullStackDev. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Y-zp-AOw">
-                                <rect key="frame" x="171" y="442" width="258" height="21"/>
+                                <rect key="frame" x="171" y="561" width="258" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -47,10 +47,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="A5Y-zp-AOw" firstAttribute="centerX" secondItem="64R-VA-bHX" secondAttribute="centerX" id="2WB-00-lGq"/>
-                            <constraint firstItem="A5Y-zp-AOw" firstAttribute="top" secondItem="64R-VA-bHX" secondAttribute="bottom" constant="12" id="EK2-EN-lh8"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="A5Y-zp-AOw" secondAttribute="bottom" constant="18" id="CQp-T1-aMJ"/>
                             <constraint firstItem="IZi-Uw-cw9" firstAttribute="centerX" secondItem="KS9-9n-9oI" secondAttribute="centerX" id="IvU-py-Pg8"/>
-                            <constraint firstItem="A5Y-zp-AOw" firstAttribute="top" secondItem="64R-VA-bHX" secondAttribute="bottom" constant="12" id="JZA-yK-am7"/>
+                            <constraint firstItem="A5Y-zp-AOw" firstAttribute="centerX" secondItem="KS9-9n-9oI" secondAttribute="centerX" id="bzP-NV-zF2"/>
                             <constraint firstItem="KS9-9n-9oI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cDI-3U-HNn"/>
                             <constraint firstItem="64R-VA-bHX" firstAttribute="top" secondItem="KS9-9n-9oI" secondAttribute="bottom" constant="10" id="iom-lg-6b7"/>
                             <constraint firstItem="64R-VA-bHX" firstAttribute="centerX" secondItem="KS9-9n-9oI" secondAttribute="centerX" id="wzZ-k9-WHR"/>

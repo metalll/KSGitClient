@@ -9,6 +9,6 @@
 #import "NSDRepo.h"
 
 @interface NSDRepo (InitWithDictionary)
-- (instancetype) initWithDictionary:(NSDictionary *)dictionary;
++ (id) initWithDictionary:(NSDictionary *)dictionary;
 
 @end

@@ -9,9 +9,12 @@
 #import "NSDBaseViewController.h"
 #import "NSDGitManager.h"
 #import "NSDUserCell.h"
+#import "NSDRepoCell.h"
 #import "NSDUser.h"
 #import "NSDUser+NSDInitUserWithDictionary.h"
 #import "NSDChacheController.h"
+#import "NSDRepo+InitWithDictionary.m"
+#import "NSDImageAssetDownloader.h"
 @interface NSDBaseViewController ()
 {
    
@@ -32,22 +35,8 @@
 
     
     
-    [NSDGitManager getCurrentUserWithCompletion:^(NSDictionary *responceDic, NSString *errorString) {
-        
-        _user = [[NSDUser alloc] initWithDictionary:responceDic];
-        [_tableView reloadData];
-      
-    [NSDGitManager performRequestWithURLString:_user.reposURL andMethod:nil andParams:nil andAcceptJSONResponse:YES andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
-        [NSDGitManager processJSONData:data andErrorString:errorString andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
-           
-            NSLog(@"%@",responceDic);
-            
-        }];
-        
-        
-    }];
-        
-    }];
+    [self initUser];
+   
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -60,7 +49,7 @@
         return 101;
     }
     else{
-        return 82;
+        return 90;
     }
 }
 
@@ -79,7 +68,7 @@
         return 1;
     }
     else {
-        return 5; // number of repos;
+        return _repos.count; // number of repos;
     }
     
 }
@@ -113,18 +102,31 @@
         }
         
     }
-    else{
+    
+    if(indexPath.section == 1){
         cellID = @"repo";
         cell = [tableView dequeueReusableCellWithIdentifier:cellID];
         
         if(cell == nil){
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NSDRepoCell"owner:self options:nil];
             cell = [nib lastObject];
+            [(NSDRepoCell *)cell setIndetifireWithString:cellID];
         }
         
-        // тута закидываем данные для виев;
         
-    }
+        if([[_repos objectAtIndex:indexPath.row] isFork]){
+            [[(NSDRepoCell *)cell repoImageView] setImage:[UIImage imageNamed:@"fork"]];
+        }else{
+            [[(NSDRepoCell *)cell repoImageView] setImage:[UIImage imageNamed:@"repo"]];}
+        
+        [[(NSDRepoCell *)cell repoName] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] repoName]]] ;
+        [[(NSDRepoCell *)cell starCount] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] stars]]];
+        if([[_repos objectAtIndex:indexPath.row] repoLang] != [NSNull new]){
+            [[(NSDRepoCell *)cell lang] setText:[[_repos objectAtIndex:indexPath.row] repoLang]];}
+        else{ [[(NSDRepoCell *)cell lang] setText:@"no lang"]; }
+        }
+        
+    
     
     
     
@@ -141,11 +143,21 @@
     [NSDGitManager getCurrentUserWithCompletion:^(NSDictionary *responceDic, NSString *errorString) {
         
         _user = [[NSDUser alloc] initWithDictionary:responceDic];
-        [_tableView reloadData];
+        
+        [NSDGitManager performRequestWithURLString:_user.reposURL andMethod:nil andParams:nil andAcceptJSONResponse:YES andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
+
+            NSError * JSONError = nil;
+            NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError]);
+            _repos = [NSDRepo initWithDictionary:[NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError]];
+         [_tableView reloadData];
+        }];
+        
+        
         NSLog(@"username %@",_user.userName);
         
     }];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

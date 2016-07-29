@@ -25,4 +25,13 @@
     
 }
 
+-(void)setIndetifireWithString:(NSString *)cellID
+{
+    self.cellID = cellID;
+}
+
+-(NSString *)reuseIdentifier{
+    return self.cellID;
+}
+
 @end

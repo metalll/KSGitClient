@@ -48,10 +48,10 @@
     NSHTTPURLResponse * httpResponce = (NSHTTPURLResponse *)responce;
     NSLog(@"%@",responce);
     if(httpResponce.statusCode>=200&&httpResponce.statusCode<=299){ return nil; }
-    if(httpResponce.statusCode>=400&&httpResponce.statusCode<=499){ return [NSString stringWithFormat:@"Client error: %u",httpResponce.statusCode]; }
-    if(httpResponce.statusCode>=500&&httpResponce.statusCode<=599){ return [NSString stringWithFormat:@"Server error: %u",httpResponce.statusCode]; }
+    if(httpResponce.statusCode>=400&&httpResponce.statusCode<=499){ return [NSString stringWithFormat:@"Client error: %ld",httpResponce.statusCode]; }
+    if(httpResponce.statusCode>=500&&httpResponce.statusCode<=599){ return [NSString stringWithFormat:@"Server error: %ld",httpResponce.statusCode]; }
     
-    return [NSString stringWithFormat:@"Unknown error: %u",httpResponce.statusCode];
+    return [NSString stringWithFormat:@"Unknown error: %ld",httpResponce.statusCode];
 }
 
 +(void)downloadResourceWithURLString:(NSString *)url andCompletion:(void (^)(NSString * localPath, NSString * errorString))completion{

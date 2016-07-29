@@ -15,11 +15,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="459" height="81"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="repo" translatesAutoresizingMaskIntoConstraints="NO" id="blL-jq-KoR">
-                        <rect key="frame" x="8" y="8" width="66" height="66"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="obj - c" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZa-wj-0Gd">
+                        <rect key="frame" x="331" y="48" width="120" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="66" id="KeT-jj-s41"/>
-                            <constraint firstAttribute="width" constant="66" id="xLg-0z-E8U"/>
+                            <constraint firstAttribute="width" constant="120" id="8Gq-Nc-4ft"/>
+                            <constraint firstAttribute="height" constant="21" id="Wfb-2h-tu4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="highlightedColor" red="0.038818100469999998" green="0.4203489225" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="shadowColor" red="0.038818100469999998" green="0.4203489225" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="repo" translatesAutoresizingMaskIntoConstraints="NO" id="blL-jq-KoR">
+                        <rect key="frame" x="8" y="14" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="55" id="KeT-jj-s41"/>
+                            <constraint firstAttribute="width" constant="55" id="xLg-0z-E8U"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="nxe-nY-cji">
@@ -39,18 +49,8 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="obj - c" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZa-wj-0Gd">
-                        <rect key="frame" x="371" y="48" width="80" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="80" id="8Gq-Nc-4ft"/>
-                            <constraint firstAttribute="height" constant="21" id="Wfb-2h-tu4"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="highlightedColor" red="0.038818100469999998" green="0.4203489225" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="shadowColor" red="0.038818100469999998" green="0.4203489225" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                    </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="ksgithub" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPY-vr-da1">
-                        <rect key="frame" x="74" y="8" width="295" height="65"/>
+                        <rect key="frame" x="63" y="8" width="268" height="65"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -64,13 +64,19 @@
                     <constraint firstItem="wPY-vr-da1" firstAttribute="top" secondItem="KHo-4l-2iG" secondAttribute="topMargin" id="Fn9-Rl-vJm"/>
                     <constraint firstItem="ba3-mF-ScT" firstAttribute="leading" secondItem="nxe-nY-cji" secondAttribute="trailing" id="Kyq-NT-dev"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ba3-mF-ScT" secondAttribute="trailing" id="Mvx-39-wot"/>
-                    <constraint firstItem="nxe-nY-cji" firstAttribute="leading" secondItem="wPY-vr-da1" secondAttribute="trailing" id="Tvq-XK-EsC"/>
                     <constraint firstItem="ba3-mF-ScT" firstAttribute="top" secondItem="KHo-4l-2iG" secondAttribute="topMargin" id="Y61-Ys-Xpx"/>
                     <constraint firstItem="vZa-wj-0Gd" firstAttribute="trailing" secondItem="KHo-4l-2iG" secondAttribute="trailingMargin" id="d2f-xL-R0N"/>
-                    <constraint firstItem="blL-jq-KoR" firstAttribute="top" secondItem="KHo-4l-2iG" secondAttribute="topMargin" id="hSC-p5-fyU"/>
+                    <constraint firstItem="vZa-wj-0Gd" firstAttribute="leading" secondItem="wPY-vr-da1" secondAttribute="trailing" id="gpu-k1-pMD"/>
+                    <constraint firstItem="blL-jq-KoR" firstAttribute="top" secondItem="KHo-4l-2iG" secondAttribute="topMargin" constant="6" id="hSC-p5-fyU"/>
                     <constraint firstAttribute="bottomMargin" secondItem="wPY-vr-da1" secondAttribute="bottom" id="xTJ-Q0-EJP"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lang" destination="vZa-wj-0Gd" id="OWV-GK-x3b"/>
+                <outlet property="repoImageView" destination="blL-jq-KoR" id="xWe-Id-x90"/>
+                <outlet property="repoName" destination="wPY-vr-da1" id="VFU-bu-Mxo"/>
+                <outlet property="starCount" destination="ba3-mF-ScT" id="2qj-ED-23i"/>
+            </connections>
             <point key="canvasLocation" x="452.5" y="348"/>
         </tableViewCell>
     </objects>
