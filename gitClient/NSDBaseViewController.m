@@ -14,7 +14,7 @@
 #import "NSDUser+NSDInitUserWithDictionary.h"
 #import "NSDChacheController.h"
 #import "NSDRepo+InitWithDictionary.m"
-#import "NSDImageAssetDownloader.h"
+
 @interface NSDBaseViewController ()
 {
    
@@ -28,16 +28,19 @@
     if(!NSDGitManager.hasToken){  // тыкс велосипед т.к viewWillAppear вызываеться после ViewDidload!!!
         NSLog(@"No token no auth");
     }
-  
+    else{   [self initUser];
+    }
+
+    
     _tableView.delegate = self;
     _tableView.dataSource = self;
-  
+    _tableView.alpha = 0;
+    _activityIndicator.hidesWhenStopped = YES;
+    [_activityIndicator startAnimating];
 
     
     
-    [self initUser];
-   
-}
+ }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if(section==0) return @"";
@@ -121,9 +124,10 @@
         
         [[(NSDRepoCell *)cell repoName] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] repoName]]] ;
         [[(NSDRepoCell *)cell starCount] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] stars]]];
-        if([[_repos objectAtIndex:indexPath.row] repoLang] != [NSNull new]){
+        if((id)[[_repos objectAtIndex:indexPath.row] repoLang] != [NSNull new]){
+            
             [[(NSDRepoCell *)cell lang] setText:[[_repos objectAtIndex:indexPath.row] repoLang]];}
-        else{ [[(NSDRepoCell *)cell lang] setText:@"no lang"]; }
+        else{ [[(NSDRepoCell *)cell lang] setText:@""]; }
         }
         
     
@@ -149,12 +153,16 @@
             NSError * JSONError = nil;
             NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError]);
             _repos = [NSDRepo initWithDictionary:[NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError]];
+            
          [_tableView reloadData];
+            [_tableView setAlpha:1];
+            [_activityIndicator stopAnimating];
+            
         }];
         
         
         NSLog(@"username %@",_user.userName);
-        
+       
     }];
 }
 

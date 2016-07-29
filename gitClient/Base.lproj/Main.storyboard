@@ -34,6 +34,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gDe-aT-nBY">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                                <color key="color" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cma-uA-f7t">
                                 <rect key="frame" x="20" y="64" width="560" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -41,8 +45,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7y8-aH-r0W" firstAttribute="top" secondItem="gDe-aT-nBY" secondAttribute="bottom" id="4dd-mN-hMj"/>
+                            <constraint firstItem="gDe-aT-nBY" firstAttribute="top" secondItem="hTg-k8-ltO" secondAttribute="bottom" id="H8a-0z-V76"/>
+                            <constraint firstItem="gDe-aT-nBY" firstAttribute="leading" secondItem="YdG-jH-9L0" secondAttribute="leadingMargin" id="WPT-oU-Lau"/>
                             <constraint firstItem="Cma-uA-f7t" firstAttribute="top" secondItem="hTg-k8-ltO" secondAttribute="bottom" id="cgF-vG-9vh"/>
                             <constraint firstItem="7y8-aH-r0W" firstAttribute="top" secondItem="Cma-uA-f7t" secondAttribute="bottom" id="dYj-F3-35G"/>
+                            <constraint firstItem="gDe-aT-nBY" firstAttribute="trailing" secondItem="YdG-jH-9L0" secondAttribute="trailingMargin" id="e2t-Nx-t2p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Cma-uA-f7t" secondAttribute="trailing" id="rUJ-I7-bZ7"/>
                             <constraint firstItem="Cma-uA-f7t" firstAttribute="leading" secondItem="YdG-jH-9L0" secondAttribute="leadingMargin" id="tmK-U1-GT8"/>
                         </constraints>
@@ -51,6 +59,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menuImageSet" id="kkp-Ju-kfQ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="gDe-aT-nBY" id="qfx-LK-RTp"/>
                         <outlet property="tableView" destination="Cma-uA-f7t" id="lTs-lz-iER"/>
                     </connections>
                 </viewController>

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C1BB0FBE1D481038000312C1 /* menu_logo22.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FBB1D481038000312C1 /* menu_logo22.png */; };
-		C1BB0FBF1D481038000312C1 /* menu_logo44.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FBC1D481038000312C1 /* menu_logo44.png */; };
-		C1BB0FC01D481038000312C1 /* menu_logo66.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FBD1D481038000312C1 /* menu_logo66.png */; };
+		C107BC651D4BDD30004220F5 /* NSDSlideNavigatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C107BC641D4BDD30004220F5 /* NSDSlideNavigatorController.m */; };
+		C107BC691D4BDED4004220F5 /* NSDSlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = C107BC681D4BDED4004220F5 /* NSDSlideNavigationContorllerAnimatorFade.m */; };
+		C107BC6C1D4BDF36004220F5 /* NSDSlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = C107BC6B1D4BDF36004220F5 /* NSDSlideNavigationContorllerAnimatorScale.m */; };
+		C107BC6F1D4BDF84004220F5 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = C107BC6E1D4BDF84004220F5 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.m */; };
+		C107BC721D4BE019004220F5 /* NSDSlideNavigationContorllerAnimatorSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = C107BC711D4BE019004220F5 /* NSDSlideNavigationContorllerAnimatorSlide.m */; };
 		C1BB0FC71D481EBB000312C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FC61D481EBB000312C1 /* AppDelegate.m */; };
 		C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FC81D481ED7000312C1 /* Assets.xcassets */; };
 		C1BB0FCF1D481EE3000312C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FCD1D481EE3000312C1 /* Main.storyboard */; };
@@ -30,15 +32,6 @@
 		C1BB10031D481F00000312C1 /* NSDUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FEE1D481F00000312C1 /* NSDUsersViewController.m */; };
 		C1BB10051D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FF21D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m */; };
 		C1BB10061D481F00000312C1 /* NSURL+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FF41D481F00000312C1 /* NSURL+NSDNetworkConnection.m */; };
-		C1BB60331D49482600E2B90E /* star22.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB60301D49482600E2B90E /* star22.png */; };
-		C1BB60341D49482600E2B90E /* star44.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB60311D49482600E2B90E /* star44.png */; };
-		C1BB60351D49482600E2B90E /* star66.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB60321D49482600E2B90E /* star66.png */; };
-		C1BB603A1D4950D000E2B90E /* fork22.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB60361D4950D000E2B90E /* fork22.png */; };
-		C1BB603C1D4950D000E2B90E /* fork44.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB60381D4950D000E2B90E /* fork44.png */; };
-		C1BB603D1D4950D000E2B90E /* fork66.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB60391D4950D000E2B90E /* fork66.png */; };
-		C1BB60411D49512100E2B90E /* repo22.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB603E1D49512100E2B90E /* repo22.png */; };
-		C1BB60451D4951A900E2B90E /* repo44.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB60441D4951A900E2B90E /* repo44.png */; };
-		C1BB60471D49521B00E2B90E /* repo66.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BB60461D49521B00E2B90E /* repo66.png */; };
 		C1BBE1B21D46D4C0001B0334 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BBE1B11D46D4C0001B0334 /* logo.png */; };
 		C1C3BE3D1D436BDE001A0E50 /* gitClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C3BE3C1D436BDE001A0E50 /* gitClientTests.m */; };
 		C1FA3EB81D4A071700E9D7B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FA3EB71D4A071700E9D7B8 /* LaunchScreen.storyboard */; };
@@ -46,6 +39,7 @@
 		C1FA3EC41D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA3EC01D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.m */; };
 		C1FA3EC51D4A136B00E9D7B8 /* NSDRepoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA3EC21D4A136B00E9D7B8 /* NSDRepoCell.m */; };
 		C1FA3EC71D4A139800E9D7B8 /* NSDRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1FA3EC61D4A139800E9D7B8 /* NSDRepoCell.xib */; };
+		C1FB99CE1D4BE27000754459 /* NSDSlideNavigationContorllerAnimatorSlideAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FB99CD1D4BE27000754459 /* NSDSlideNavigationContorllerAnimatorSlideAndFade.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +53,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C1BB0FBB1D481038000312C1 /* menu_logo22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_logo22.png; sourceTree = "<group>"; };
-		C1BB0FBC1D481038000312C1 /* menu_logo44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_logo44.png; sourceTree = "<group>"; };
-		C1BB0FBD1D481038000312C1 /* menu_logo66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_logo66.png; sourceTree = "<group>"; };
+		C107BC631D4BDD30004220F5 /* NSDSlideNavigatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDSlideNavigatorController.h; sourceTree = "<group>"; };
+		C107BC641D4BDD30004220F5 /* NSDSlideNavigatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDSlideNavigatorController.m; sourceTree = "<group>"; };
+		C107BC661D4BDE3C004220F5 /* NSDSlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDSlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
+		C107BC671D4BDED4004220F5 /* NSDSlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDSlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
+		C107BC681D4BDED4004220F5 /* NSDSlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDSlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
+		C107BC6A1D4BDF36004220F5 /* NSDSlideNavigationContorllerAnimatorScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDSlideNavigationContorllerAnimatorScale.h; sourceTree = "<group>"; };
+		C107BC6B1D4BDF36004220F5 /* NSDSlideNavigationContorllerAnimatorScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDSlideNavigationContorllerAnimatorScale.m; sourceTree = "<group>"; };
+		C107BC6D1D4BDF84004220F5 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDSlideNavigationContorllerAnimatorScaleAndFade.h; sourceTree = "<group>"; };
+		C107BC6E1D4BDF84004220F5 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDSlideNavigationContorllerAnimatorScaleAndFade.m; sourceTree = "<group>"; };
+		C107BC701D4BE019004220F5 /* NSDSlideNavigationContorllerAnimatorSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDSlideNavigationContorllerAnimatorSlide.h; sourceTree = "<group>"; };
+		C107BC711D4BE019004220F5 /* NSDSlideNavigationContorllerAnimatorSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDSlideNavigationContorllerAnimatorSlide.m; sourceTree = "<group>"; };
 		C1BB0FC51D481EBB000312C1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = gitClient/AppDelegate.h; sourceTree = "<group>"; };
 		C1BB0FC61D481EBB000312C1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = gitClient/AppDelegate.m; sourceTree = "<group>"; };
 		C1BB0FC81D481ED7000312C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = gitClient/Assets.xcassets; sourceTree = "<group>"; };
@@ -99,15 +101,6 @@
 		C1BB0FF21D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableURLRequest+NSDNetworkConnection.m"; path = "gitClient/NSMutableURLRequest+NSDNetworkConnection.m"; sourceTree = "<group>"; };
 		C1BB0FF31D481F00000312C1 /* NSURL+NSDNetworkConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+NSDNetworkConnection.h"; path = "gitClient/NSURL+NSDNetworkConnection.h"; sourceTree = "<group>"; };
 		C1BB0FF41D481F00000312C1 /* NSURL+NSDNetworkConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+NSDNetworkConnection.m"; path = "gitClient/NSURL+NSDNetworkConnection.m"; sourceTree = "<group>"; };
-		C1BB60301D49482600E2B90E /* star22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star22.png; sourceTree = "<group>"; };
-		C1BB60311D49482600E2B90E /* star44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star44.png; sourceTree = "<group>"; };
-		C1BB60321D49482600E2B90E /* star66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star66.png; sourceTree = "<group>"; };
-		C1BB60361D4950D000E2B90E /* fork22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fork22.png; sourceTree = "<group>"; };
-		C1BB60381D4950D000E2B90E /* fork44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fork44.png; sourceTree = "<group>"; };
-		C1BB60391D4950D000E2B90E /* fork66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fork66.png; sourceTree = "<group>"; };
-		C1BB603E1D49512100E2B90E /* repo22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repo22.png; sourceTree = "<group>"; };
-		C1BB60441D4951A900E2B90E /* repo44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repo44.png; sourceTree = "<group>"; };
-		C1BB60461D49521B00E2B90E /* repo66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repo66.png; sourceTree = "<group>"; };
 		C1BBE1B11D46D4C0001B0334 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../Downloads/logo.png; sourceTree = "<group>"; };
 		C1C3BE1F1D436BDE001A0E50 /* gitClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gitClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C3BE381D436BDE001A0E50 /* gitClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gitClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +114,8 @@
 		C1FA3EC11D4A136B00E9D7B8 /* NSDRepoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDRepoCell.h; path = gitClient/NSDRepoCell.h; sourceTree = "<group>"; };
 		C1FA3EC21D4A136B00E9D7B8 /* NSDRepoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDRepoCell.m; path = gitClient/NSDRepoCell.m; sourceTree = "<group>"; };
 		C1FA3EC61D4A139800E9D7B8 /* NSDRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NSDRepoCell.xib; path = gitClient/NSDRepoCell.xib; sourceTree = "<group>"; };
+		C1FB99CC1D4BE27000754459 /* NSDSlideNavigationContorllerAnimatorSlideAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDSlideNavigationContorllerAnimatorSlideAndFade.h; sourceTree = "<group>"; };
+		C1FB99CD1D4BE27000754459 /* NSDSlideNavigationContorllerAnimatorSlideAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDSlideNavigationContorllerAnimatorSlideAndFade.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +136,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C107BC621D4BDCF2004220F5 /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C107BC631D4BDD30004220F5 /* NSDSlideNavigatorController.h */,
+				C107BC641D4BDD30004220F5 /* NSDSlideNavigatorController.m */,
+				C1FAAEAA1D4BE785009E312A /* Animations */,
+			);
+			name = MenuViewController;
+			sourceTree = "<group>";
+		};
 		C112FD2C1D48A14F008E2C7B /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +189,7 @@
 		C112FD301D48A22A008E2C7B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C107BC621D4BDCF2004220F5 /* MenuViewController */,
 				C1BB0FE41D481EFF000312C1 /* NSDReposViewController.h */,
 				C1BB0FE51D481EFF000312C1 /* NSDReposViewController.m */,
 				C1BB0FE21D481EFF000312C1 /* NSDOAuthViewController.h */,
@@ -201,6 +207,7 @@
 		C112FD311D48A32F008E2C7B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C1EDD9FD1D4BBA4400C6ABFC /* Animations */,
 				C1FA3EC11D4A136B00E9D7B8 /* NSDRepoCell.h */,
 				C1FA3EC21D4A136B00E9D7B8 /* NSDRepoCell.m */,
 				C1BB0FEA1D481F00000312C1 /* NSDUserCell.h */,
@@ -263,19 +270,7 @@
 				C1BB0FC41D481EAA000312C1 /* gitClient */,
 				C1C3BE3B1D436BDE001A0E50 /* gitClientTests */,
 				C1C3BE201D436BDE001A0E50 /* Products */,
-				C1BB0FBB1D481038000312C1 /* menu_logo22.png */,
-				C1BB0FBC1D481038000312C1 /* menu_logo44.png */,
-				C1BB0FBD1D481038000312C1 /* menu_logo66.png */,
 				C1BBE1B11D46D4C0001B0334 /* logo.png */,
-				C1BB60301D49482600E2B90E /* star22.png */,
-				C1BB60311D49482600E2B90E /* star44.png */,
-				C1BB60321D49482600E2B90E /* star66.png */,
-				C1BB60361D4950D000E2B90E /* fork22.png */,
-				C1BB60381D4950D000E2B90E /* fork44.png */,
-				C1BB60391D4950D000E2B90E /* fork66.png */,
-				C1BB603E1D49512100E2B90E /* repo22.png */,
-				C1BB60441D4951A900E2B90E /* repo44.png */,
-				C1BB60461D49521B00E2B90E /* repo66.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -295,6 +290,31 @@
 				C1C3BE3E1D436BDE001A0E50 /* Info.plist */,
 			);
 			path = gitClientTests;
+			sourceTree = "<group>";
+		};
+		C1EDD9FD1D4BBA4400C6ABFC /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		C1FAAEAA1D4BE785009E312A /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				C107BC661D4BDE3C004220F5 /* NSDSlideNavigationContorllerAnimator.h */,
+				C107BC671D4BDED4004220F5 /* NSDSlideNavigationContorllerAnimatorFade.h */,
+				C107BC681D4BDED4004220F5 /* NSDSlideNavigationContorllerAnimatorFade.m */,
+				C107BC6A1D4BDF36004220F5 /* NSDSlideNavigationContorllerAnimatorScale.h */,
+				C107BC6B1D4BDF36004220F5 /* NSDSlideNavigationContorllerAnimatorScale.m */,
+				C107BC6D1D4BDF84004220F5 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.h */,
+				C107BC6E1D4BDF84004220F5 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.m */,
+				C107BC701D4BE019004220F5 /* NSDSlideNavigationContorllerAnimatorSlide.h */,
+				C107BC711D4BE019004220F5 /* NSDSlideNavigationContorllerAnimatorSlide.m */,
+				C1FB99CC1D4BE27000754459 /* NSDSlideNavigationContorllerAnimatorSlideAndFade.h */,
+				C1FB99CD1D4BE27000754459 /* NSDSlideNavigationContorllerAnimatorSlideAndFade.m */,
+			);
+			name = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,23 +400,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1BBE1B21D46D4C0001B0334 /* logo.png in Resources */,
-				C1BB60471D49521B00E2B90E /* repo66.png in Resources */,
-				C1BB0FC01D481038000312C1 /* menu_logo66.png in Resources */,
-				C1BB603A1D4950D000E2B90E /* fork22.png in Resources */,
-				C1BB60351D49482600E2B90E /* star66.png in Resources */,
 				C1BB0FCF1D481EE3000312C1 /* Main.storyboard in Resources */,
-				C1BB0FBE1D481038000312C1 /* menu_logo22.png in Resources */,
 				C1FA3EB81D4A071700E9D7B8 /* LaunchScreen.storyboard in Resources */,
-				C1BB60411D49512100E2B90E /* repo22.png in Resources */,
-				C1BB603C1D4950D000E2B90E /* fork44.png in Resources */,
 				C1BB10021D481F00000312C1 /* NSDUserCell.xib in Resources */,
 				C1FA3EC71D4A139800E9D7B8 /* NSDRepoCell.xib in Resources */,
-				C1BB603D1D4950D000E2B90E /* fork66.png in Resources */,
-				C1BB60451D4951A900E2B90E /* repo44.png in Resources */,
 				C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */,
-				C1BB60341D49482600E2B90E /* star44.png in Resources */,
-				C1BB0FBF1D481038000312C1 /* menu_logo44.png in Resources */,
-				C1BB60331D49482600E2B90E /* star22.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,19 +424,25 @@
 			files = (
 				C1BB0FFE1D481F00000312C1 /* NSDReposViewController.m in Sources */,
 				C1BB0FF81D481F00000312C1 /* NSDGitConstants.m in Sources */,
+				C107BC651D4BDD30004220F5 /* NSDSlideNavigatorController.m in Sources */,
 				C1BB0FC71D481EBB000312C1 /* AppDelegate.m in Sources */,
 				C1BB0FFD1D481F00000312C1 /* NSDOAuthViewController.m in Sources */,
 				C1BB0FF61D481F00000312C1 /* NSDBaseViewController.m in Sources */,
 				C1FA3EC31D4A136B00E9D7B8 /* NSDRepo.m in Sources */,
 				C1BB0FF51D481F00000312C1 /* main.m in Sources */,
+				C107BC6C1D4BDF36004220F5 /* NSDSlideNavigationContorllerAnimatorScale.m in Sources */,
 				C1FA3EC51D4A136B00E9D7B8 /* NSDRepoCell.m in Sources */,
+				C1FB99CE1D4BE27000754459 /* NSDSlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				C1BB0FF91D481F00000312C1 /* NSDGitManager.m in Sources */,
 				C1BB0FFC1D481F00000312C1 /* NSDNetworkController.m in Sources */,
 				C1BB10031D481F00000312C1 /* NSDUsersViewController.m in Sources */,
+				C107BC6F1D4BDF84004220F5 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
+				C107BC721D4BE019004220F5 /* NSDSlideNavigationContorllerAnimatorSlide.m in Sources */,
 				C1FA3EC41D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.m in Sources */,
 				C1BB10001D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m in Sources */,
 				C1BB10051D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */,
 				C1BB0FFB1D481F00000312C1 /* NSDMenuViewController.m in Sources */,
+				C107BC691D4BDED4004220F5 /* NSDSlideNavigationContorllerAnimatorFade.m in Sources */,
 				C1BB10011D481F00000312C1 /* NSDUserCell.m in Sources */,
 				C1BB10061D481F00000312C1 /* NSURL+NSDNetworkConnection.m in Sources */,
 				C1BB0FF71D481F00000312C1 /* NSDChacheController.m in Sources */,
