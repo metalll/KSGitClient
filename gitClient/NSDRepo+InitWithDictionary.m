@@ -26,14 +26,14 @@
         
         temp.repoName = [[(NSArray *)dictionary objectAtIndex:i] objectForKey:@"name"];
         temp.repoUrl = [[(NSArray *)dictionary objectAtIndex:i] objectForKey:@"html_url"];
-        temp.repoLang = [[(NSArray *)dictionary objectAtIndex:i] objectForKey:@"language"];
+        temp.forks = [[(NSArray *) dictionary objectAtIndex:i] objectForKey:@"forks"];
         temp.stars = [[(NSArray *)dictionary objectAtIndex:i]objectForKey:@"stargazers_count"] ;
         
         NSLog(@"repoName : %@",temp.repoName);
         NSLog(@"repoURL : %@",temp.repoUrl);
         NSLog(@"repoStars: %@",temp.stars);
         NSLog(@"is fork %@",temp.isFork?@"YES":@"NO");
-        NSLog(@"repo lang : %@",temp.repoLang);
+        NSLog(@"repo forks : %@",temp.forks);
         [retVal addObject:temp];
     }
    

@@ -14,18 +14,7 @@
 @implementation NSDNetworkController
 
 
-+ (instancetype)controller {
-    @synchronized(self){
-        
-   
-    static id instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [self new];
-    });
-        return instance;
-    }
-}
+
 
 - (instancetype)init
 {
@@ -40,7 +29,7 @@
 
 
 
-+(NSString *)processResponceWithResponce:(NSURLResponse *)responce andError:(NSError *)error{
+-(NSString *)processResponceWithResponce:(NSURLResponse *)responce andError:(NSError *)error{
     if(error!=nil){
         return [error localizedDescription];
     }
@@ -54,10 +43,10 @@
     return [NSString stringWithFormat:@"Unknown error: %ld",httpResponce.statusCode];
 }
 
-+(void)downloadResourceWithURLString:(NSString *)url andCompletion:(void (^)(NSString * localPath, NSString * errorString))completion{
+-(void)downloadResourceWithURLString:(NSString *)url andCompletion:(void (^)(NSString * localPath, NSString * errorString))completion{
     NSURL * URL = [NSURL URLWithString:url];
     NSURLRequest * request = [NSURLRequest requestWithURL:URL cachePolicy: NSURLRequestUseProtocolCachePolicy  timeoutInterval:10];
-    NSURLSession * session = [(NSDNetworkController *)[self controller] urlSession];
+    NSURLSession * session = self.urlSession;
     [[session downloadTaskWithRequest:request completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if(error){
@@ -95,8 +84,8 @@
     
 }
 
-+(void)performRequestWithURLPath:(NSString *)urlPath andMethod:(NSString *)method andParams:(NSDictionary *)params andAcceptJSONResponse:(BOOL)acceptJSONResponse andSendBodyAsJSON:(BOOL)sendBodyAsJSON andCompletion:(void (^)(NSData *, NSString *))completion{
-    NSString * baseURL =[NSString stringWithFormat:@"%@", [[self controller]baseURL]];
+-(void)performRequestWithURLPath:(NSString *)urlPath andMethod:(NSString *)method andParams:(NSDictionary *)params andAcceptJSONResponse:(BOOL)acceptJSONResponse andSendBodyAsJSON:(BOOL)sendBodyAsJSON andCompletion:(void (^)(NSData *, NSString *))completion{
+    NSString * baseURL =[NSString stringWithFormat:@"%@", self.baseURL];
     if(baseURL){
         [self performRequestWithURLString:[baseURL stringByAppendingPathComponent:urlPath] andMethod:method andParams:params andAcceptJSONResponse:acceptJSONResponse andSendBodyAsJSON:sendBodyAsJSON andCompletion:completion];
     }else{
@@ -105,7 +94,7 @@
     
 }
 
-+(void)performRequestWithURLString:(NSString *)url andMethod:(NSString *)method andParams:(NSDictionary *)params andAcceptJSONResponse:(BOOL)acceptJSONResponse andSendBodyAsJSON:(BOOL)sendBodyAsJSON andCompletion:(void (^)(NSData *, NSString *))completion{
+-(void)performRequestWithURLString:(NSString *)url andMethod:(NSString *)method andParams:(NSDictionary *)params andAcceptJSONResponse:(BOOL)acceptJSONResponse andSendBodyAsJSON:(BOOL)sendBodyAsJSON andCompletion:(void (^)(NSData *, NSString *))completion{
     
     NSURL * URL = [NSURL URLWithString:url];
     
@@ -158,9 +147,9 @@
             else reqURL=[NSURL URLWithString:url];
             request.URL = reqURL;
     }
-    NSLog(@"%@", [[self controller] urlSession]);
-    if([[self controller]urlSession]==nil) [[self controller]setUrlSession:[NSURLSession sharedSession]];
-    [[[[self controller] urlSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    
+    if(self.urlSession==nil) [self setUrlSession:[NSURLSession sharedSession]];
+    [[self.urlSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
               NSString * errorString = [self processResponceWithResponce:response andError:error];

@@ -9,8 +9,8 @@
 #import "NSDGitManager.h"
 
 @interface NSDGitManager ()
-+(NSString *)URLStringWithPathComponent:(NSString *)pathComponent;
-+(void)searchForPath:(NSString *)path andQueryString:(NSString *)query andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
+-(NSString *)URLStringWithPathComponent:(NSString *)pathComponent;
+-(void)searchForPath:(NSString *)path andQueryString:(NSString *)query andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
 
 @end

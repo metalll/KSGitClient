@@ -15,16 +15,16 @@
 @property NSString * baseURL;
 @property NSURLSession * urlSession;
     
-+(NSString *)processResponceWithResponce:(NSURLResponse *)responce andError:(NSError *)error;
-+(void)downloadResourceWithURLString:(NSString *)url andCompletion:(void(^)(NSString * localPath,NSString * errorString)) completion;
-+(void)performRequestWithURLPath:(NSString *)urlPath
+-(NSString *)processResponceWithResponce:(NSURLResponse *)responce andError:(NSError *)error;
+-(void)downloadResourceWithURLString:(NSString *)url andCompletion:(void(^)(NSString * localPath,NSString * errorString)) completion;
+-(void)performRequestWithURLPath:(NSString *)urlPath
                        andMethod:(NSString *)method
                        andParams:(NSDictionary *)params
            andAcceptJSONResponse:(BOOL) acceptJSONResponse
                andSendBodyAsJSON:(BOOL)sendBodyAsJSON
                    andCompletion:(void(^)(NSData * data,NSString * errorString))completion;
 
-+(void) performRequestWithURLString:(NSString *)url
+-(void) performRequestWithURLString:(NSString *)url
                           andMethod:(NSString *)method
                           andParams:(NSDictionary *)params
               andAcceptJSONResponse:(BOOL) acceptJSONResponse

@@ -12,7 +12,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-
+    _avatarImageView.layer.cornerRadius = 40;
+    _avatarImageView.layer.masksToBounds = YES;
+    _avatarImageView.layer.borderWidth = 0;
     _activityIndicator.hidesWhenStopped = YES;
     
 }

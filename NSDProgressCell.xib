@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="231" id="y55-gi-jX3">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="191"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y55-gi-jX3" id="uef-PV-QbD">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="190"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-Be-nyZ">
+                        <rect key="frame" x="8" y="8" width="386" height="174"/>
+                        <color key="color" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="FTe-Be-nyZ" firstAttribute="top" secondItem="uef-PV-QbD" secondAttribute="topMargin" id="WhX-EV-cor"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="FTe-Be-nyZ" secondAttribute="bottom" id="hFQ-hC-kTa"/>
+                    <constraint firstItem="FTe-Be-nyZ" firstAttribute="leading" secondItem="uef-PV-QbD" secondAttribute="leadingMargin" id="pi0-SE-rjO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="FTe-Be-nyZ" secondAttribute="trailing" id="qpO-0l-XbP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="159" y="86.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -9,8 +9,7 @@
 #import "NSDOAuthViewController.h"
 #import "NSDGitManager.h"
 #import "NSURL+NSDNetworkConnection.h"
-#import "NSDBaseViewController.h"
-#import "NSDUser+NSDInitUserWithDictionary.h"
+#import "NSDBaseNavigatorController.h"
 @interface NSDOAuthViewController ()
 
 @end
@@ -20,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _indicatorView.hidesWhenStopped = YES;
-    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: NSDGitManager.requestOAuth2Access]]];
+    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.loadURL]]];
     _webView.delegate = self;
 }
 
@@ -36,10 +35,12 @@
     
     if([[request.URL dictionaryFromURL] objectForKey:@"code"]!=nil){
         
-        [NSDGitManager processOAuth2WithCallbackURI:request.URL andCompletion:^{
-            [(NSDBaseViewController *)[(UINavigationController *)[self presentingViewController] topViewController] initUser] ;
+        
+        [[[NSDBaseNavigatorController sharedInstance] gitApi] processOAuth2WithCallbackURI:request.URL andCompletion:^{
+            [[NSDBaseNavigatorController sharedInstance] initUser];
             [self dismissViewControllerAnimated:YES completion:nil];
         }];
+
         return NO;
     }
     

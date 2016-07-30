@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1197FAE1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1197FAD1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m */; };
+		C1197FB01D4D299B006DA0EF /* NSDProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */; };
 		C1BB0FC71D481EBB000312C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FC61D481EBB000312C1 /* AppDelegate.m */; };
 		C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FC81D481ED7000312C1 /* Assets.xcassets */; };
 		C1BB0FCF1D481EE3000312C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FCD1D481EE3000312C1 /* Main.storyboard */; };
@@ -53,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C1197FAC1D4D0BA2006DA0EF /* NSDBaseNavigatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDBaseNavigatorController.h; sourceTree = "<group>"; };
+		C1197FAD1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDBaseNavigatorController.m; sourceTree = "<group>"; };
+		C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSDProgressCell.xib; sourceTree = "<group>"; };
 		C1BB0FC51D481EBB000312C1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = gitClient/AppDelegate.h; sourceTree = "<group>"; };
 		C1BB0FC61D481EBB000312C1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = gitClient/AppDelegate.m; sourceTree = "<group>"; };
 		C1BB0FC81D481ED7000312C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = gitClient/Assets.xcassets; sourceTree = "<group>"; };
@@ -161,6 +166,7 @@
 				C1BB0FEC1D481F00000312C1 /* NSDUserCell.xib */,
 				C1FA3EC61D4A139800E9D7B8 /* NSDRepoCell.xib */,
 				C1FA3EB71D4A071700E9D7B8 /* LaunchScreen.storyboard */,
+				C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -188,15 +194,16 @@
 		C112FD301D48A22A008E2C7B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C107BC621D4BDCF2004220F5 /* CustomNavigatorController */,
 				C1BB0FE21D481EFF000312C1 /* NSDOAuthViewController.h */,
 				C1BB0FE31D481EFF000312C1 /* NSDOAuthViewController.m */,
 				C1BB0FDE1D481EFF000312C1 /* NSDMenuViewController.h */,
 				C1BB0FDF1D481EFF000312C1 /* NSDMenuViewController.m */,
-				C1F3DFFC1D4C964600BC8556 /* NSDNotificationsViewController.h */,
-				C1F3DFFD1D4C964600BC8556 /* NSDNotificationsViewController.m */,
 				C1BB0FD31D481EFF000312C1 /* NSDBaseViewController.h */,
 				C1BB0FD41D481EFF000312C1 /* NSDBaseViewController.m */,
+				C1F3DFFC1D4C964600BC8556 /* NSDNotificationsViewController.h */,
+				C1F3DFFD1D4C964600BC8556 /* NSDNotificationsViewController.m */,
+				C1197FAC1D4D0BA2006DA0EF /* NSDBaseNavigatorController.h */,
+				C1197FAD1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -240,8 +247,8 @@
 				C1BB0FE01D481EFF000312C1 /* NSDNetworkController.h */,
 				C1BB0FE11D481EFF000312C1 /* NSDNetworkController.m */,
 				C1BB0FE81D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.h */,
-				C1BB0FF41D481F00000312C1 /* NSURL+NSDNetworkConnection.m */,
 				C1BB0FE91D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m */,
+				C1BB0FF41D481F00000312C1 /* NSURL+NSDNetworkConnection.m */,
 				C1BB0FF11D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.h */,
 				C1BB0FF21D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m */,
 				C1BB0FF31D481F00000312C1 /* NSURL+NSDNetworkConnection.h */,
@@ -252,6 +259,7 @@
 		C1BB0FC41D481EAA000312C1 /* gitClient */ = {
 			isa = PBXGroup;
 			children = (
+				C107BC621D4BDCF2004220F5 /* CustomNavigatorController */,
 				C112FD2F1D48A212008E2C7B /* NSD */,
 				C112FD2E1D48A202008E2C7B /* Main */,
 				C112FD2C1D48A14F008E2C7B /* AppDelegate */,
@@ -395,6 +403,7 @@
 				C1BB10021D481F00000312C1 /* NSDUserCell.xib in Resources */,
 				C1FA3EC71D4A139800E9D7B8 /* NSDRepoCell.xib in Resources */,
 				C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */,
+				C1197FB01D4D299B006DA0EF /* NSDProgressCell.xib in Resources */,
 				C1F3E00D1D4C966600BC8556 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +438,7 @@
 				C1F3E00E1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorFade.m in Sources */,
 				C1BB10001D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m in Sources */,
 				C1F3E0121D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
+				C1197FAE1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m in Sources */,
 				C1F3E00F1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScale.m in Sources */,
 				C1BB10051D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */,
 				C1BB0FFB1D481F00000312C1 /* NSDMenuViewController.m in Sources */,
@@ -562,6 +572,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.org.com.gitClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -574,6 +585,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.org.com.gitClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

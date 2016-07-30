@@ -17,23 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="64R-VA-bHX">
-                                <rect key="frame" x="290" y="410" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="iT3-F1-UP6"/>
-                                    <constraint firstAttribute="height" constant="20" id="sSx-YZ-Gdw"/>
-                                </constraints>
-                                <color key="color" red="0.038818100469999998" green="0.4203489225" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2016 nullStackDev. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5Y-zp-AOw">
                                 <rect key="frame" x="171" y="561" width="258" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SmallGIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZi-Uw-cw9">
-                                <rect key="frame" x="250" y="112" width="100" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -44,6 +30,12 @@
                                     <constraint firstAttribute="height" constant="250" id="8t5-Yn-HzV"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smart GIT Client" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZi-Uw-cw9">
+                                <rect key="frame" x="209" y="112" width="183" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -51,8 +43,6 @@
                             <constraint firstItem="IZi-Uw-cw9" firstAttribute="centerX" secondItem="KS9-9n-9oI" secondAttribute="centerX" id="IvU-py-Pg8"/>
                             <constraint firstItem="A5Y-zp-AOw" firstAttribute="centerX" secondItem="KS9-9n-9oI" secondAttribute="centerX" id="bzP-NV-zF2"/>
                             <constraint firstItem="KS9-9n-9oI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cDI-3U-HNn"/>
-                            <constraint firstItem="64R-VA-bHX" firstAttribute="top" secondItem="KS9-9n-9oI" secondAttribute="bottom" constant="10" id="iom-lg-6b7"/>
-                            <constraint firstItem="64R-VA-bHX" firstAttribute="centerX" secondItem="KS9-9n-9oI" secondAttribute="centerX" id="wzZ-k9-WHR"/>
                             <constraint firstItem="KS9-9n-9oI" firstAttribute="top" secondItem="IZi-Uw-cw9" secondAttribute="bottom" constant="8" id="yYs-tM-I3s"/>
                             <constraint firstItem="KS9-9n-9oI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-25" id="yut-BE-sJk"/>
                         </constraints>

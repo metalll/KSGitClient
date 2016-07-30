@@ -14,11 +14,10 @@
 #import "NSDUser+NSDInitUserWithDictionary.h"
 #import "NSDChacheController.h"
 #import "NSDRepo+InitWithDictionary.m"
-#import "NSDSlideNavigatorController.h"
-
+#import "NSDBaseNavigatorController.h"
 @interface NSDBaseViewController ()
 {
-   
+    BOOL loadedRepo;
 }
 @end
 
@@ -26,22 +25,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if(!NSDGitManager.hasToken){  // тыкс велосипед т.к viewWillAppear вызываеться после ViewDidload!!!
-        NSLog(@"No token no auth");
-    }
-    else{   [self initUser];
-    }
 
-        
     _tableView.delegate = self;
-    _tableView.dataSource = self;
-    _tableView.alpha = 0;
-    _activityIndicator.hidesWhenStopped = YES;
-    [_activityIndicator startAnimating];
+     _tableView.dataSource = self;
+     _tableView.alpha = 0;
+     _activityIndicator.hidesWhenStopped = YES;
+     [_activityIndicator startAnimating];
+
 
     
-    
- }
+}
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if(section==0) return @"";
@@ -55,7 +48,8 @@
         return 101;
     }
     else{
-        return 90;
+        if(loadedRepo) return 82;
+        return 200;
     }
 }
 
@@ -74,7 +68,8 @@
         return 1;
     }
     else {
-        return _repos.count; // number of repos;
+        if(loadedRepo) return _repos.count; // number of repos;
+        return 1;
     }
     
 }
@@ -87,17 +82,18 @@
         NSLog(@"%@", _user);
          cell = [tableView dequeueReusableCellWithIdentifier:cellID];
         if(cell==nil){
+            
+            
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NSDUserCell"owner:self options:nil];
+            
             cell = [nib lastObject];
         }
         if(_user!=nil){
             [[(NSDUserCell *)cell activityIndicator]startAnimating];
             [[(NSDUserCell *)cell userName]insertText:_user.userName];
             [[(NSDUserCell *)cell userLogin]insertText:_user.userLogin];
-            
-           
-
-               [NSDChacheController objectForKey:_user.userAvatarURL andCompletion:^(id object) {
+            NSDChacheController * __weak chache = [[NSDBaseNavigatorController sharedInstance] chache];
+            [chache objectForKey:_user.userAvatarURL andCompletion:^(id object) {
                    
                 [[(NSDUserCell *)cell avatarImageView]setImage:(UIImage *)object];
                 [[(NSDUserCell *)cell activityIndicator] stopAnimating];
@@ -110,6 +106,11 @@
     }
     
     if(indexPath.section == 1){
+        
+        if(!loadedRepo){
+            return [[[NSBundle mainBundle] loadNibNamed:@"NSDProgressCell"owner:self options:nil] lastObject];
+        }
+        
         cellID = @"repo";
         cell = [tableView dequeueReusableCellWithIdentifier:cellID];
         
@@ -127,10 +128,7 @@
         
         [[(NSDRepoCell *)cell repoName] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] repoName]]] ;
         [[(NSDRepoCell *)cell starCount] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] stars]]];
-        if((id)[[_repos objectAtIndex:indexPath.row] repoLang] != [NSNull new]){
-            
-            [[(NSDRepoCell *)cell lang] setText:[[_repos objectAtIndex:indexPath.row] repoLang]];}
-        else{ [[(NSDRepoCell *)cell lang] setText:@""]; }
+        [[(NSDRepoCell *)cell forkCount] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] forks]]];
         }
         
     
@@ -146,27 +144,21 @@
 
 
 
--(void)initUser{
-    [NSDGitManager getCurrentUserWithCompletion:^(NSDictionary *responceDic, NSString *errorString) {
-        
-        _user = [[NSDUser alloc] initWithDictionary:responceDic];
-        
-        [NSDGitManager performRequestWithURLString:_user.reposURL andMethod:nil andParams:nil andAcceptJSONResponse:YES andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
-
-            NSError * JSONError = nil;
-            NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError]);
-            _repos = [NSDRepo initWithDictionary:[NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError]];
-            
-         [_tableView reloadData];
-            [_tableView setAlpha:1];
-            [_activityIndicator stopAnimating];
-            
-        }];
-        
-        
-        NSLog(@"username %@",_user.userName);
+-(void)startView{
+    [_activityIndicator stopAnimating];
+    [_tableView reloadData];
+    _tableView.alpha=1;
+    
+    NSDGitManager * __weak gitApi = [NSDBaseNavigatorController sharedInstance].gitApi;
+    
+    [gitApi getReposWithStringURL:_user.reposURL andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
        
+        NSLog(@"%@",responceDic);
+        _repos = [NSDRepo initWithDictionary:responceDic];
+        loadedRepo=YES;
+        [_tableView reloadData];
     }];
+    
 }
 
 
@@ -175,16 +167,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillAppear:(BOOL)animated{
-       if(!NSDGitManager.hasToken){
-        UIViewController * auth = [self.storyboard instantiateViewControllerWithIdentifier:@"Auth"];
-        [self.navigationController presentViewController:auth animated:NO completion:nil];
-    }
-   
-    [_tableView reloadData];
-    [super viewWillAppear:animated];
-
-}
 
 
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu

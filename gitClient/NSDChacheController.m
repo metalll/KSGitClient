@@ -15,18 +15,10 @@ NSMutableArray *array;
 NSUInteger size;
 }
 
-+ (instancetype)controller {
-    static id instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [self new];
-    });
-    return instance;
-}
 
-+ (NSMutableDictionary *)dic {
-    NSDChacheController *c = [self controller];
-    return c->cacheDic;
+
+- (NSMutableDictionary *)dic {
+    return self->cacheDic;
 }
 
 - (instancetype)init
@@ -39,7 +31,7 @@ NSUInteger size;
     return self;
 }
 
-+ (void)objectForKey:(id)key andCompletion:(void (^)(id object))completion {
+- (void)objectForKey:(id)key andCompletion:(void (^)(id object))completion {
     id retVal =[[self dic] objectForKey:key];
     if(retVal!=nil && completion!=nil){
         completion(retVal);
@@ -66,34 +58,34 @@ NSUInteger size;
 }
 
 
-+ (void)setObject:(id)object forKey:(id<NSCopying>)key ofLength:(NSUInteger)length {
-    NSDChacheController * c = [self controller];
-    @synchronized(c) {
+- (void)setObject:(id)object forKey:(id<NSCopying>)key ofLength:(NSUInteger)length {
+    
+    @synchronized(self) {
         
-        if (c->size >= 1000 * 1000 * 25) {
+        if (self->size >= 1000 * 1000 * 25) {
             
             NSUInteger minusSize = 0;
-            NSUInteger expectedHalfSize = c->size / 2;
+            NSUInteger expectedHalfSize = self->size / 2;
             NSUInteger i = 0;
-            for (; i < [c->array count]; i++) {
-                id dic = c->array[i];
+            for (; i < [self->array count]; i++) {
+                id dic = self->array[i];
                 if ([dic isKindOfClass:[NSDictionary class]]) {
                     minusSize += [dic[@"length"] unsignedIntegerValue];
-                    [c->cacheDic removeObjectForKey:dic[@"key"]];
+                    [self->cacheDic removeObjectForKey:dic[@"key"]];
                     if (minusSize >= expectedHalfSize) {
                         break;
                     }
                 }
             }
             
-            [c->array removeObjectsInRange:NSMakeRange(0, i + 1)];
+            [self->array removeObjectsInRange:NSMakeRange(0, i + 1)];
             
-            c->size -= minusSize;
+            self->size -= minusSize;
         }
         
-        [c->cacheDic setObject:object forKey:key];
-        [c->array addObject:@{@"key": key, @"length": @(length)}];
-        c->size += length;
+        [self->cacheDic setObject:object forKey:key];
+        [self->array addObject:@{@"key": key, @"length": @(length)}];
+        self->size += length;
     }
 }
 @end

@@ -14,8 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSDUser * user;
+@property (weak)NSDUser * user;
 @property NSArray * repos;
--(void)initUser;
+
+-(void)startView;
 
 @end

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "NSDSlideNavigatorController.h"
-@interface NSDMenuViewController :UIViewController <NSDSlideNavigationControllerDelegate>
+@interface NSDMenuViewController :UIViewController <NSDSlideNavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 

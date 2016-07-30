@@ -9,35 +9,34 @@
 #import <Foundation/Foundation.h>
 #import "NSDNetworkController.h"
 @interface NSDGitManager : NSDNetworkController
-+(void)processJSONData:(NSData *)JSONData andErrorString:(NSString *)errorString andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
 
+-(void)processJSONData:(NSData *)JSONData andErrorString:(NSString *)errorString andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
-
-
-+(void)searchForReposCountainingWithQueryString:(NSString *)queryString
+-(void)searchForReposCountainingWithQueryString:(NSString *)queryString
                                   andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
-+(void)searchForUserCountainingWithQueryString:(NSString *)queryString
+-(void)searchForUserCountainingWithQueryString:(NSString *)queryString
                                  andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
-+(void)getCurrentUserWithCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
+-(void)getCurrentUserWithCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
-+(void)newRepoWithName:(NSString *)name
+-(void)getReposWithStringURL:(NSString *)url andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
+-(void)newRepoWithName:(NSString *)name
         andDescription:(NSString *)decription
      andInitWithReadMe:(BOOL)initReadMe
      andAllowDownloads:(BOOL)allowDownloads
          andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
-+(void)updateUserBioWithNewBio:(NSString *)newBio
+-(void)updateUserBioWithNewBio:(NSString *)newBio
                  andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
 
-+(NSString *)requestOAuth2Access;
+-(NSString *)requestOAuth2Access;
 
-+(void)setAccesToken:(NSString *)token;
+-(void)setAccesToken:(NSString *)token;
 
-+(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI andCompletion:(void(^)()) completionToken;
-+(NSURLSession *) postAuthSession;
-+(BOOL)hasToken;
+-(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI andCompletion:(void(^)()) completionToken;
+-(NSURLSession *) postAuthSession;
+-(BOOL)hasToken;
 @end
