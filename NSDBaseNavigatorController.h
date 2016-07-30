@@ -15,6 +15,7 @@
 @property NSDUser * currentUser;
 @property NSDGitManager * gitApi;
 @property NSDChacheController * chache;
+
 -(void)initUser;
 
 

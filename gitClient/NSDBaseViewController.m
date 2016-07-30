@@ -90,8 +90,11 @@
         }
         if(_user!=nil){
             [[(NSDUserCell *)cell activityIndicator]startAnimating];
-            [[(NSDUserCell *)cell userName]insertText:_user.userName];
-            [[(NSDUserCell *)cell userLogin]insertText:_user.userLogin];
+            if((id)_user.userLogin != [NSNull null])
+                [[(NSDUserCell *)cell userName]setText:_user.userLogin];else{[[(NSDUserCell *)cell userName]setText:@""];}
+             if((id)_user.userName != [NSNull null])
+            [[(NSDUserCell *)cell userLogin]setText:_user.userName];
+            else{[[(NSDUserCell *)cell userLogin]setText:@""];}
             NSDChacheController * __weak chache = [[NSDBaseNavigatorController sharedInstance] chache];
             [chache objectForKey:_user.userAvatarURL andCompletion:^(id object) {
                    

@@ -37,6 +37,8 @@
         
         
         [[[NSDBaseNavigatorController sharedInstance] gitApi] processOAuth2WithCallbackURI:request.URL andCompletion:^{
+            
+            
             [[NSDBaseNavigatorController sharedInstance] initUser];
             [self dismissViewControllerAnimated:YES completion:nil];
         }];

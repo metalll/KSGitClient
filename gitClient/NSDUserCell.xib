@@ -22,7 +22,7 @@
                             <constraint firstAttribute="width" constant="80" id="qlP-y4-kEt"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="NullStackDev" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWs-EL-bz6">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="NullStackDev" translatesAutoresizingMaskIntoConstraints="NO" id="rWs-EL-bz6">
                         <rect key="frame" x="88" y="8" width="273" height="35"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -34,7 +34,7 @@
                     <activityIndicatorView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9dZ-cR-pL5">
                         <rect key="frame" x="8" y="8" width="80" height="80"/>
                     </activityIndicatorView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="metalll" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-PT-Rka">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="metalll" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-PT-Rka">
                         <rect key="frame" x="88" y="49" width="273" height="35"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

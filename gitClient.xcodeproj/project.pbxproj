@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C1197FAE1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1197FAD1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m */; };
 		C1197FB01D4D299B006DA0EF /* NSDProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */; };
+		C1197FB41D4D52E5006DA0EF /* NSDMenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1197FB31D4D52E5006DA0EF /* NSDMenuItemCell.xib */; };
 		C1BB0FC71D481EBB000312C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FC61D481EBB000312C1 /* AppDelegate.m */; };
 		C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FC81D481ED7000312C1 /* Assets.xcassets */; };
 		C1BB0FCF1D481EE3000312C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FCD1D481EE3000312C1 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		C1197FAC1D4D0BA2006DA0EF /* NSDBaseNavigatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDBaseNavigatorController.h; sourceTree = "<group>"; };
 		C1197FAD1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDBaseNavigatorController.m; sourceTree = "<group>"; };
 		C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSDProgressCell.xib; sourceTree = "<group>"; };
+		C1197FB31D4D52E5006DA0EF /* NSDMenuItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSDMenuItemCell.xib; sourceTree = "<group>"; };
 		C1BB0FC51D481EBB000312C1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = gitClient/AppDelegate.h; sourceTree = "<group>"; };
 		C1BB0FC61D481EBB000312C1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = gitClient/AppDelegate.m; sourceTree = "<group>"; };
 		C1BB0FC81D481ED7000312C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = gitClient/Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				C1FA3EC61D4A139800E9D7B8 /* NSDRepoCell.xib */,
 				C1FA3EB71D4A071700E9D7B8 /* LaunchScreen.storyboard */,
 				C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */,
+				C1197FB31D4D52E5006DA0EF /* NSDMenuItemCell.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			files = (
 				C1BBE1B21D46D4C0001B0334 /* logo.png in Resources */,
 				C1BB0FCF1D481EE3000312C1 /* Main.storyboard in Resources */,
+				C1197FB41D4D52E5006DA0EF /* NSDMenuItemCell.xib in Resources */,
 				C1FA3EB81D4A071700E9D7B8 /* LaunchScreen.storyboard in Resources */,
 				C1BB10021D481F00000312C1 /* NSDUserCell.xib in Resources */,
 				C1FA3EC71D4A139800E9D7B8 /* NSDRepoCell.xib in Resources */,

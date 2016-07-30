@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
   
 }
 
@@ -38,7 +40,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    return nil;
+    return [[NSBundle mainBundle] loadNibNamed:@"NSDMenuItemCell" owner:self options:nil].lastObject;
     
 }
 

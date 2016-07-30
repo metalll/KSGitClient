@@ -175,12 +175,11 @@
         
         NSString * tttoken = [responceDic objectForKey:@"access_token"];
         [[NSUserDefaults standardUserDefaults] setObject:tttoken forKey:@"accessToken"];
-       [self setAccesToken:tttoken];
-        
+               
         
         dispatch_async(dispatch_get_main_queue(), ^{
              [self setAccesToken:tttoken];
-            
+            self.token = tttoken;
              completionToken();
          });
         
