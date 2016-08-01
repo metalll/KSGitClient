@@ -10,4 +10,19 @@
 
 @implementation NSDNotificationsViewController
 
+-(void)viewDidLoad{
+    [super viewDidLoad];
+
+    
+
+}
+
+-(void)startView{
+    
+    [self.gitApi getCurrentUserNotificationsWithGetAllNotif:YES andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
+        
+    }];
+    
+}
+
 @end

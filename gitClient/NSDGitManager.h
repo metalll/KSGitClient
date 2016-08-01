@@ -31,6 +31,9 @@
 -(void)updateUserBioWithNewBio:(NSString *)newBio
                  andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
+-(void)getCurrentUserStarredWithCompletion:(void(^)(NSDictionary * responceDic,NSString *errorString))completion;
+
+-(void)getCurrentUserNotificationsWithGetAllNotif:(BOOL)all andCompletion:(void(^)(NSDictionary * responceDic,NSString *errorString))completion;
 
 -(NSString *)requestOAuth2Access;
 

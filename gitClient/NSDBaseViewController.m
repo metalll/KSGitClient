@@ -18,6 +18,7 @@
 @interface NSDBaseViewController ()
 {
     BOOL loadedRepo;
+    NSInteger userCellHeight;
 }
 @end
 
@@ -45,7 +46,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == 0&& indexPath.row == 0){
-        return 101;
+        return 204+userCellHeight;
     }
     else{
         if(loadedRepo) return 82;
@@ -89,18 +90,50 @@
             cell = [nib lastObject];
         }
         if(_user!=nil){
+            
             [[(NSDUserCell *)cell activityIndicator]startAnimating];
+            
+            
             if((id)_user.userLogin != [NSNull null])
-                [[(NSDUserCell *)cell userName]setText:_user.userLogin];else{[[(NSDUserCell *)cell userName]setText:@""];}
-             if((id)_user.userName != [NSNull null])
-            [[(NSDUserCell *)cell userLogin]setText:_user.userName];
-            else{[[(NSDUserCell *)cell userLogin]setText:@""];}
+                [[(NSDUserCell *)cell userLogin]setText:_user.userLogin];else{[[(NSDUserCell *)cell userLogin]setText:@""];}
+            
+            if((id)_user.userName != [NSNull null])
+            [[(NSDUserCell *)cell userName]setText:_user.userName];
+            else{[[(NSDUserCell *)cell userName]setText:@""];}
+            
+            
+            if((id)_user.userBio != [NSNull null]){
+            float viewWidth = (self.view.frame.size.width-16)/10.1; //внимание велосипед!! берем прикидываем ширину лейбла с биографией и делим ее на примерную ширину символа
+            float viewRowsCount = _user.userBio.length / viewWidth; //далее берем посчитываем кол-во столбцов
+            NSLog(@"%@",_user.userBio);
+            NSLog(@"%f",viewRowsCount);
+            [(UILabel *)[(NSDUserCell *)cell bio]setNumberOfLines:ceilf(viewRowsCount)]; // далее округляем и закидываем в количество столбцов bio лейбла
+          userCellHeight = 18 * ceilf(viewRowsCount); // далее примерная высота лейбла после манипуляций
+                // и плюсуем эти расчеты к стоковой высоте cell'a (чуть выше) профит!!
+                
+                [(UILabel *)[(NSDUserCell *)cell bio]setText:_user.userBio];
+            }
+            else{ [(UILabel *)[(NSDUserCell *)cell bio]setText:@""]; }
+            
+          
+            [[(NSDUserCell *)cell followersCount] setText:[ NSString stringWithFormat:@"%@", _user.followersCount]];
+            
+            [[(NSDUserCell *)cell followingCount] setText:[ NSString stringWithFormat:@"%@", _user.followingCount]];
+            
+            [[[NSDBaseNavigatorController sharedInstance] gitApi] getCurrentUserStarredWithCompletion:^(NSDictionary *responceDic, NSString *errorString) {
+                
+                [(UILabel *)[(NSDUserCell *)cell starredCount]setText:[NSString stringWithFormat:@"%d",responceDic.count]];
+                
+                
+            }];
+            
+            
             NSDChacheController * __weak chache = [[NSDBaseNavigatorController sharedInstance] chache];
+            
             [chache objectForKey:_user.userAvatarURL andCompletion:^(id object) {
-                   
                 [[(NSDUserCell *)cell avatarImageView]setImage:(UIImage *)object];
                 [[(NSDUserCell *)cell activityIndicator] stopAnimating];
-                
+              
                 
             }];
             
@@ -129,8 +162,12 @@
         }else{
             [[(NSDRepoCell *)cell repoImageView] setImage:[UIImage imageNamed:@"repo"]];}
         
+        
+        
         [[(NSDRepoCell *)cell repoName] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] repoName]]] ;
+        
         [[(NSDRepoCell *)cell starCount] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] stars]]];
+        
         [[(NSDRepoCell *)cell forkCount] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] forks]]];
         }
         
@@ -144,6 +181,8 @@
     return cell;
     
 }
+
+
 
 
 

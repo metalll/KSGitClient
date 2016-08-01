@@ -17,7 +17,7 @@
                 <subviews>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-Be-nyZ">
                         <rect key="frame" x="8" y="8" width="386" height="174"/>
-                        <color key="color" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="color" red="0.36078431372549019" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </activityIndicatorView>
                 </subviews>
                 <constraints>

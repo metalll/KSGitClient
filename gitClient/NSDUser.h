@@ -20,6 +20,17 @@
 @property NSString * userCompany;
 @property NSString * userCollaborators;
 
+@property NSString * starredCount;
+@property NSString * starredURL;
+
+@property NSString * followingCount ;
+@property NSString * followingURL;
+
+@property NSString * followersCount;
+@property NSString * followersURL;
+
+@property NSString * joinedOn;
+
 //other fields
 @property NSString * eventsURL;
 @property NSString * reposURL;

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NSDGitManager.h"
 @interface NSDNotificationsViewController : UIViewController
+@property(nonatomic,weak) NSDGitManager * gitApi;
+
+-(void)startView;
 
 @end

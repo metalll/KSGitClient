@@ -156,6 +156,48 @@
     return retVal;
 }
 
+
+-(void)getCurrentUserStarredWithCompletion:(void (^)(NSDictionary *, NSString *))completion{
+    
+    [self performRequestWithURLPath:@"/user/starred" andMethod:@"GET" andParams:nil andAcceptJSONResponse:YES andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
+        
+        if(!data||errorString){
+            completion(nil,errorString);
+            return ;
+        }
+        
+        [self processJSONData:data andErrorString:errorString andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
+            if(!responceDic||errorString){
+                completion(nil,errorString);
+                return ;
+            }
+            
+            completion(responceDic,nil);
+        }];
+        
+    }];
+    
+}
+
+-(void)getCurrentUserNotificationsWithGetAllNotif:(BOOL)all andCompletion:(void (^)(NSDictionary *, NSString *))completion{
+    
+    NSMutableDictionary * params = [NSMutableDictionary new];
+    if(all){
+    [params setObject:@"true" forKey:@"all"];
+    }else{
+    [params setObject:@"false" forKey:@"all"];
+    }
+    
+    [self performRequestWithURLPath:@"/notifications" andMethod:@"GET" andParams:params andAcceptJSONResponse:YES andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
+        [self processJSONData:data andErrorString:errorString andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
+           
+            NSLog(@"%@",responceDic);
+            
+        }];
+    }];
+
+}
+
 -(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI andCompletion:(void(^)()) completionToken{
     
     NSDictionary * callbackParams = [callbackURI dictionaryFromURL];
@@ -188,6 +230,8 @@
         
     }];
 }
+
+
 
 
 @end
