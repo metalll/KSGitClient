@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "NSDSlideNavigatorController.h"
 #import "NSDGitManager.h"
-#import "NSDChacheController.h"
+#import "NSDCacheController.h"
 #import "NSDUser.h"
-@interface NSDBaseNavigatorController : NSDSlideNavigationController
+@interface NSDNavigatorController : NSDSlideNavigationController
 @property NSDUser * currentUser;
-@property NSDGitManager * gitApi;
-@property NSDChacheController * chache;
+@property(weak) NSDGitManager * gitApi;
+@property(weak) NSDCacheController * cache;
 
 -(void)initUser;
 

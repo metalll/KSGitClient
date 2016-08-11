@@ -14,15 +14,24 @@
 @implementation NSDGitManager
 
 
-
++(instancetype)sharedInstance{
+    static NSDGitManager * instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[NSDGitManager alloc] init];
+    });
+    return instance;
+}
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
+        self.username = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+        self.password = [[NSUserDefaults standardUserDefaults] objectForKey:@"passWord"];
         self.baseURL = kGithubAPIURL;
         self.token = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
-        if(self.token!=nil){
+        if(self.token){
             [self setAccesToken:(self.token)];
         }
         
@@ -31,9 +40,14 @@
     return self;
 }
 
+
+
 -(BOOL)hasToken{
     return self.token!=nil;
 }
+
+
+
 
 -(NSString *)URLStringWithPathComponent:(NSString *)pathComponent{
     return [kGithubAPIURL stringByAppendingString:pathComponent];
@@ -51,22 +65,22 @@
 
 -(void)processJSONData:(NSData *)JSONData andErrorString:(NSString *)errorString andCompletion:(void (^)(NSDictionary *, NSString *))completion{
     NSString * newErrorString = errorString;
-    if(JSONData!=nil){
+    if(JSONData){
         NSError * error = nil;
         NSDictionary * retValDic = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
-        if(errorString!=nil){
+        if(errorString){
             NSLog(@"GitHub error!!!");
             completion(nil,newErrorString);
             return;
         }
         
-        if(error!=nil){ completion(nil,@"Error parsing JSON"); return;}
+        if(error){ completion(nil,@"Error parsing JSON"); return;}
         
         
         
         completion(retValDic,nil);
         return;
-    }else {
+    } else {
         completion(nil,@"no data no life ;-(");
         return;
     }
@@ -137,11 +151,11 @@
 
 -(NSURLSession *)postAuthSession{
     if([self hasToken]) return self.urlSession;
-    return nil;
+    return [NSURLSession sharedSession];
 }
 
 -(void)setAccesToken:(NSString *)token{
-    NSLog(@"setToken %@",token);
+  //  NSLog(@"setToken %@",token);
     NSURLSessionConfiguration * config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSMutableDictionary * configToken = [NSMutableDictionary new];
     [configToken setObject:[@"token " stringByAppendingString:token] forKey:@"Authorization"];
@@ -156,6 +170,33 @@
     return retVal;
 }
 
+-(void)getCurrentUserFeedsRssWithCompletion:(void (^)(NSDictionary *, NSString *))completion{
+    NSURL *url = [NSURL URLWithString: @"https://api.github.com/feeds"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSString * authStr = [NSString stringWithFormat:@"%@:%@", self.username, self.password];
+    NSData * authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString * authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedStringWithOptions:0]];
+    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
+    
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithRequest:request
+                completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                    if (!error) {
+                        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                        NSLog(@"%@",responseDictionary);
+                        completion(responseDictionary,nil);
+                    }
+                    completion(nil,@"error feeds");
+                }] resume];
+    
+    
+}
 
 -(void)getCurrentUserStarredWithCompletion:(void (^)(NSDictionary *, NSString *))completion{
     
@@ -165,7 +206,7 @@
             completion(nil,errorString);
             return ;
         }
-        
+
         [self processJSONData:data andErrorString:errorString andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
             if(!responceDic||errorString){
                 completion(nil,errorString);
@@ -190,8 +231,8 @@
     
     [self performRequestWithURLPath:@"/notifications" andMethod:@"GET" andParams:params andAcceptJSONResponse:YES andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
         [self processJSONData:data andErrorString:errorString andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
-           
-            NSLog(@"%@",responceDic);
+          
+         //   NSLog(@"%@",responceDic);
             
         }];
     }];
@@ -209,7 +250,7 @@
     
     [self performRequestWithURLString:kGithubAccessTokenURLString andMethod:@"POST" andParams:requestParams andAcceptJSONResponse:YES andSendBodyAsJSON:YES andCompletion:^(NSData *data, NSString *errorString) {
         NSError * JSONError = nil;
-        if(errorString!=nil){
+        if(errorString){
             NSLog(@"err");
             return;
         }
@@ -225,7 +266,6 @@
              completionToken();
          });
         
-       
         return;
         
     }];

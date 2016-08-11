@@ -10,13 +10,14 @@
 #import "NSDUser.h"
 #import "NSDRepo.h"
 #import "NSDSlideNavigatorController.h"
-@interface NSDBaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,NSDSlideNavigationControllerDelegate>
+#import "NSDBaseTableViewController.h"
+@interface NSDDetaliedUserProfileViewController : NSDBaseTableViewController
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak)NSDUser * user;
+@property NSDUser * user;
 @property NSArray * repos;
 
--(void)startView;
+
 
 @end

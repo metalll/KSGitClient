@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "NSDNetworkController.h"
 @interface NSDGitManager : NSDNetworkController
-
+@property NSString * username;
+@property NSString * password;
++(instancetype)sharedInstance;
 
 -(void)processJSONData:(NSData *)JSONData andErrorString:(NSString *)errorString andCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
@@ -35,9 +37,16 @@
 
 -(void)getCurrentUserNotificationsWithGetAllNotif:(BOOL)all andCompletion:(void(^)(NSDictionary * responceDic,NSString *errorString))completion;
 
+-(void)getCurrentUserFeedsRssWithCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
+
+
+
+
 -(NSString *)requestOAuth2Access;
 
 -(void)setAccesToken:(NSString *)token;
+
+
 
 -(void)processOAuth2WithCallbackURI:(NSURL *)callbackURI andCompletion:(void(^)()) completionToken;
 -(NSURLSession *) postAuthSession;

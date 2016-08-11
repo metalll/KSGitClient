@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "NSDBaseNavigatorController.h"
+#import "NSDNavigatorController.h"
 #import "NSDMenuViewController.h"
 #import "NSDNotificationsViewController.h"
+#import "NSDNewsViewController.h"
+#import "NSDBaseViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -24,38 +26,27 @@
     
     NSDNotificationsViewController * rightMenu = (NSDNotificationsViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"Notifications"];
     
-    [NSDBaseNavigatorController sharedInstance].rightMenu = rightMenu;
-    [NSDBaseNavigatorController sharedInstance].leftMenu = leftMenu;
-    [NSDBaseNavigatorController sharedInstance].menuRevealAnimationDuration = .18;
+    NSDNavigatorController * navigatorVC =  [NSDNavigatorController sharedInstance];
+    
+    navigatorVC.rightMenu = rightMenu;
+    navigatorVC.leftMenu = leftMenu;
+    navigatorVC.menuRevealAnimationDuration = .18;
     
     
     UIButton *buttonMenu  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     [buttonMenu setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
-    [buttonMenu addTarget:[NSDBaseNavigatorController sharedInstance] action:@selector(toggleLeftMenu) forControlEvents:UIControlEventTouchUpInside];
+    [buttonMenu addTarget:[NSDNavigatorController sharedInstance] action:@selector(toggleLeftMenu) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:buttonMenu];
-    [NSDBaseNavigatorController sharedInstance].leftBarButtonItem = leftBarButtonItem;
+    navigatorVC.leftBarButtonItem = leftBarButtonItem;
     
     UIButton *buttonNotif  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     [buttonNotif setImage:[UIImage imageNamed:@"notif"] forState:UIControlStateNormal];
-    [buttonNotif addTarget:[NSDBaseNavigatorController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
+    [buttonNotif addTarget:[NSDNavigatorController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:buttonNotif];
-    [NSDBaseNavigatorController sharedInstance].rightBarButtonItem = rightBarButtonItem;
+    navigatorVC.rightBarButtonItem = rightBarButtonItem;
 
-    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidClose object:nil queue:nil usingBlock:^(NSNotification *note) {
-        NSString *menu = note.userInfo[@"menu"];
-        NSLog(@"Closed %@", menu);
-    }];
     
-    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidOpen object:nil queue:nil usingBlock:^(NSNotification *note) {
-        NSString *menu = note.userInfo[@"menu"];
-        NSLog(@"Opened %@", menu);
-    }];
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidReveal object:nil queue:nil usingBlock:^(NSNotification *note) {
-        NSString *menu = note.userInfo[@"menu"];
-        NSLog(@"Revealed %@", menu);
-    }];
-    
+
     
   
     return YES;
@@ -66,7 +57,7 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     
-  
+    
     return NO;
 }
 

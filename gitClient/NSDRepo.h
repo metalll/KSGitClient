@@ -12,7 +12,6 @@
 @property NSString * repoName;
 @property BOOL isFork;
 @property NSString * stars;
-
 @property NSString * repoUrl;
 @property NSString * forks;
 @end

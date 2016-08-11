@@ -23,8 +23,7 @@
             [partsArray addObject:[[(NSString *)keyArr stringByAppendingString: @"="]stringByAppendingString:(NSString *)valueArr]] ;
        
             }
-            
-        
+                    
         return [partsArray componentsJoinedByString:@"&"];
         
     }

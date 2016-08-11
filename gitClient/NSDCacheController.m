@@ -6,16 +6,28 @@
 //  Copyright © 2016 nullStackDev. All rights reserved.
 //
 
-#import "NSDChacheController.h"
+#import "NSDCacheController.h"
 #import <UIKit/UIKit.h>
 #import "NSDGitManager.h"
-@implementation NSDChacheController{
+
+#define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+@implementation NSDCacheController{
 NSMutableDictionary *cacheDic;
 NSMutableArray *array;
 NSUInteger size;
 }
 
 
++(instancetype)sharedInstance{
+    static NSDCacheController * instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken,^{
+        instance = [[NSDCacheController alloc] init];
+    });
+    
+    
+    return instance;
+}
 
 - (NSMutableDictionary *)dic {
     return self->cacheDic;
@@ -33,7 +45,7 @@ NSUInteger size;
 
 - (void)objectForKey:(id)key andCompletion:(void (^)(id object))completion {
     id retVal =[[self dic] objectForKey:key];
-    if(retVal!=nil && completion!=nil){
+    if(retVal && completion){
         completion(retVal);
         return;
     }
@@ -71,6 +83,9 @@ NSUInteger size;
                 id dic = self->array[i];
                 if ([dic isKindOfClass:[NSDictionary class]]) {
                     minusSize += [dic[@"length"] unsignedIntegerValue];
+                    
+                
+                    
                     [self->cacheDic removeObjectForKey:dic[@"key"]];
                     if (minusSize >= expectedHalfSize) {
                         break;

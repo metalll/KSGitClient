@@ -7,9 +7,8 @@
 //
 
 #import "NSDOAuthViewController.h"
-#import "NSDGitManager.h"
 #import "NSURL+NSDNetworkConnection.h"
-#import "NSDBaseNavigatorController.h"
+#import "NSDNavigatorController.h"
 @interface NSDOAuthViewController ()
 
 @end
@@ -29,17 +28,31 @@
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    NSLog(@"%@",request);
+  
+    if([[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize?client_id=90148ae988fcef1f0bb3&scope=user,repo,notifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login?client_id=90148ae988fcef1f0bb3&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D90148ae988fcef1f0bb3%26scope%3Duser%252Crepo%252Cnotifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/session"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize?client_id=90148ae988fcef1f0bb3&scope=user%2Crepo%2Cnotifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize"]){
+        
+        if([request.HTTPMethod isEqualToString:@"POST"]){
+            NSString * httpBodyData = [@"?" stringByAppendingString:[[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]];
+            NSDictionary * requestDic = [[NSURL URLWithString:httpBodyData] dictionaryFromURL];
+            [[NSUserDefaults standardUserDefaults] setObject:[requestDic objectForKey:@"login"] forKey:@"userName"];
+            [_gitApi setUsername:[requestDic objectForKey:@"login"]];
+            [[NSUserDefaults standardUserDefaults] setObject:[requestDic objectForKey:@"password"] forKey:@"passWord"];
+            [_gitApi setPassword:[requestDic objectForKey:@"password"]];
+
+            
+          //  NSLog(@"%@",httpBodyData);
+        }
+        return YES;
     
-    if([[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize?client_id=90148ae988fcef1f0bb3&scope=user,repo,notifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login?client_id=90148ae988fcef1f0bb3&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D90148ae988fcef1f0bb3%26scope%3Duser%252Crepo%252Cnotifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/session"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize?client_id=90148ae988fcef1f0bb3&scope=user%2Crepo%2Cnotifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize"]) return YES;
+    }
     
     if([[request.URL dictionaryFromURL] objectForKey:@"code"]!=nil){
         
         
-        [[[NSDBaseNavigatorController sharedInstance] gitApi] processOAuth2WithCallbackURI:request.URL andCompletion:^{
+        [[[NSDNavigatorController sharedInstance] gitApi] processOAuth2WithCallbackURI:request.URL andCompletion:^{
             
             
-            [[NSDBaseNavigatorController sharedInstance] initUser];
+            [[NSDNavigatorController sharedInstance] initUser];
             [self dismissViewControllerAnimated:YES completion:nil];
         }];
 
@@ -65,16 +78,6 @@
     [_indicatorView startAnimating];
 }
 
--(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"No internet connection"
-                                                                   message:@"Check your network connection"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {  }];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
- }
 
 /*
 #pragma mark - Navigation

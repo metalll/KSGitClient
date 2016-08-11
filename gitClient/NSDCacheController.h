@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDChacheController : NSObject
+@interface NSDCacheController : NSObject
++(instancetype)sharedInstance;
 - (void)objectForKey:(id)key andCompletion:(void(^)(id object))completion;
 - (void)setObject:(id)object forKey:(id<NSCopying>)key ofLength:(NSUInteger)length;
 @end

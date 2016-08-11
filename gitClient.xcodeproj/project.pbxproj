@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C1197FAE1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1197FAD1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m */; };
+		C10220F61D5CE38E006AF027 /* NSDXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C10220F51D5CE38E006AF027 /* NSDXMLParser.m */; };
+		C110DFDD1D5643AA00C65EB8 /* NSDNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C110DFDC1D5643AA00C65EB8 /* NSDNewsViewController.m */; };
+		C1197FAE1D4D0BA2006DA0EF /* NSDNavigatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1197FAD1D4D0BA2006DA0EF /* NSDNavigatorController.m */; };
 		C1197FB01D4D299B006DA0EF /* NSDProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */; };
 		C1197FB41D4D52E5006DA0EF /* NSDMenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1197FB31D4D52E5006DA0EF /* NSDMenuItemCell.xib */; };
+		C174A3B21D5CC0AC004A4CE2 /* NSDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174A3B11D5CC0AC004A4CE2 /* NSDBaseViewController.m */; };
+		C174A3B71D5CC2D3004A4CE2 /* NSDBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174A3B61D5CC2D3004A4CE2 /* NSDBaseTableViewController.m */; };
+		C1AD04A71D573DDC00B61DA6 /* NSDNewsRssEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AD04A61D573DDC00B61DA6 /* NSDNewsRssEntry.m */; };
 		C1BB0FC71D481EBB000312C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FC61D481EBB000312C1 /* AppDelegate.m */; };
 		C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FC81D481ED7000312C1 /* Assets.xcassets */; };
 		C1BB0FCF1D481EE3000312C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FCD1D481EE3000312C1 /* Main.storyboard */; };
 		C1BB0FF51D481F00000312C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FD21D481EFF000312C1 /* main.m */; };
-		C1BB0FF61D481F00000312C1 /* NSDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FD41D481EFF000312C1 /* NSDBaseViewController.m */; };
-		C1BB0FF71D481F00000312C1 /* NSDChacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FD61D481EFF000312C1 /* NSDChacheController.m */; };
+		C1BB0FF61D481F00000312C1 /* NSDDetaliedUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FD41D481EFF000312C1 /* NSDDetaliedUserProfileViewController.m */; };
+		C1BB0FF71D481F00000312C1 /* NSDCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FD61D481EFF000312C1 /* NSDCacheController.m */; };
 		C1BB0FF81D481F00000312C1 /* NSDGitConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FD81D481EFF000312C1 /* NSDGitConstants.m */; };
 		C1BB0FF91D481F00000312C1 /* NSDGitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FDB1D481EFF000312C1 /* NSDGitManager.m */; };
 		C1BB0FFA1D481F00000312C1 /* NSDictionary+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FDD1D481EFF000312C1 /* NSDictionary+NSDNetworkConnection.m */; };
@@ -31,7 +36,6 @@
 		C1BBE1B21D46D4C0001B0334 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BBE1B11D46D4C0001B0334 /* logo.png */; };
 		C1C3BE3D1D436BDE001A0E50 /* gitClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C3BE3C1D436BDE001A0E50 /* gitClientTests.m */; };
 		C1F3DFFE1D4C964600BC8556 /* NSDNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F3DFFD1D4C964600BC8556 /* NSDNotificationsViewController.m */; };
-		C1F3E00D1D4C966600BC8556 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1F3DFFF1D4C966600BC8556 /* Info.plist */; };
 		C1F3E00E1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F3E0021D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorFade.m */; };
 		C1F3E00F1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F3E0041D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScale.m */; };
 		C1F3E0101D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F3E0061D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.m */; };
@@ -56,19 +60,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C1197FAC1D4D0BA2006DA0EF /* NSDBaseNavigatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDBaseNavigatorController.h; sourceTree = "<group>"; };
-		C1197FAD1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDBaseNavigatorController.m; sourceTree = "<group>"; };
+		C10220F41D5CE38E006AF027 /* NSDXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDXMLParser.h; sourceTree = "<group>"; };
+		C10220F51D5CE38E006AF027 /* NSDXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDXMLParser.m; sourceTree = "<group>"; };
+		C110DFDB1D5643AA00C65EB8 /* NSDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNewsViewController.h; sourceTree = "<group>"; };
+		C110DFDC1D5643AA00C65EB8 /* NSDNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDNewsViewController.m; sourceTree = "<group>"; };
+		C1197FAC1D4D0BA2006DA0EF /* NSDNavigatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNavigatorController.h; sourceTree = "<group>"; };
+		C1197FAD1D4D0BA2006DA0EF /* NSDNavigatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDNavigatorController.m; sourceTree = "<group>"; };
 		C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSDProgressCell.xib; sourceTree = "<group>"; };
 		C1197FB31D4D52E5006DA0EF /* NSDMenuItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSDMenuItemCell.xib; sourceTree = "<group>"; };
+		C174A3B01D5CC0AC004A4CE2 /* NSDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDBaseViewController.h; sourceTree = "<group>"; };
+		C174A3B11D5CC0AC004A4CE2 /* NSDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDBaseViewController.m; sourceTree = "<group>"; };
+		C174A3B51D5CC2D3004A4CE2 /* NSDBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDBaseTableViewController.h; sourceTree = "<group>"; };
+		C174A3B61D5CC2D3004A4CE2 /* NSDBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDBaseTableViewController.m; sourceTree = "<group>"; };
+		C1AD04A51D573DDC00B61DA6 /* NSDNewsRssEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDNewsRssEntry.h; path = gitClient/NSDNewsRssEntry.h; sourceTree = "<group>"; };
+		C1AD04A61D573DDC00B61DA6 /* NSDNewsRssEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDNewsRssEntry.m; path = gitClient/NSDNewsRssEntry.m; sourceTree = "<group>"; };
 		C1BB0FC51D481EBB000312C1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = gitClient/AppDelegate.h; sourceTree = "<group>"; };
 		C1BB0FC61D481EBB000312C1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = gitClient/AppDelegate.m; sourceTree = "<group>"; };
 		C1BB0FC81D481ED7000312C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = gitClient/Assets.xcassets; sourceTree = "<group>"; };
 		C1BB0FCE1D481EE3000312C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = gitClient/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1BB0FD21D481EFF000312C1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = gitClient/main.m; sourceTree = "<group>"; };
-		C1BB0FD31D481EFF000312C1 /* NSDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDBaseViewController.h; path = gitClient/NSDBaseViewController.h; sourceTree = "<group>"; };
-		C1BB0FD41D481EFF000312C1 /* NSDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDBaseViewController.m; path = gitClient/NSDBaseViewController.m; sourceTree = "<group>"; };
-		C1BB0FD51D481EFF000312C1 /* NSDChacheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDChacheController.h; path = gitClient/NSDChacheController.h; sourceTree = "<group>"; };
-		C1BB0FD61D481EFF000312C1 /* NSDChacheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDChacheController.m; path = gitClient/NSDChacheController.m; sourceTree = "<group>"; };
+		C1BB0FD31D481EFF000312C1 /* NSDDetaliedUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDDetaliedUserProfileViewController.h; path = gitClient/NSDDetaliedUserProfileViewController.h; sourceTree = "<group>"; };
+		C1BB0FD41D481EFF000312C1 /* NSDDetaliedUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDDetaliedUserProfileViewController.m; path = gitClient/NSDDetaliedUserProfileViewController.m; sourceTree = "<group>"; };
+		C1BB0FD51D481EFF000312C1 /* NSDCacheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDCacheController.h; path = gitClient/NSDCacheController.h; sourceTree = "<group>"; };
+		C1BB0FD61D481EFF000312C1 /* NSDCacheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDCacheController.m; path = gitClient/NSDCacheController.m; sourceTree = "<group>"; };
 		C1BB0FD71D481EFF000312C1 /* NSDGitConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDGitConstants.h; path = gitClient/NSDGitConstants.h; sourceTree = "<group>"; };
 		C1BB0FD81D481EFF000312C1 /* NSDGitConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDGitConstants.m; path = gitClient/NSDGitConstants.m; sourceTree = "<group>"; };
 		C1BB0FD91D481EFF000312C1 /* NSDGitManager_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDGitManager_Private.h; path = gitClient/NSDGitManager_Private.h; sourceTree = "<group>"; };
@@ -100,7 +114,6 @@
 		C1C3BE3E1D436BDE001A0E50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1F3DFFC1D4C964600BC8556 /* NSDNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDNotificationsViewController.h; path = gitClient/NSDNotificationsViewController.h; sourceTree = "<group>"; };
 		C1F3DFFD1D4C964600BC8556 /* NSDNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDNotificationsViewController.m; path = gitClient/NSDNotificationsViewController.m; sourceTree = "<group>"; };
-		C1F3DFFF1D4C966600BC8556 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = gitClient/Info.plist; sourceTree = "<group>"; };
 		C1F3E0001D4C966600BC8556 /* NSDSlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDSlideNavigationContorllerAnimator.h; path = gitClient/NSDSlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
 		C1F3E0011D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDSlideNavigationContorllerAnimatorFade.h; path = gitClient/NSDSlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
 		C1F3E0021D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDSlideNavigationContorllerAnimatorFade.m; path = gitClient/NSDSlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
@@ -142,14 +155,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C10220F31D5CE365006AF027 /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				C10220F41D5CE38E006AF027 /* NSDXMLParser.h */,
+				C10220F51D5CE38E006AF027 /* NSDXMLParser.m */,
+			);
+			name = XML;
+			sourceTree = "<group>";
+		};
 		C107BC621D4BDCF2004220F5 /* CustomNavigatorController */ = {
 			isa = PBXGroup;
 			children = (
+				C1FAAEAA1D4BE785009E312A /* Animations */,
 				C1F3E00B1D4C966600BC8556 /* NSDSlideNavigatorController.h */,
 				C1F3E00C1D4C966600BC8556 /* NSDSlideNavigatorController.m */,
-				C1FAAEAA1D4BE785009E312A /* Animations */,
 			);
 			name = CustomNavigatorController;
+			sourceTree = "<group>";
+		};
+		C110DFD71D56408800C65EB8 /* NSDNavigatorController */ = {
+			isa = PBXGroup;
+			children = (
+				C1197FAC1D4D0BA2006DA0EF /* NSDNavigatorController.h */,
+				C1197FAD1D4D0BA2006DA0EF /* NSDNavigatorController.m */,
+			);
+			name = NSDNavigatorController;
+			sourceTree = "<group>";
+		};
+		C110DFD81D5641D500C65EB8 /* NSDDetaliedUserProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1BB0FD31D481EFF000312C1 /* NSDDetaliedUserProfileViewController.h */,
+				C1BB0FD41D481EFF000312C1 /* NSDDetaliedUserProfileViewController.m */,
+			);
+			name = NSDDetaliedUserProfileViewController;
+			sourceTree = "<group>";
+		};
+		C110DFD91D56424100C65EB8 /* NSDNewsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C110DFDB1D5643AA00C65EB8 /* NSDNewsViewController.h */,
+				C110DFDC1D5643AA00C65EB8 /* NSDNewsViewController.m */,
+			);
+			name = NSDNewsViewController;
+			sourceTree = "<group>";
+		};
+		C110DFDA1D56427600C65EB8 /* NSDOAuthViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1BB0FE21D481EFF000312C1 /* NSDOAuthViewController.h */,
+				C1BB0FE31D481EFF000312C1 /* NSDOAuthViewController.m */,
+			);
+			name = NSDOAuthViewController;
+			sourceTree = "<group>";
+		};
+		C110DFDE1D5643BB00C65EB8 /* NSDPreferencesViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NSDPreferencesViewController;
 			sourceTree = "<group>";
 		};
 		C112FD2C1D48A14F008E2C7B /* AppDelegate */ = {
@@ -197,16 +262,16 @@
 		C112FD301D48A22A008E2C7B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C1BB0FE21D481EFF000312C1 /* NSDOAuthViewController.h */,
-				C1BB0FE31D481EFF000312C1 /* NSDOAuthViewController.m */,
+				C174A3B31D5CC27D004A4CE2 /* Base(AbstractViewControllers) */,
+				C110DFDE1D5643BB00C65EB8 /* NSDPreferencesViewController */,
+				C110DFDA1D56427600C65EB8 /* NSDOAuthViewController */,
+				C110DFD91D56424100C65EB8 /* NSDNewsViewController */,
+				C110DFD71D56408800C65EB8 /* NSDNavigatorController */,
+				C110DFD81D5641D500C65EB8 /* NSDDetaliedUserProfileViewController */,
 				C1BB0FDE1D481EFF000312C1 /* NSDMenuViewController.h */,
 				C1BB0FDF1D481EFF000312C1 /* NSDMenuViewController.m */,
-				C1BB0FD31D481EFF000312C1 /* NSDBaseViewController.h */,
-				C1BB0FD41D481EFF000312C1 /* NSDBaseViewController.m */,
 				C1F3DFFC1D4C964600BC8556 /* NSDNotificationsViewController.h */,
 				C1F3DFFD1D4C964600BC8556 /* NSDNotificationsViewController.m */,
-				C1197FAC1D4D0BA2006DA0EF /* NSDBaseNavigatorController.h */,
-				C1197FAD1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -229,6 +294,8 @@
 				C1FA3EBE1D4A136B00E9D7B8 /* NSDRepo.m */,
 				C1BB0FE61D481F00000312C1 /* NSDUser.h */,
 				C1BB0FE71D481F00000312C1 /* NSDUser.m */,
+				C1AD04A51D573DDC00B61DA6 /* NSDNewsRssEntry.h */,
+				C1AD04A61D573DDC00B61DA6 /* NSDNewsRssEntry.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -236,37 +303,33 @@
 		C112FD331D48A363008E2C7B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C1FA3EBF1D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.h */,
-				C1FA3EC01D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.m */,
-				C1BB0FD51D481EFF000312C1 /* NSDChacheController.h */,
-				C1BB0FD61D481EFF000312C1 /* NSDChacheController.m */,
-				C1BB0FD71D481EFF000312C1 /* NSDGitConstants.h */,
-				C1BB0FD81D481EFF000312C1 /* NSDGitConstants.m */,
-				C1BB0FD91D481EFF000312C1 /* NSDGitManager_Private.h */,
-				C1BB0FDA1D481EFF000312C1 /* NSDGitManager.h */,
-				C1BB0FDB1D481EFF000312C1 /* NSDGitManager.m */,
-				C1BB0FDC1D481EFF000312C1 /* NSDictionary+NSDNetworkConnection.h */,
-				C1BB0FDD1D481EFF000312C1 /* NSDictionary+NSDNetworkConnection.m */,
-				C1BB0FE01D481EFF000312C1 /* NSDNetworkController.h */,
-				C1BB0FE11D481EFF000312C1 /* NSDNetworkController.m */,
-				C1BB0FE81D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.h */,
-				C1BB0FE91D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m */,
-				C1BB0FF41D481F00000312C1 /* NSURL+NSDNetworkConnection.m */,
-				C1BB0FF11D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.h */,
-				C1BB0FF21D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m */,
-				C1BB0FF31D481F00000312C1 /* NSURL+NSDNetworkConnection.h */,
+				C10220F31D5CE365006AF027 /* XML */,
+				C1BB0FD51D481EFF000312C1 /* NSDCacheController.h */,
+				C1BB0FD61D481EFF000312C1 /* NSDCacheController.m */,
+				C1FBC09E1D54C38A00E3E70C /* ModelUtils */,
+				C1FBC09D1D54C27E00E3E70C /* Network */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C174A3B31D5CC27D004A4CE2 /* Base(AbstractViewControllers) */ = {
+			isa = PBXGroup;
+			children = (
+				C174A3B01D5CC0AC004A4CE2 /* NSDBaseViewController.h */,
+				C174A3B11D5CC0AC004A4CE2 /* NSDBaseViewController.m */,
+				C174A3B51D5CC2D3004A4CE2 /* NSDBaseTableViewController.h */,
+				C174A3B61D5CC2D3004A4CE2 /* NSDBaseTableViewController.m */,
+			);
+			name = "Base(AbstractViewControllers)";
 			sourceTree = "<group>";
 		};
 		C1BB0FC41D481EAA000312C1 /* gitClient */ = {
 			isa = PBXGroup;
 			children = (
-				C107BC621D4BDCF2004220F5 /* CustomNavigatorController */,
 				C112FD2F1D48A212008E2C7B /* NSD */,
-				C112FD2E1D48A202008E2C7B /* Main */,
 				C112FD2C1D48A14F008E2C7B /* AppDelegate */,
 				C1BB0FC81D481ED7000312C1 /* Assets.xcassets */,
+				C112FD2E1D48A202008E2C7B /* Main */,
 			);
 			name = gitClient;
 			sourceTree = "<group>";
@@ -274,7 +337,7 @@
 		C1C3BE161D436BDE001A0E50 = {
 			isa = PBXGroup;
 			children = (
-				C1F3DFFF1D4C966600BC8556 /* Info.plist */,
+				C107BC621D4BDCF2004220F5 /* CustomNavigatorController */,
 				C1BB0FC41D481EAA000312C1 /* gitClient */,
 				C1C3BE3B1D436BDE001A0E50 /* gitClientTests */,
 				C1C3BE201D436BDE001A0E50 /* Products */,
@@ -316,6 +379,37 @@
 				C1F3E00A1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorSlideAndFade.m */,
 			);
 			name = Animations;
+			sourceTree = "<group>";
+		};
+		C1FBC09D1D54C27E00E3E70C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C1BB0FE01D481EFF000312C1 /* NSDNetworkController.h */,
+				C1BB0FD71D481EFF000312C1 /* NSDGitConstants.h */,
+				C1BB0FDA1D481EFF000312C1 /* NSDGitManager.h */,
+				C1BB0FD91D481EFF000312C1 /* NSDGitManager_Private.h */,
+				C1BB0FF11D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.h */,
+				C1BB0FDC1D481EFF000312C1 /* NSDictionary+NSDNetworkConnection.h */,
+				C1BB0FF31D481F00000312C1 /* NSURL+NSDNetworkConnection.h */,
+				C1BB0FD81D481EFF000312C1 /* NSDGitConstants.m */,
+				C1BB0FE11D481EFF000312C1 /* NSDNetworkController.m */,
+				C1BB0FDB1D481EFF000312C1 /* NSDGitManager.m */,
+				C1BB0FF21D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m */,
+				C1BB0FDD1D481EFF000312C1 /* NSDictionary+NSDNetworkConnection.m */,
+				C1BB0FF41D481F00000312C1 /* NSURL+NSDNetworkConnection.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		C1FBC09E1D54C38A00E3E70C /* ModelUtils */ = {
+			isa = PBXGroup;
+			children = (
+				C1FA3EBF1D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.h */,
+				C1FA3EC01D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.m */,
+				C1BB0FE81D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.h */,
+				C1BB0FE91D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m */,
+			);
+			name = ModelUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +462,14 @@
 					C1C3BE1E1D436BDE001A0E50 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 3CNYS54QTZ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					C1C3BE371D436BDE001A0E50 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -408,7 +510,6 @@
 				C1FA3EC71D4A139800E9D7B8 /* NSDRepoCell.xib in Resources */,
 				C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */,
 				C1197FB01D4D299B006DA0EF /* NSDProgressCell.xib in Resources */,
-				C1F3E00D1D4C966600BC8556 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,27 +530,32 @@
 				C1BB0FF81D481F00000312C1 /* NSDGitConstants.m in Sources */,
 				C1BB0FC71D481EBB000312C1 /* AppDelegate.m in Sources */,
 				C1BB0FFD1D481F00000312C1 /* NSDOAuthViewController.m in Sources */,
-				C1BB0FF61D481F00000312C1 /* NSDBaseViewController.m in Sources */,
+				C1BB0FF61D481F00000312C1 /* NSDDetaliedUserProfileViewController.m in Sources */,
 				C1F3E0131D4C966600BC8556 /* NSDSlideNavigatorController.m in Sources */,
+				C110DFDD1D5643AA00C65EB8 /* NSDNewsViewController.m in Sources */,
 				C1FA3EC31D4A136B00E9D7B8 /* NSDRepo.m in Sources */,
 				C1BB0FF51D481F00000312C1 /* main.m in Sources */,
 				C1FA3EC51D4A136B00E9D7B8 /* NSDRepoCell.m in Sources */,
 				C1F3E0111D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorSlide.m in Sources */,
 				C1F3E0101D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				C1BB0FF91D481F00000312C1 /* NSDGitManager.m in Sources */,
+				C1AD04A71D573DDC00B61DA6 /* NSDNewsRssEntry.m in Sources */,
 				C1BB0FFC1D481F00000312C1 /* NSDNetworkController.m in Sources */,
 				C1FA3EC41D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.m in Sources */,
 				C1F3E00E1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorFade.m in Sources */,
+				C174A3B71D5CC2D3004A4CE2 /* NSDBaseTableViewController.m in Sources */,
 				C1BB10001D481F00000312C1 /* NSDUser+NSDInitUserWithDictionary.m in Sources */,
 				C1F3E0121D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
-				C1197FAE1D4D0BA2006DA0EF /* NSDBaseNavigatorController.m in Sources */,
+				C1197FAE1D4D0BA2006DA0EF /* NSDNavigatorController.m in Sources */,
 				C1F3E00F1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScale.m in Sources */,
+				C174A3B21D5CC0AC004A4CE2 /* NSDBaseViewController.m in Sources */,
 				C1BB10051D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */,
 				C1BB0FFB1D481F00000312C1 /* NSDMenuViewController.m in Sources */,
 				C1BB10011D481F00000312C1 /* NSDUserCell.m in Sources */,
 				C1F3DFFE1D4C964600BC8556 /* NSDNotificationsViewController.m in Sources */,
+				C10220F61D5CE38E006AF027 /* NSDXMLParser.m in Sources */,
 				C1BB10061D481F00000312C1 /* NSURL+NSDNetworkConnection.m in Sources */,
-				C1BB0FF71D481F00000312C1 /* NSDChacheController.m in Sources */,
+				C1BB0FF71D481F00000312C1 /* NSDCacheController.m in Sources */,
 				C1BB0FFF1D481F00000312C1 /* NSDUser.m in Sources */,
 				C1BB0FFA1D481F00000312C1 /* NSDictionary+NSDNetworkConnection.m in Sources */,
 			);
@@ -571,7 +677,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = gitClient/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/gitClientTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.org.com.gitClient;
@@ -584,7 +690,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = gitClient/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/gitClientTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.org.com.gitClient;

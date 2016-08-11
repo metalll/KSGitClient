@@ -6,32 +6,31 @@
 //  Copyright © 2016 nullStackDev. All rights reserved.
 //
 
-#import "NSDBaseViewController.h"
+#import "NSDDetaliedUserProfileViewController.h"
 #import "NSDGitManager.h"
 #import "NSDUserCell.h"
 #import "NSDRepoCell.h"
 #import "NSDUser.h"
 #import "NSDUser+NSDInitUserWithDictionary.h"
-#import "NSDChacheController.h"
+#import "NSDCacheController.h"
 #import "NSDRepo+InitWithDictionary.m"
-#import "NSDBaseNavigatorController.h"
-@interface NSDBaseViewController ()
+#import "NSDNavigatorController.h"
+@interface NSDDetaliedUserProfileViewController ()
 {
     BOOL loadedRepo;
     NSInteger userCellHeight;
 }
 @end
 
-@implementation NSDBaseViewController
+@implementation NSDDetaliedUserProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     _tableView.delegate = self;
-     _tableView.dataSource = self;
-     _tableView.alpha = 0;
-     _activityIndicator.hidesWhenStopped = YES;
-     [_activityIndicator startAnimating];
+    _tableView.dataSource = self;
+    _tableView.alpha = 0;
+    _activityIndicator.hidesWhenStopped = YES;
+    [_activityIndicator startAnimating];
 
 
     
@@ -83,12 +82,10 @@
         NSLog(@"%@", _user);
          cell = [tableView dequeueReusableCellWithIdentifier:cellID];
         if(cell==nil){
-            
-            
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NSDUserCell"owner:self options:nil];
-            
             cell = [nib lastObject];
         }
+        
         if(_user!=nil){
             
             [[(NSDUserCell *)cell activityIndicator]startAnimating];
@@ -120,17 +117,16 @@
             
             [[(NSDUserCell *)cell followingCount] setText:[ NSString stringWithFormat:@"%@", _user.followingCount]];
             
-            [[[NSDBaseNavigatorController sharedInstance] gitApi] getCurrentUserStarredWithCompletion:^(NSDictionary *responceDic, NSString *errorString) {
+            [[[NSDNavigatorController sharedInstance] gitApi] getCurrentUserStarredWithCompletion:^(NSDictionary *responceDic, NSString *errorString) {
                 
                 [(UILabel *)[(NSDUserCell *)cell starredCount]setText:[NSString stringWithFormat:@"%d",responceDic.count]];
-                
                 
             }];
             
             
-            NSDChacheController * __weak chache = [[NSDBaseNavigatorController sharedInstance] chache];
+          
             
-            [chache objectForKey:_user.userAvatarURL andCompletion:^(id object) {
+            [self.cache objectForKey:_user.userAvatarURL andCompletion:^(id object) {
                 [[(NSDUserCell *)cell avatarImageView]setImage:(UIImage *)object];
                 [[(NSDUserCell *)cell activityIndicator] stopAnimating];
               
@@ -191,12 +187,11 @@
     [_tableView reloadData];
     _tableView.alpha=1;
     
-    NSDGitManager * __weak gitApi = [NSDBaseNavigatorController sharedInstance].gitApi;
     
-    [gitApi getReposWithStringURL:_user.reposURL andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
+    [self.gitApi getReposWithStringURL:_user.reposURL andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
        
         NSLog(@"%@",responceDic);
-        _repos = [NSDRepo initWithDictionary:responceDic];
+       // _repos = [NSDRepo initWithDictionary:responceDic];
         loadedRepo=YES;
         [_tableView reloadData];
     }];

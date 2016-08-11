@@ -30,17 +30,17 @@
 
 
 -(NSString *)processResponceWithResponce:(NSURLResponse *)responce andError:(NSError *)error{
-    if(error!=nil){
+    if(error){
         return [error localizedDescription];
     }
     
     NSHTTPURLResponse * httpResponce = (NSHTTPURLResponse *)responce;
-    NSLog(@"%@",responce);
+   // NSLog(@"%@",responce);
     if(httpResponce.statusCode>=200&&httpResponce.statusCode<=299){ return nil; }
-    if(httpResponce.statusCode>=400&&httpResponce.statusCode<=499){ return [NSString stringWithFormat:@"Client error: %ld",httpResponce.statusCode]; }
-    if(httpResponce.statusCode>=500&&httpResponce.statusCode<=599){ return [NSString stringWithFormat:@"Server error: %ld",httpResponce.statusCode]; }
+    if(httpResponce.statusCode>=400&&httpResponce.statusCode<=499){ return [NSString stringWithFormat:@"Client error: %d",httpResponce.statusCode]; }
+    if(httpResponce.statusCode>=500&&httpResponce.statusCode<=599){ return [NSString stringWithFormat:@"Server error: %d",httpResponce.statusCode]; }
     
-    return [NSString stringWithFormat:@"Unknown error: %ld",httpResponce.statusCode];
+    return [NSString stringWithFormat:@"Unknown error: %d",httpResponce.statusCode];
 }
 
 -(void)downloadResourceWithURLString:(NSString *)url andCompletion:(void (^)(NSString * localPath, NSString * errorString))completion{
@@ -57,7 +57,7 @@
             return ;
         }
         
-        if(location==nil){
+        if(!location){
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(nil,@"Error!Request succeed, but URL is nil!");
@@ -68,7 +68,7 @@
         NSString * localPath = [NSTemporaryDirectory() stringByAppendingPathComponent:[NSUUID UUID].UUIDString];
         NSError * errorF;
         [[NSFileManager defaultManager] copyItemAtURL:location toURL:[NSURL fileURLWithPath:localPath] error:&errorF];
-        if(errorF!=nil){
+        if(errorF){
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(nil,[NSString stringWithFormat:@"could don't copy downloaded file %@",[error localizedDescription]]);
             });
@@ -98,7 +98,7 @@
     
     NSURL * URL = [NSURL URLWithString:url];
     
-    if(method==nil){
+    if(!method){
         method = @"GET";
     }
     
@@ -110,7 +110,7 @@
     NSLog(@"%@",request.HTTPBody) ;
     }
     
-    if(params!=nil){
+    if(params){
         if([method isEqualToString:@"POST"]||[method isEqualToString:@"PUT"]||[method isEqualToString:@"DELETE"]||[method isEqualToString:@"PATH"]){
         
             NSData * bodyData = nil;
@@ -119,13 +119,13 @@
                 
                 request.HTTPBody = [NSJSONSerialization dataWithJSONObject:params options:0 error:&JSONError];
                 
-                if(JSONError!=nil){
+                if(JSONError){
                     completion(nil,[@"Error dataWithJSON" stringByAppendingString:[JSONError localizedDescription]]);
                     return;
                 }else{
                     NSString * encodedString = [params encodedStringWithHttpBody];
                     bodyData = [encodedString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:false];
-                    if(bodyData==nil){
+                    if(!bodyData){
                         completion(nil,@"couldn't create bodyData");
                         return;
                     }
@@ -142,13 +142,13 @@
     else {
             NSString * encodedString = [params encodedStringWithHttpBody];
             NSURL * reqURL;
-            if(encodedString!=nil)
+            if(encodedString)
             reqURL = [NSURL URLWithString:[[url stringByAppendingString:@"?"]stringByAppendingString:  encodedString]];
             else reqURL=[NSURL URLWithString:url];
             request.URL = reqURL;
     }
     
-    if(self.urlSession==nil) [self setUrlSession:[NSURLSession sharedSession]];
+    if(!self.urlSession) [self setUrlSession:[NSURLSession sharedSession]];
     [[self.urlSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
