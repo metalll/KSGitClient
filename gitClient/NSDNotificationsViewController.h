@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "NSDGitManager.h"
-@interface NSDNotificationsViewController : UIViewController
+#import "NSDCacheController.h"
+#import "NSDNotification.h"
+
+@interface NSDNotificationsViewController : UIViewController <UITableViewDataSource,UITableViewDelegate> {
+    NSMutableArray <NSDNotification *> * notifications;
+}
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,weak) NSDGitManager * gitApi;
 
 -(void)startView;

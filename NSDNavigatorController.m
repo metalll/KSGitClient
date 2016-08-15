@@ -35,9 +35,12 @@
         NSDOAuthViewController *auth = (NSDOAuthViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"Auth"];
         auth.loadURL = _gitApi.requestOAuth2Access;
         [self presentViewController:auth animated:YES completion:nil];
+    
+        return;
     }
     else {
         [self initUser];
+        
     }
 
 }
@@ -56,6 +59,7 @@
             NSDOAuthViewController *auth = (NSDOAuthViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"Auth"];
             auth.loadURL = _gitApi.requestOAuth2Access;
             [self presentViewController:auth animated:YES completion:nil];
+            return ;
         }
             
         NSDNotificationsViewController * __weak notific = (NSDNotificationsViewController *)self.rightMenu;
@@ -65,7 +69,8 @@
                   
             
         NSDNewsViewController * __weak news = (NSDNewsViewController *)self.topViewController;
-        news.privateSelfUserFeed = YES;
+            if([self.topViewController isKindOfClass:[NSDNewsViewController class]]){
+                news.privateSelfUserFeed = YES;}
         [news startView];
     }];
 }

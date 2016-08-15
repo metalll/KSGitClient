@@ -16,4 +16,8 @@
 @property NSString * rssLink;
 @property (weak) NSDXMLParser * xmlParser;
 @property BOOL privateSelfUserFeed;
+@property BOOL userActivity;
+@property BOOL loaded;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @end

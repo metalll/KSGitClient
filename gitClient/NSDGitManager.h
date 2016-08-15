@@ -39,7 +39,7 @@
 
 -(void)getCurrentUserFeedsRssWithCompletion:(void(^)(NSDictionary * responceDic,NSString * errorString))completion;
 
-
+- (void)signOut;
 
 
 -(NSString *)requestOAuth2Access;

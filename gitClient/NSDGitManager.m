@@ -100,7 +100,18 @@
     }];
 }
 
-
+-(void)signOut{
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"userName"];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"passWord"];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"accessToken"];
+    
+    self.username = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    self.password = [[NSUserDefaults standardUserDefaults] objectForKey:@"passWord"];
+    self.baseURL = kGithubAPIURL;
+    self.token = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
+    self.urlSession = [NSURLSession sharedSession];
+    
+}
 
 -(void)getReposWithStringURL:(NSString *)url andCompletion:(void (^)(NSDictionary *, NSString *))completion{
     [self performRequestWithURLString:url andMethod:nil andParams:nil andAcceptJSONResponse:YES andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
@@ -232,7 +243,8 @@
     [self performRequestWithURLPath:@"/notifications" andMethod:@"GET" andParams:params andAcceptJSONResponse:YES andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
         [self processJSONData:data andErrorString:errorString andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
           
-         //   NSLog(@"%@",responceDic);
+            completion(responceDic,nil);
+         ///  NSLog(@"%@",responceDic);
             
         }];
     }];

@@ -380,7 +380,7 @@ static NSDSlideNavigationController *singletonInstance;
 
 - (void)updateMenuFrameAndTransformAccordingToOrientation
 {
-    // Animate rotatation when menu is open and device rotates
+  
     CGAffineTransform transform = self.view.transform;
     self.leftMenu.view.transform = transform;
     self.rightMenu.view.transform = transform;

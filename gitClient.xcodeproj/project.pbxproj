@@ -8,13 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		C10220F61D5CE38E006AF027 /* NSDXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C10220F51D5CE38E006AF027 /* NSDXMLParser.m */; };
+		C10220FC1D5D1511006AF027 /* NSDFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10220FB1D5D1511006AF027 /* NSDFeedCell.xib */; };
 		C110DFDD1D5643AA00C65EB8 /* NSDNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C110DFDC1D5643AA00C65EB8 /* NSDNewsViewController.m */; };
 		C1197FAE1D4D0BA2006DA0EF /* NSDNavigatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1197FAD1D4D0BA2006DA0EF /* NSDNavigatorController.m */; };
 		C1197FB01D4D299B006DA0EF /* NSDProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */; };
 		C1197FB41D4D52E5006DA0EF /* NSDMenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1197FB31D4D52E5006DA0EF /* NSDMenuItemCell.xib */; };
+		C1198D351D60A40D001DF0B0 /* NSDSimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1198D341D60A40D001DF0B0 /* NSDSimpleCell.xib */; };
+		C11DC4151D6113A6006D2B33 /* NSDReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11DC4141D6113A6006D2B33 /* NSDReposViewController.m */; };
+		C125356F1D61DDE7007DB950 /* NSDUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C125356E1D61DDE7007DB950 /* NSDUserViewController.m */; };
+		C16976621D5F1521003EC981 /* news22.png in Resources */ = {isa = PBXBuildFile; fileRef = C169765F1D5F1521003EC981 /* news22.png */; };
+		C16976631D5F1521003EC981 /* news44.png in Resources */ = {isa = PBXBuildFile; fileRef = C16976601D5F1521003EC981 /* news44.png */; };
+		C16976641D5F1521003EC981 /* news66.png in Resources */ = {isa = PBXBuildFile; fileRef = C16976611D5F1521003EC981 /* news66.png */; };
 		C174A3B21D5CC0AC004A4CE2 /* NSDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174A3B11D5CC0AC004A4CE2 /* NSDBaseViewController.m */; };
 		C174A3B71D5CC2D3004A4CE2 /* NSDBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C174A3B61D5CC2D3004A4CE2 /* NSDBaseTableViewController.m */; };
+		C1A95F0A1D5DD12E00D1FDF6 /* NSDFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A95F091D5DD12E00D1FDF6 /* NSDFeedCell.m */; };
 		C1AD04A71D573DDC00B61DA6 /* NSDNewsRssEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AD04A61D573DDC00B61DA6 /* NSDNewsRssEntry.m */; };
+		C1B9A6511D5F9A0D004605B7 /* NSDActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B9A6501D5F9A0D004605B7 /* NSDActivityViewController.m */; };
 		C1BB0FC71D481EBB000312C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FC61D481EBB000312C1 /* AppDelegate.m */; };
 		C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FC81D481ED7000312C1 /* Assets.xcassets */; };
 		C1BB0FCF1D481EE3000312C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BB0FCD1D481EE3000312C1 /* Main.storyboard */; };
@@ -35,6 +44,10 @@
 		C1BB10061D481F00000312C1 /* NSURL+NSDNetworkConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BB0FF41D481F00000312C1 /* NSURL+NSDNetworkConnection.m */; };
 		C1BBE1B21D46D4C0001B0334 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BBE1B11D46D4C0001B0334 /* logo.png */; };
 		C1C3BE3D1D436BDE001A0E50 /* gitClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C3BE3C1D436BDE001A0E50 /* gitClientTests.m */; };
+		C1D268FC1D60C99F00C3AB82 /* NSDSimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D268FB1D60C99F00C3AB82 /* NSDSimpleCell.m */; };
+		C1E2EACA1D5FFAFA0078E48F /* NSDNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E2EAC91D5FFAFA0078E48F /* NSDNotification.m */; };
+		C1E2EACC1D60036E0078E48F /* NSDNotif.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1E2EACB1D60036E0078E48F /* NSDNotif.xib */; };
+		C1E2EACF1D6005F80078E48F /* NSDNotif.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E2EACE1D6005F80078E48F /* NSDNotif.m */; };
 		C1F3DFFE1D4C964600BC8556 /* NSDNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F3DFFD1D4C964600BC8556 /* NSDNotificationsViewController.m */; };
 		C1F3E00E1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F3E0021D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorFade.m */; };
 		C1F3E00F1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F3E0041D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScale.m */; };
@@ -47,6 +60,7 @@
 		C1FA3EC41D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA3EC01D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.m */; };
 		C1FA3EC51D4A136B00E9D7B8 /* NSDRepoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA3EC21D4A136B00E9D7B8 /* NSDRepoCell.m */; };
 		C1FA3EC71D4A139800E9D7B8 /* NSDRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1FA3EC61D4A139800E9D7B8 /* NSDRepoCell.xib */; };
+		C1FF11B51D5E613100891B6B /* NSDMenuItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FF11B41D5E613100891B6B /* NSDMenuItemCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,18 +76,31 @@
 /* Begin PBXFileReference section */
 		C10220F41D5CE38E006AF027 /* NSDXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDXMLParser.h; sourceTree = "<group>"; };
 		C10220F51D5CE38E006AF027 /* NSDXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDXMLParser.m; sourceTree = "<group>"; };
+		C10220FB1D5D1511006AF027 /* NSDFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSDFeedCell.xib; sourceTree = "<group>"; };
 		C110DFDB1D5643AA00C65EB8 /* NSDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNewsViewController.h; sourceTree = "<group>"; };
 		C110DFDC1D5643AA00C65EB8 /* NSDNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDNewsViewController.m; sourceTree = "<group>"; };
 		C1197FAC1D4D0BA2006DA0EF /* NSDNavigatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNavigatorController.h; sourceTree = "<group>"; };
 		C1197FAD1D4D0BA2006DA0EF /* NSDNavigatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDNavigatorController.m; sourceTree = "<group>"; };
 		C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSDProgressCell.xib; sourceTree = "<group>"; };
 		C1197FB31D4D52E5006DA0EF /* NSDMenuItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSDMenuItemCell.xib; sourceTree = "<group>"; };
+		C1198D341D60A40D001DF0B0 /* NSDSimpleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSDSimpleCell.xib; sourceTree = "<group>"; };
+		C11DC4131D6113A6006D2B33 /* NSDReposViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDReposViewController.h; sourceTree = "<group>"; };
+		C11DC4141D6113A6006D2B33 /* NSDReposViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDReposViewController.m; sourceTree = "<group>"; };
+		C125356D1D61DDE7007DB950 /* NSDUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDUserViewController.h; sourceTree = "<group>"; };
+		C125356E1D61DDE7007DB950 /* NSDUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDUserViewController.m; sourceTree = "<group>"; };
+		C169765F1D5F1521003EC981 /* news22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news22.png; sourceTree = "<group>"; };
+		C16976601D5F1521003EC981 /* news44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news44.png; sourceTree = "<group>"; };
+		C16976611D5F1521003EC981 /* news66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news66.png; sourceTree = "<group>"; };
 		C174A3B01D5CC0AC004A4CE2 /* NSDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDBaseViewController.h; sourceTree = "<group>"; };
 		C174A3B11D5CC0AC004A4CE2 /* NSDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDBaseViewController.m; sourceTree = "<group>"; };
 		C174A3B51D5CC2D3004A4CE2 /* NSDBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDBaseTableViewController.h; sourceTree = "<group>"; };
 		C174A3B61D5CC2D3004A4CE2 /* NSDBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDBaseTableViewController.m; sourceTree = "<group>"; };
+		C1A95F081D5DD12E00D1FDF6 /* NSDFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDFeedCell.h; sourceTree = "<group>"; };
+		C1A95F091D5DD12E00D1FDF6 /* NSDFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDFeedCell.m; sourceTree = "<group>"; };
 		C1AD04A51D573DDC00B61DA6 /* NSDNewsRssEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDNewsRssEntry.h; path = gitClient/NSDNewsRssEntry.h; sourceTree = "<group>"; };
 		C1AD04A61D573DDC00B61DA6 /* NSDNewsRssEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDNewsRssEntry.m; path = gitClient/NSDNewsRssEntry.m; sourceTree = "<group>"; };
+		C1B9A64F1D5F9A0D004605B7 /* NSDActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDActivityViewController.h; sourceTree = "<group>"; };
+		C1B9A6501D5F9A0D004605B7 /* NSDActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDActivityViewController.m; sourceTree = "<group>"; };
 		C1BB0FC51D481EBB000312C1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = gitClient/AppDelegate.h; sourceTree = "<group>"; };
 		C1BB0FC61D481EBB000312C1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = gitClient/AppDelegate.m; sourceTree = "<group>"; };
 		C1BB0FC81D481ED7000312C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = gitClient/Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +139,13 @@
 		C1C3BE381D436BDE001A0E50 /* gitClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gitClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C3BE3C1D436BDE001A0E50 /* gitClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gitClientTests.m; sourceTree = "<group>"; };
 		C1C3BE3E1D436BDE001A0E50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1D268FA1D60C99F00C3AB82 /* NSDSimpleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDSimpleCell.h; sourceTree = "<group>"; };
+		C1D268FB1D60C99F00C3AB82 /* NSDSimpleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDSimpleCell.m; sourceTree = "<group>"; };
+		C1E2EAC81D5FFAFA0078E48F /* NSDNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNotification.h; sourceTree = "<group>"; };
+		C1E2EAC91D5FFAFA0078E48F /* NSDNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDNotification.m; sourceTree = "<group>"; };
+		C1E2EACB1D60036E0078E48F /* NSDNotif.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSDNotif.xib; sourceTree = "<group>"; };
+		C1E2EACD1D6005F80078E48F /* NSDNotif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNotif.h; sourceTree = "<group>"; };
+		C1E2EACE1D6005F80078E48F /* NSDNotif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDNotif.m; sourceTree = "<group>"; };
 		C1F3DFFC1D4C964600BC8556 /* NSDNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDNotificationsViewController.h; path = gitClient/NSDNotificationsViewController.h; sourceTree = "<group>"; };
 		C1F3DFFD1D4C964600BC8556 /* NSDNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDNotificationsViewController.m; path = gitClient/NSDNotificationsViewController.m; sourceTree = "<group>"; };
 		C1F3E0001D4C966600BC8556 /* NSDSlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDSlideNavigationContorllerAnimator.h; path = gitClient/NSDSlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
@@ -135,6 +169,8 @@
 		C1FA3EC11D4A136B00E9D7B8 /* NSDRepoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDRepoCell.h; path = gitClient/NSDRepoCell.h; sourceTree = "<group>"; };
 		C1FA3EC21D4A136B00E9D7B8 /* NSDRepoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDRepoCell.m; path = gitClient/NSDRepoCell.m; sourceTree = "<group>"; };
 		C1FA3EC61D4A139800E9D7B8 /* NSDRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NSDRepoCell.xib; path = gitClient/NSDRepoCell.xib; sourceTree = "<group>"; };
+		C1FF11B31D5E613100891B6B /* NSDMenuItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDMenuItemCell.h; sourceTree = "<group>"; };
+		C1FF11B41D5E613100891B6B /* NSDMenuItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDMenuItemCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +198,15 @@
 				C10220F51D5CE38E006AF027 /* NSDXMLParser.m */,
 			);
 			name = XML;
+			sourceTree = "<group>";
+		};
+		C10220FA1D5D1021006AF027 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				C1BB0FD51D481EFF000312C1 /* NSDCacheController.h */,
+				C1BB0FD61D481EFF000312C1 /* NSDCacheController.m */,
+			);
+			name = Cache;
 			sourceTree = "<group>";
 		};
 		C107BC621D4BDCF2004220F5 /* CustomNavigatorController */ = {
@@ -210,13 +255,6 @@
 			name = NSDOAuthViewController;
 			sourceTree = "<group>";
 		};
-		C110DFDE1D5643BB00C65EB8 /* NSDPreferencesViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = NSDPreferencesViewController;
-			sourceTree = "<group>";
-		};
 		C112FD2C1D48A14F008E2C7B /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +273,9 @@
 				C1FA3EB71D4A071700E9D7B8 /* LaunchScreen.storyboard */,
 				C1197FAF1D4D299B006DA0EF /* NSDProgressCell.xib */,
 				C1197FB31D4D52E5006DA0EF /* NSDMenuItemCell.xib */,
+				C10220FB1D5D1511006AF027 /* NSDFeedCell.xib */,
+				C1E2EACB1D60036E0078E48F /* NSDNotif.xib */,
+				C1198D341D60A40D001DF0B0 /* NSDSimpleCell.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -262,16 +303,16 @@
 		C112FD301D48A22A008E2C7B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C125356C1D61DDCA007DB950 /* NSDUsersViewController */,
+				C11DC4121D61137A006D2B33 /* NSDReposViewController */,
 				C174A3B31D5CC27D004A4CE2 /* Base(AbstractViewControllers) */,
-				C110DFDE1D5643BB00C65EB8 /* NSDPreferencesViewController */,
+				C1B9A64E1D5F99E4004605B7 /* NSDActivityViewController */,
 				C110DFDA1D56427600C65EB8 /* NSDOAuthViewController */,
 				C110DFD91D56424100C65EB8 /* NSDNewsViewController */,
 				C110DFD71D56408800C65EB8 /* NSDNavigatorController */,
 				C110DFD81D5641D500C65EB8 /* NSDDetaliedUserProfileViewController */,
-				C1BB0FDE1D481EFF000312C1 /* NSDMenuViewController.h */,
-				C1BB0FDF1D481EFF000312C1 /* NSDMenuViewController.m */,
-				C1F3DFFC1D4C964600BC8556 /* NSDNotificationsViewController.h */,
-				C1F3DFFD1D4C964600BC8556 /* NSDNotificationsViewController.m */,
+				C1B9A64D1D5F998C004605B7 /* NSDMenuViewController */,
+				C1E2EAC71D5FE9B10078E48F /* NSDNotifViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -283,6 +324,14 @@
 				C1FA3EC21D4A136B00E9D7B8 /* NSDRepoCell.m */,
 				C1BB0FEA1D481F00000312C1 /* NSDUserCell.h */,
 				C1BB0FEB1D481F00000312C1 /* NSDUserCell.m */,
+				C1A95F081D5DD12E00D1FDF6 /* NSDFeedCell.h */,
+				C1A95F091D5DD12E00D1FDF6 /* NSDFeedCell.m */,
+				C1FF11B31D5E613100891B6B /* NSDMenuItemCell.h */,
+				C1FF11B41D5E613100891B6B /* NSDMenuItemCell.m */,
+				C1E2EACD1D6005F80078E48F /* NSDNotif.h */,
+				C1E2EACE1D6005F80078E48F /* NSDNotif.m */,
+				C1D268FA1D60C99F00C3AB82 /* NSDSimpleCell.h */,
+				C1D268FB1D60C99F00C3AB82 /* NSDSimpleCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -296,6 +345,8 @@
 				C1BB0FE71D481F00000312C1 /* NSDUser.m */,
 				C1AD04A51D573DDC00B61DA6 /* NSDNewsRssEntry.h */,
 				C1AD04A61D573DDC00B61DA6 /* NSDNewsRssEntry.m */,
+				C1E2EAC81D5FFAFA0078E48F /* NSDNotification.h */,
+				C1E2EAC91D5FFAFA0078E48F /* NSDNotification.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -303,13 +354,30 @@
 		C112FD331D48A363008E2C7B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C10220FA1D5D1021006AF027 /* Cache */,
 				C10220F31D5CE365006AF027 /* XML */,
-				C1BB0FD51D481EFF000312C1 /* NSDCacheController.h */,
-				C1BB0FD61D481EFF000312C1 /* NSDCacheController.m */,
 				C1FBC09E1D54C38A00E3E70C /* ModelUtils */,
 				C1FBC09D1D54C27E00E3E70C /* Network */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C11DC4121D61137A006D2B33 /* NSDReposViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C11DC4131D6113A6006D2B33 /* NSDReposViewController.h */,
+				C11DC4141D6113A6006D2B33 /* NSDReposViewController.m */,
+			);
+			name = NSDReposViewController;
+			sourceTree = "<group>";
+		};
+		C125356C1D61DDCA007DB950 /* NSDUsersViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C125356D1D61DDE7007DB950 /* NSDUserViewController.h */,
+				C125356E1D61DDE7007DB950 /* NSDUserViewController.m */,
+			);
+			name = NSDUsersViewController;
 			sourceTree = "<group>";
 		};
 		C174A3B31D5CC27D004A4CE2 /* Base(AbstractViewControllers) */ = {
@@ -321,6 +389,24 @@
 				C174A3B61D5CC2D3004A4CE2 /* NSDBaseTableViewController.m */,
 			);
 			name = "Base(AbstractViewControllers)";
+			sourceTree = "<group>";
+		};
+		C1B9A64D1D5F998C004605B7 /* NSDMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1BB0FDE1D481EFF000312C1 /* NSDMenuViewController.h */,
+				C1BB0FDF1D481EFF000312C1 /* NSDMenuViewController.m */,
+			);
+			name = NSDMenuViewController;
+			sourceTree = "<group>";
+		};
+		C1B9A64E1D5F99E4004605B7 /* NSDActivityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1B9A64F1D5F9A0D004605B7 /* NSDActivityViewController.h */,
+				C1B9A6501D5F9A0D004605B7 /* NSDActivityViewController.m */,
+			);
+			name = NSDActivityViewController;
 			sourceTree = "<group>";
 		};
 		C1BB0FC41D481EAA000312C1 /* gitClient */ = {
@@ -337,6 +423,9 @@
 		C1C3BE161D436BDE001A0E50 = {
 			isa = PBXGroup;
 			children = (
+				C169765F1D5F1521003EC981 /* news22.png */,
+				C16976601D5F1521003EC981 /* news44.png */,
+				C16976611D5F1521003EC981 /* news66.png */,
 				C107BC621D4BDCF2004220F5 /* CustomNavigatorController */,
 				C1BB0FC41D481EAA000312C1 /* gitClient */,
 				C1C3BE3B1D436BDE001A0E50 /* gitClientTests */,
@@ -361,6 +450,15 @@
 				C1C3BE3E1D436BDE001A0E50 /* Info.plist */,
 			);
 			path = gitClientTests;
+			sourceTree = "<group>";
+		};
+		C1E2EAC71D5FE9B10078E48F /* NSDNotifViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1F3DFFC1D4C964600BC8556 /* NSDNotificationsViewController.h */,
+				C1F3DFFD1D4C964600BC8556 /* NSDNotificationsViewController.m */,
+			);
+			name = NSDNotifViewController;
 			sourceTree = "<group>";
 		};
 		C1FAAEAA1D4BE785009E312A /* Animations */ = {
@@ -502,10 +600,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1198D351D60A40D001DF0B0 /* NSDSimpleCell.xib in Resources */,
 				C1BBE1B21D46D4C0001B0334 /* logo.png in Resources */,
+				C16976621D5F1521003EC981 /* news22.png in Resources */,
 				C1BB0FCF1D481EE3000312C1 /* Main.storyboard in Resources */,
 				C1197FB41D4D52E5006DA0EF /* NSDMenuItemCell.xib in Resources */,
+				C16976631D5F1521003EC981 /* news44.png in Resources */,
+				C1E2EACC1D60036E0078E48F /* NSDNotif.xib in Resources */,
+				C10220FC1D5D1511006AF027 /* NSDFeedCell.xib in Resources */,
 				C1FA3EB81D4A071700E9D7B8 /* LaunchScreen.storyboard in Resources */,
+				C16976641D5F1521003EC981 /* news66.png in Resources */,
 				C1BB10021D481F00000312C1 /* NSDUserCell.xib in Resources */,
 				C1FA3EC71D4A139800E9D7B8 /* NSDRepoCell.xib in Resources */,
 				C1BB0FC91D481ED7000312C1 /* Assets.xcassets in Resources */,
@@ -528,11 +632,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1BB0FF81D481F00000312C1 /* NSDGitConstants.m in Sources */,
+				C1A95F0A1D5DD12E00D1FDF6 /* NSDFeedCell.m in Sources */,
+				C1E2EACA1D5FFAFA0078E48F /* NSDNotification.m in Sources */,
 				C1BB0FC71D481EBB000312C1 /* AppDelegate.m in Sources */,
 				C1BB0FFD1D481F00000312C1 /* NSDOAuthViewController.m in Sources */,
+				C125356F1D61DDE7007DB950 /* NSDUserViewController.m in Sources */,
 				C1BB0FF61D481F00000312C1 /* NSDDetaliedUserProfileViewController.m in Sources */,
 				C1F3E0131D4C966600BC8556 /* NSDSlideNavigatorController.m in Sources */,
 				C110DFDD1D5643AA00C65EB8 /* NSDNewsViewController.m in Sources */,
+				C1B9A6511D5F9A0D004605B7 /* NSDActivityViewController.m in Sources */,
 				C1FA3EC31D4A136B00E9D7B8 /* NSDRepo.m in Sources */,
 				C1BB0FF51D481F00000312C1 /* main.m in Sources */,
 				C1FA3EC51D4A136B00E9D7B8 /* NSDRepoCell.m in Sources */,
@@ -540,6 +648,7 @@
 				C1F3E0101D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				C1BB0FF91D481F00000312C1 /* NSDGitManager.m in Sources */,
 				C1AD04A71D573DDC00B61DA6 /* NSDNewsRssEntry.m in Sources */,
+				C11DC4151D6113A6006D2B33 /* NSDReposViewController.m in Sources */,
 				C1BB0FFC1D481F00000312C1 /* NSDNetworkController.m in Sources */,
 				C1FA3EC41D4A136B00E9D7B8 /* NSDRepo+InitWithDictionary.m in Sources */,
 				C1F3E00E1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorFade.m in Sources */,
@@ -550,11 +659,14 @@
 				C1F3E00F1D4C966600BC8556 /* NSDSlideNavigationContorllerAnimatorScale.m in Sources */,
 				C174A3B21D5CC0AC004A4CE2 /* NSDBaseViewController.m in Sources */,
 				C1BB10051D481F00000312C1 /* NSMutableURLRequest+NSDNetworkConnection.m in Sources */,
+				C1E2EACF1D6005F80078E48F /* NSDNotif.m in Sources */,
 				C1BB0FFB1D481F00000312C1 /* NSDMenuViewController.m in Sources */,
 				C1BB10011D481F00000312C1 /* NSDUserCell.m in Sources */,
+				C1FF11B51D5E613100891B6B /* NSDMenuItemCell.m in Sources */,
 				C1F3DFFE1D4C964600BC8556 /* NSDNotificationsViewController.m in Sources */,
 				C10220F61D5CE38E006AF027 /* NSDXMLParser.m in Sources */,
 				C1BB10061D481F00000312C1 /* NSURL+NSDNetworkConnection.m in Sources */,
+				C1D268FC1D60C99F00C3AB82 /* NSDSimpleCell.m in Sources */,
 				C1BB0FF71D481F00000312C1 /* NSDCacheController.m in Sources */,
 				C1BB0FFF1D481F00000312C1 /* NSDUser.m in Sources */,
 				C1BB0FFA1D481F00000312C1 /* NSDictionary+NSDNetworkConnection.m in Sources */,

@@ -10,13 +10,16 @@
 #import "NSURL+NSDNetworkConnection.h"
 #import "NSDNavigatorController.h"
 @interface NSDOAuthViewController ()
-
+{
+    BOOL isFirstPost;
+}
 @end
 
 @implementation NSDOAuthViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _gitApi = [NSDGitManager sharedInstance];
     _indicatorView.hidesWhenStopped = YES;
     [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.loadURL]]];
     _webView.delegate = self;
@@ -28,17 +31,21 @@
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-  
-    if([[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize?client_id=90148ae988fcef1f0bb3&scope=user,repo,notifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login?client_id=90148ae988fcef1f0bb3&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D90148ae988fcef1f0bb3%26scope%3Duser%252Crepo%252Cnotifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/session"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize?client_id=90148ae988fcef1f0bb3&scope=user%2Crepo%2Cnotifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize"]){
+    
+    if([[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize?client_id=90148ae988fcef1f0bb3&scope=user,repo,notifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login?client_id=90148ae988fcef1f0bb3&return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D90148ae988fcef1f0bb3%26scope%3Duser%252Crepo%252Cnotifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/session"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize?client_id=90148ae988fcef1f0bb3&scope=user%2Crepo%2Cnotifications"]||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/login/oauth/authorize"]
+       ||[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/logout"]
+       ){
         
-        if([request.HTTPMethod isEqualToString:@"POST"]){
+        if([request.HTTPMethod isEqualToString:@"POST"]&&[[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/session"]){
             NSString * httpBodyData = [@"?" stringByAppendingString:[[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]];
             NSDictionary * requestDic = [[NSURL URLWithString:httpBodyData] dictionaryFromURL];
+            if([requestDic objectForKey:@"login"]!=[NSNull null]&&[requestDic objectForKey:@"password"]!=[NSNull null]){
             [[NSUserDefaults standardUserDefaults] setObject:[requestDic objectForKey:@"login"] forKey:@"userName"];
             [_gitApi setUsername:[requestDic objectForKey:@"login"]];
             [[NSUserDefaults standardUserDefaults] setObject:[requestDic objectForKey:@"password"] forKey:@"passWord"];
             [_gitApi setPassword:[requestDic objectForKey:@"password"]];
-
+                isFirstPost = YES;
+            }
             
           //  NSLog(@"%@",httpBodyData);
         }
@@ -49,7 +56,7 @@
     if([[request.URL dictionaryFromURL] objectForKey:@"code"]!=nil){
         
         
-        [[[NSDNavigatorController sharedInstance] gitApi] processOAuth2WithCallbackURI:request.URL andCompletion:^{
+        [_gitApi processOAuth2WithCallbackURI:request.URL andCompletion:^{
             
             
             [[NSDNavigatorController sharedInstance] initUser];
@@ -57,6 +64,12 @@
         }];
 
         return NO;
+    }
+   // NSLog(@"%@",request.URL);
+    
+    if([[NSString stringWithFormat:@"%@",request.URL] isEqualToString:@"https://github.com/"]){
+         [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://github.com/login/oauth/authorize?client_id=90148ae988fcef1f0bb3&scope=user,repo,notifications"]]];
+        return YES;
     }
     
     [UIApplication.sharedApplication openURL:request.URL];

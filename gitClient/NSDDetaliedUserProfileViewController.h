@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSDUser * user;
 @property NSArray * repos;
-
+@property BOOL hideLeftMenu;
 
 
 @end

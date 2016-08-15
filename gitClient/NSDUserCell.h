@@ -11,6 +11,7 @@
 @interface NSDUserCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *joinedLogo;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UITextView *userName;
 @property (weak, nonatomic) IBOutlet UITextView *userLogin;
@@ -20,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *followersCount;
 @property (weak, nonatomic) IBOutlet UILabel *starredCount;
 @property (weak, nonatomic) IBOutlet UILabel *followingCount;
+@property (weak, nonatomic) IBOutlet UIImageView *mailLogo;
 
 @end

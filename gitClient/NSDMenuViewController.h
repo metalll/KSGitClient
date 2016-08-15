@@ -11,7 +11,7 @@
 #import "NSDSlideNavigatorController.h"
 @interface NSDMenuViewController :UIViewController <NSDSlideNavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property NSUInteger currentViewController;
 
 
 @end

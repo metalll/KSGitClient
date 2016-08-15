@@ -10,5 +10,4 @@
 
 @interface NSDRepo (InitWithDictionary)
 - (NSDRepo *) initWithDictionary:(NSDictionary *)dictionary andIndex:(NSInteger)index;
-
 @end

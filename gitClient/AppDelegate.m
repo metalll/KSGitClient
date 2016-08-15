@@ -24,13 +24,13 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     NSDMenuViewController *leftMenu = (NSDMenuViewController*)[mainStoryboard                                                                 instantiateViewControllerWithIdentifier: @"Menu"];
     
-    NSDNotificationsViewController * rightMenu = (NSDNotificationsViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"Notifications"];
+   // NSDNotificationsViewController * rightMenu = (NSDNotificationsViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"Notifications"];
     
     NSDNavigatorController * navigatorVC =  [NSDNavigatorController sharedInstance];
     
-    navigatorVC.rightMenu = rightMenu;
+   // navigatorVC.rightMenu = rightMenu;
     navigatorVC.leftMenu = leftMenu;
-    navigatorVC.menuRevealAnimationDuration = .18;
+    navigatorVC.menuRevealAnimationDuration = .20;
     
     
     UIButton *buttonMenu  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
@@ -39,11 +39,11 @@
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:buttonMenu];
     navigatorVC.leftBarButtonItem = leftBarButtonItem;
     
-    UIButton *buttonNotif  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [buttonNotif setImage:[UIImage imageNamed:@"notif"] forState:UIControlStateNormal];
-    [buttonNotif addTarget:[NSDNavigatorController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:buttonNotif];
-    navigatorVC.rightBarButtonItem = rightBarButtonItem;
+//    UIButton *buttonNotif  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+//    [buttonNotif setImage:[UIImage imageNamed:@"notif"] forState:UIControlStateNormal];
+//    [buttonNotif addTarget:[NSDNavigatorController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:buttonNotif];
+//    navigatorVC.rightBarButtonItem = rightBarButtonItem;
 
     
 

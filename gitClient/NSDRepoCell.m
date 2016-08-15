@@ -30,7 +30,7 @@
 }
 
 -(NSString *)reuseIdentifier{
-    return self.cellID;
+    return @"rCell";
 }
 
 @end

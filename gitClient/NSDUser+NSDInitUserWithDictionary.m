@@ -16,10 +16,31 @@
     if(self){
         
         NSLog(@"%@",dictionary);
+        @try {
+             self.userBio = [dictionary objectForKey:@"bio"];
+        }
+        @catch (NSException *exception) {
+            self.userBio = nil;
+        }
         
-        self.userBio = [dictionary objectForKey:@"bio"];
-        self.userLogin = [dictionary objectForKey:@"login"];
-        self.userName = [dictionary objectForKey:@"name"];
+        @try {
+            self.userLogin = [dictionary objectForKey:@"login"];
+        }
+        @catch (NSException *exception) {
+            self.userLogin = nil;
+        }
+        @try {
+          self.userName = [dictionary objectForKey:@"name"];
+        }
+        @catch (NSException *exception) {
+            self.userName =nil;
+        }
+        
+
+        
+       
+        
+        
         self.userPrivateRepoCount = [dictionary objectForKey:@"total_private_repos"];
         self.userPublicRepoCount = [dictionary objectForKey:@"public_repos"];
         self.userEmail = [dictionary objectForKey:@"email"];

@@ -13,6 +13,7 @@
 @property NSString * published;
 @property NSString * type;
 @property NSString * link;
+@property NSString * authorAvatarUrl;
 
 - (id)initWithDictinary:(NSDictionary *)dictionary andIndex:(NSInteger)index;
 

@@ -99,8 +99,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="fork" width="44" height="44"/>
-        <image name="repo" width="44" height="44"/>
+        <image name="fork" width="22" height="22"/>
+        <image name="repo" width="22" height="22"/>
         <image name="star" width="22" height="22"/>
     </resources>
 </document>

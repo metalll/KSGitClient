@@ -25,14 +25,10 @@
 }
 
 -(BOOL)slideNavigationControllerShouldDisplayRightMenu{
-    [NSException raise:NSInternalInconsistencyException
-                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
     return NO;
 }
 
 -(BOOL)slideNavigationControllerShouldDisplayLeftMenu{
-    [NSException raise:NSInternalInconsistencyException
-                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
     return NO;
 }
 

@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tij-wV-bJt">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tij-wV-bJt" customClass="NSDMenuItemCell">
             <rect key="frame" x="0.0" y="0.0" width="351" height="39"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tij-wV-bJt" id="pc3-f1-dve">
@@ -40,6 +40,10 @@
                     <constraint firstAttribute="trailingMargin" secondItem="C6G-xY-SGn" secondAttribute="trailing" constant="60" id="rjs-Nf-0PW"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="menuLabel" destination="KCu-nU-Zn3" id="0ey-lC-Owj"/>
+                <outlet property="menuLogo" destination="C6G-xY-SGn" id="46b-aK-edh"/>
+            </connections>
             <point key="canvasLocation" x="507.5" y="272.5"/>
         </tableViewCell>
     </objects>

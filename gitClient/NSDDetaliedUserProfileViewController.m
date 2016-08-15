@@ -15,9 +15,12 @@
 #import "NSDCacheController.h"
 #import "NSDRepo+InitWithDictionary.m"
 #import "NSDNavigatorController.h"
+#import "NSDSimpleCell.h"
+#import "NSDReposViewController.h"
+#import "NSDUserViewController.h"
 @interface NSDDetaliedUserProfileViewController ()
 {
-    BOOL loadedRepo;
+   
     NSInteger userCellHeight;
 }
 @end
@@ -31,7 +34,7 @@
     _tableView.alpha = 0;
     _activityIndicator.hidesWhenStopped = YES;
     [_activityIndicator startAnimating];
-
+    [self startView];
 
     
 }
@@ -45,11 +48,11 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == 0&& indexPath.row == 0){
-        return 204+userCellHeight;
+        return 152+userCellHeight;
     }
     else{
-        if(loadedRepo) return 82;
-        return 200;
+        
+        return 44;
     }
 }
 
@@ -60,18 +63,18 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(section==0){
-        return 1;
+        return 5;
     }
-    else {
-        if(loadedRepo) return _repos.count; // number of repos;
-        return 1;
-    }
-    
+//    else {
+//        if(loadedRepo) return _repos.count; // number of repos;
+//        return 1;
+//    }
+    return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -98,12 +101,23 @@
             [[(NSDUserCell *)cell userName]setText:_user.userName];
             else{[[(NSDUserCell *)cell userName]setText:@""];}
             
+            if((id)_user.userEmail != [NSNull null]){
+                [[(NSDUserCell *)cell mail]setText:_user.userEmail];
+            [[(NSDUserCell *)cell mailLogo] setAlpha:1];}
+            else{[[(NSDUserCell *)cell mail]setText:@""];
+                
+                [[(NSDUserCell *)cell mailLogo] setAlpha:0];
+            }
+            
             
             if((id)_user.userBio != [NSNull null]){
             float viewWidth = (self.view.frame.size.width-16)/10.1; //внимание велосипед!! берем прикидываем ширину лейбла с биографией и делим ее на примерную ширину символа
             float viewRowsCount = _user.userBio.length / viewWidth; //далее берем посчитываем кол-во столбцов
             NSLog(@"%@",_user.userBio);
             NSLog(@"%f",viewRowsCount);
+                
+                
+                
             [(UILabel *)[(NSDUserCell *)cell bio]setNumberOfLines:ceilf(viewRowsCount)]; // далее округляем и закидываем в количество столбцов bio лейбла
           userCellHeight = 18 * ceilf(viewRowsCount); // далее примерная высота лейбла после манипуляций
                 // и плюсуем эти расчеты к стоковой высоте cell'a (чуть выше) профит!!
@@ -115,6 +129,14 @@
           
             [[(NSDUserCell *)cell followersCount] setText:[ NSString stringWithFormat:@"%@", _user.followersCount]];
             
+            NSDate * date = [self parseRFC3339Date:_user.joinedOn];
+            NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+            [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+            NSString *articleDateString = [dateFormatter stringFromDate:date];
+            
+            
+            [[(NSDUserCell *)cell joined]setText:articleDateString];
             [[(NSDUserCell *)cell followingCount] setText:[ NSString stringWithFormat:@"%@", _user.followingCount]];
             
             [[[NSDNavigatorController sharedInstance] gitApi] getCurrentUserStarredWithCompletion:^(NSDictionary *responceDic, NSString *errorString) {
@@ -124,7 +146,7 @@
             }];
             
             
-          
+            
             
             [self.cache objectForKey:_user.userAvatarURL andCompletion:^(id object) {
                 [[(NSDUserCell *)cell avatarImageView]setImage:(UIImage *)object];
@@ -137,37 +159,57 @@
         
     }
     
-    if(indexPath.section == 1){
-        
-        if(!loadedRepo){
-            return [[[NSBundle mainBundle] loadNibNamed:@"NSDProgressCell"owner:self options:nil] lastObject];
-        }
-        
-        cellID = @"repo";
+    if(indexPath.row >= 1){
+        cellID = @"simpleCell";
         cell = [tableView dequeueReusableCellWithIdentifier:cellID];
         
-        if(cell == nil){
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NSDRepoCell"owner:self options:nil];
-            cell = [nib lastObject];
-            [(NSDRepoCell *)cell setIndetifireWithString:cellID];
-        }
+        if(!cell){
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NSDSimpleCell"owner:self options:nil];
+            cell = [nib lastObject];}
+            NSDSimpleCell * __weak sCell = (NSDSimpleCell *) cell;
+            switch (indexPath.row) {
+                case 1:
+                   sCell.simpleName.text = [_user.userLogin stringByAppendingString: @"'s followers"];
+                   sCell.SimpleCount.text = [ NSString stringWithFormat:@"%@", _user.followersCount];
+                    break;
+                case 2:
+                    sCell.simpleName.text = [_user.userLogin stringByAppendingString: @"'s starred"];
+
+                    break;
+                case 3:
+                    sCell.simpleName.text = [_user.userLogin stringByAppendingString: @"'s following"];
+                    sCell.SimpleCount.text = [ NSString stringWithFormat:@"%@", _user.followingCount];
+                    break;
+                case 4:
+                    sCell.simpleName.text = [_user.userLogin stringByAppendingString: @"'s repos"];
+                    sCell.SimpleCount.text = [ NSString stringWithFormat:@"%@",_user.userPublicRepoCount];
+                default:
+                
+                    break;
+            }
+            
+            if(indexPath.row == 2){
+                if(!_user) return cell;
+                
+                
+                
+                [self.gitApi performRequestWithURLString: [self reformatURlWithString:_user.starredURL] andMethod:@"GET" andParams:nil andAcceptJSONResponse:YES andSendBodyAsJSON:NO andCompletion:^(NSData *data, NSString *errorString) {
+                    NSDictionary * responceDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    
+                    
+                     sCell.SimpleCount.text =[NSString stringWithFormat:@"%d",responceDic.count];
+                }];
+                
+//            [[[NSDNavigatorController sharedInstance] gitApi] perf:^(NSDictionary *responceDic, NSString *errorString) {
+//
+//                }];
+            }
+            
         
         
-        if([[_repos objectAtIndex:indexPath.row] isFork]){
-            [[(NSDRepoCell *)cell repoImageView] setImage:[UIImage imageNamed:@"fork"]];
-        }else{
-            [[(NSDRepoCell *)cell repoImageView] setImage:[UIImage imageNamed:@"repo"]];}
         
         
-        
-        [[(NSDRepoCell *)cell repoName] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] repoName]]] ;
-        
-        [[(NSDRepoCell *)cell starCount] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] stars]]];
-        
-        [[(NSDRepoCell *)cell forkCount] setText:[NSString stringWithFormat:@"%@",[[_repos objectAtIndex:indexPath.row] forks]]];
-        }
-        
-    
+    }
     
     
     
@@ -183,19 +225,19 @@
 
 
 -(void)startView{
-    [_activityIndicator stopAnimating];
-    [_tableView reloadData];
-    _tableView.alpha=1;
+   
+  
     
     
-    [self.gitApi getReposWithStringURL:_user.reposURL andCompletion:^(NSDictionary *responceDic, NSString *errorString) {
-       
-        NSLog(@"%@",responceDic);
-       // _repos = [NSDRepo initWithDictionary:responceDic];
-        loadedRepo=YES;
+//    [[self gitApi] getCurrentUserWithCompletion:^(NSDictionary *responceDic, NSString *errorString) {
+//       
+//        self.user = [[NSDUser alloc] initWithDictionary:responceDic];
+        _tableView.alpha=1;
+        self.title =[[_user userLogin]stringByAppendingString:@"'s profile"];
+        [_activityIndicator stopAnimating];
         [_tableView reloadData];
-    }];
-    
+
+//    }];
 }
 
 
@@ -205,15 +247,82 @@
 }
 
 
-
-- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
-{
-    return YES;
+- (NSString *) reformatURlWithString:(NSString *)string{
+    NSString * retVal;
+    NSUInteger location = [string rangeOfString:@"{"].location;
+    retVal = [string substringToIndex:location];
+    
+    
+    
+    return retVal;
 }
+
+- (NSDate *)parseRFC3339Date:(NSString *)dateString
+{
+    NSDateFormatter *rfc3339TimestampFormatterWithTimeZone = [[NSDateFormatter alloc] init];
+    [rfc3339TimestampFormatterWithTimeZone setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] ];
+    [rfc3339TimestampFormatterWithTimeZone setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+    
+    NSDate *theDate = nil;
+    NSError *error = nil;
+    if (![rfc3339TimestampFormatterWithTimeZone getObjectValue:&theDate forString:dateString range:nil error:&error]) {
+        NSLog(@"Date '%@' could not be parsed: %@", dateString, error);
+    }
+    
+    return theDate;
+}
+
 
 - (BOOL)slideNavigationControllerShouldDisplayRightMenu
 {
-    return YES;
+    return NO;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
+    if(indexPath.row == 4){
+            NSDReposViewController * vc;
+            vc = [self.storyboard instantiateViewControllerWithIdentifier:@"repos"];
+            NSDReposViewController * __weak rVC = (NSDReposViewController *)vc;
+            rVC.reposURL = _user.reposURL;
+       
+               rVC.hideLeftMenu = YES;
+        [[NSDNavigatorController sharedInstance] pushViewController:vc animated:YES];
+        
+    }
+    if(indexPath.row == 1){
+        NSDUserViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"users"];
+        vc.hideLeftMenu = YES;
+        vc.Utitle = [[(NSDSimpleCell *)[tableView cellForRowAtIndexPath:indexPath]simpleName] text];
+        vc.loadurl = _user.followersURL;
+         [[NSDNavigatorController sharedInstance] pushViewController:vc animated:YES];
+    
+    }
+    if(indexPath.row == 2){
+        NSDReposViewController * vc;
+        vc = [self.storyboard instantiateViewControllerWithIdentifier:@"repos"];
+        NSDReposViewController * __weak rVC = (NSDReposViewController *)vc;
+        rVC.reposURL = [self reformatURlWithString:_user.starredURL];
+        rVC.title = [[(NSDSimpleCell *)[tableView cellForRowAtIndexPath:indexPath]simpleName] text];
+        rVC.hideLeftMenu = YES;
+        [[NSDNavigatorController sharedInstance] pushViewController:vc animated:YES];
+        
+    }
+    
+    if(indexPath.row ==3){
+        NSDUserViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"users"];
+        vc.hideLeftMenu = YES;
+        vc.Utitle = [[(NSDSimpleCell *)[tableView cellForRowAtIndexPath:indexPath]simpleName] text];
+        vc.loadurl =[self reformatURlWithString:_user.followingURL];
+        [[NSDNavigatorController sharedInstance] pushViewController:vc animated:YES];
+
+    }
+
+    
+    }
+
+-(BOOL)slideNavigationControllerShouldDisplayLeftMenu{
+    return !self.hideLeftMenu;
 }
 /*
 #pragma mark - Navigation
