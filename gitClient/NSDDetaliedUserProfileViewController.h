@@ -18,6 +18,6 @@
 @property NSDUser * user;
 @property NSArray * repos;
 @property BOOL hideLeftMenu;
-
+@property BOOL selfUser;
 
 @end

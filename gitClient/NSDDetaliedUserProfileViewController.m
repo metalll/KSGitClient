@@ -145,9 +145,6 @@
                 
             }];
             
-            
-            
-            
             [self.cache objectForKey:_user.userAvatarURL andCompletion:^(id object) {
                 [[(NSDUserCell *)cell avatarImageView]setImage:(UIImage *)object];
                 [[(NSDUserCell *)cell activityIndicator] stopAnimating];
@@ -183,8 +180,10 @@
                 case 4:
                     sCell.simpleName.text = [_user.userLogin stringByAppendingString: @"'s repos"];
                     sCell.SimpleCount.text = [ NSString stringWithFormat:@"%@",_user.userPublicRepoCount];
+                    break;
                 default:
-                
+                      sCell.simpleName.text = @"Edit Profile";
+                    sCell.SimpleCount.alpha = 0;
                     break;
             }
             
@@ -200,6 +199,9 @@
                      sCell.SimpleCount.text =[NSString stringWithFormat:@"%d",responceDic.count];
                 }];
                 
+                
+                
+
 //            [[[NSDNavigatorController sharedInstance] gitApi] perf:^(NSDictionary *responceDic, NSString *errorString) {
 //
 //                }];
@@ -317,7 +319,15 @@
         [[NSDNavigatorController sharedInstance] pushViewController:vc animated:YES];
 
     }
-
+    
+//   // if(indexPath.row ==4){
+//        NSDUserViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"users"];
+//        vc.hideLeftMenu = YES;
+//        vc.Utitle = [[(NSDSimpleCell *)[tableView cellForRowAtIndexPath:indexPath]simpleName] text];
+//        vc.loadurl =[self reformatURlWithString:_user.followingURL];
+//        [[NSDNavigatorController sharedInstance] pushViewController:vc animated:YES];
+//        
+//    }
     
     }
 

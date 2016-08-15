@@ -139,7 +139,9 @@
 -(void)moreDownload{
     
     //?page=2&per_page=100
-    NSString *appString = [@"?page=" stringByAppendingString:[NSString stringWithFormat:@"%d",pageNumber]];
+    NSString *appString = [@"?page=" stringByAppendingString:[NSString stringWithFormat:@"%lu",(unsigned long)pageNumber]];
+    
+    
     
     NSLog(@"%@",[self.loadurl stringByAppendingString:appString]);
     pageNumber++;

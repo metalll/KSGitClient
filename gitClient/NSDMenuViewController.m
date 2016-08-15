@@ -63,9 +63,11 @@
         
     }
     
+    
     switch (indexPath.row) {
         case 0:
             cell.menuLabel.text = @"Your Profile";
+            
             cell.menuLogo.image = [UIImage imageNamed:@"profile"];
             break;
         case 1:
@@ -119,6 +121,7 @@
         vc = [storyboard instantiateViewControllerWithIdentifier:@"detaliedUserProfile"];
         NSDDetaliedUserProfileViewController * __weak dvc = (NSDDetaliedUserProfileViewController *)vc;
         dvc.user = [[NSDNavigatorController sharedInstance]  currentUser];
+        dvc.selfUser = YES;
         
     }
     

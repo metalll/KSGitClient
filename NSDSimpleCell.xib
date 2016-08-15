@@ -15,26 +15,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="324" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="metalll's followers" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELx-wv-S4g">
-                        <rect key="frame" x="43" y="8" width="160" height="27"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxm-9M-IuM">
+                        <rect key="frame" x="303" y="0.0" width="13" height="43"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxm-9M-IuM">
-                        <rect key="frame" x="274" y="0.0" width="13" height="43"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="metalll's followers" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELx-wv-S4g">
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="230" id="jDf-cW-sss"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="gxm-9M-IuM" firstAttribute="top" secondItem="ag4-rJ-u55" secondAttribute="topMargin" constant="-8" id="2K1-00-vA0"/>
-                    <constraint firstItem="ELx-wv-S4g" firstAttribute="top" secondItem="ag4-rJ-u55" secondAttribute="topMargin" id="Cxh-6j-bDd"/>
-                    <constraint firstItem="ELx-wv-S4g" firstAttribute="leading" secondItem="ag4-rJ-u55" secondAttribute="leadingMargin" constant="35" id="G22-iu-UzJ"/>
-                    <constraint firstItem="ELx-wv-S4g" firstAttribute="bottom" secondItem="ag4-rJ-u55" secondAttribute="bottomMargin" id="JZH-mE-3qL"/>
+                    <constraint firstItem="ELx-wv-S4g" firstAttribute="top" secondItem="ag4-rJ-u55" secondAttribute="topMargin" constant="-8" id="Cxh-6j-bDd"/>
+                    <constraint firstItem="ELx-wv-S4g" firstAttribute="leading" secondItem="ag4-rJ-u55" secondAttribute="leadingMargin" constant="-8" id="G22-iu-UzJ"/>
+                    <constraint firstItem="ELx-wv-S4g" firstAttribute="bottom" secondItem="ag4-rJ-u55" secondAttribute="bottomMargin" constant="8" id="JZH-mE-3qL"/>
                     <constraint firstAttribute="bottomMargin" secondItem="gxm-9M-IuM" secondAttribute="bottom" constant="-8" id="ckL-gE-vpe"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="gxm-9M-IuM" secondAttribute="trailing" constant="29" id="oZJ-dI-VFY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gxm-9M-IuM" secondAttribute="trailing" id="oZJ-dI-VFY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
